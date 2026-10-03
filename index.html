@@ -313,13 +313,107 @@ aside{position:sticky; top:128px}
 .fly{position:fixed; z-index:60; font-size:44px; pointer-events:none; animation:fly 1.4s cubic-bezier(.5,0,.6,1) forwards}
 @keyframes fly{to{transform:translate(70vw,-60vh) scale(.4) rotate(20deg); opacity:0}}
 
+
+/* ═══ Briefing ═══ */
+.brief{max-width:900px; margin:0 auto}
+.goals{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:22px 0}
+.goal{padding:18px 20px; border-radius:var(--r)}
+.goal .gi{font-size:30px}
+.goal b{display:block; font-family:var(--serif); font-size:20px; color:#fff; margin:6px 0 4px}
+.goal p{color:var(--soft); font-size:16px}
+.warn{display:flex; gap:14px; align-items:center; padding:18px 20px; border-radius:var(--r); border:1px solid rgba(251,191,36,.55); background:rgba(251,191,36,.08)}
+.warn .wi{font-size:34px}
+.warn b{color:var(--yellow)}
+.today{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+/* ═══ Stratégies ═══ */
+.strat{text-align:left}
+.strat .big{font-size:40px}
+.strat .ex{margin-top:10px; padding:10px 12px; border-radius:12px; background:rgba(0,0,0,.25); font-size:15px; color:var(--text)}
+.strat .ex b{color:var(--g1)}
+.st-petit{--g1:var(--lime); --g2:var(--emerald)}
+.st-milieu{--g1:var(--sky); --g2:var(--indigo)}
+.st-haut{--g1:var(--yellow); --g2:var(--orange)}
+.gauge{display:flex; gap:4px; margin-top:10px}
+.gauge i{flex:1; height:8px; border-radius:4px; background:rgba(255,255,255,.12)}
+.gauge i.on{background:linear-gradient(90deg,var(--g1),var(--g2))}
+.glab{display:flex; justify-content:space-between; font-size:13px; color:var(--dim); margin-top:4px}
+/* ═══ Logo ═══ */
+.logo-prev{display:flex; align-items:center; gap:18px; padding:20px; border-radius:var(--r); background:rgba(255,255,255,.95); color:#1D1F33; margin-bottom:22px}
+.lg-mark{width:74px; height:74px; border-radius:50%; display:grid; place-items:center; font-size:36px; flex:none; box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.lg-name{font-size:34px; line-height:1.05}
+.lg-sl{font-size:15px; color:#555a76; margin-top:4px}
+.sym{width:64px; height:64px; border-radius:16px; font-size:32px; display:grid; place-items:center; background:var(--glass); border:2px solid var(--border); cursor:pointer; transition:transform .2s}
+.sym:hover{transform:translateY(-3px)}
+.sym.on{border-color:#fff; background:rgba(255,255,255,.18); box-shadow:0 0 20px rgba(255,255,255,.3)}
+.sw.small{width:46px; height:46px}
+/* ═══ Vitrine ═══ */
+.front{width:100%; height:auto; display:block}
+.front-wrap{border-radius:var(--r-lg); overflow:hidden; background:linear-gradient(180deg,#1b1340,#2a1a4d)}
+.opt-row{display:flex; flex-wrap:wrap; gap:10px}
+.opt{padding:10px 18px; border-radius:14px; background:var(--glass); border:1px solid var(--border); color:var(--text); cursor:pointer; font-size:16px; display:flex; align-items:center; gap:8px}
+.opt:hover{background:var(--glass-hover)}
+.opt.on{background:var(--grad); border-color:transparent; color:#fff}
+.opt .dot{width:18px; height:18px; border-radius:50%; border:1px solid rgba(255,255,255,.4)}
+.boutique-grid{display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:22px; align-items:start}
+.boutique-grid .front-wrap{position:sticky; top:130px}
+/* ═══ Argent ═══ */
+.money{display:flex; align-items:center; gap:14px; padding:16px 20px; border-radius:var(--r); margin-top:16px}
+.money .mi{font-size:32px}
+.money b{font-family:var(--mono); font-size:22px; color:var(--emerald)}
+.cost{display:inline-block; margin-top:10px; font-family:var(--mono); font-weight:700; font-size:15px; padding:4px 10px; border-radius:8px; background:rgba(255,61,139,.18); color:#ffb4c8}
+.pro, .con{display:block; font-size:15px; margin-top:6px}
+.pro{color:#b5f5c8} .con{color:#ffc4d4}
+/* ═══ Patrimoine ═══ */
+.patri{max-width:720px; margin:22px auto 0; background:#fff; color:#1D1F33; border-radius:18px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.patri h4{background:var(--brand); color:var(--on-brand); padding:12px 20px; font-size:18px}
+.pcols{display:grid; grid-template-columns:1fr 1fr}
+.pcol{padding:14px 20px}
+.pcol + .pcol{border-left:2px solid #E3E5EF}
+.pcol h5{font-size:14px; text-transform:uppercase; letter-spacing:.06em; color:#6B6F88; margin-bottom:8px}
+.pl{display:flex; justify-content:space-between; gap:10px; padding:6px 0; border-bottom:1px dashed #E3E5EF; font-size:16px}
+.pl span:last-child{font-family:var(--mono); font-weight:700}
+.pl.neg span:last-child{color:#C0392B}
+.ptot{display:flex; justify-content:space-between; padding:10px 20px; background:#F4F2FB; font-weight:700; font-size:17px}
+.ptot span:last-child{font-family:var(--mono)}
+/* ═══ Carte de visite ═══ */
+.biz{width:100%; max-width:440px; aspect-ratio:85/55; background:#fff; color:#1D1F33; border-radius:14px; box-shadow:0 18px 40px rgba(0,0,0,.45); display:grid; grid-template-columns:34% 66%; overflow:hidden}
+.biz .l{background:var(--brand); display:grid; place-items:center; align-content:center; gap:8px; padding:10px}
+.biz .l .lg-mark{width:64px; height:64px; font-size:30px}
+.biz .r{padding:16px 18px; display:flex; flex-direction:column; justify-content:center; gap:2px; font-size:13px; color:#4A4E68}
+.biz .r .bn{font-size:22px; color:#1D1F33; line-height:1.1}
+.biz .r .bs{font-size:12px; margin-bottom:8px}
+.biz .r .who2{font-weight:700; color:#1D1F33; font-size:14px}
+.duo{display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:22px; align-items:center; margin-top:18px}
+/* ═══ Déclaration ═══ */
+.decl{max-width:760px; background:#fff; color:#1D1F33; border-radius:10px; padding:32px 36px; box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.decl h3{font-family:var(--serif); font-size:26px; margin-bottom:4px}
+.decl .sub2{color:#6B6F88; margin-bottom:16px}
+.decl ul{list-style:none; display:grid; gap:6px; margin:10px 0 18px}
+.decl li{display:flex; gap:10px; border-bottom:1px dashed #E3E5EF; padding:6px 0; font-size:16px}
+.decl li b{min-width:190px; color:#4A4E68; font-weight:600}
+.engage{display:flex; gap:12px; align-items:flex-start; background:#FFF8E1; border:2px solid #F5C451; border-radius:10px; padding:14px 16px; cursor:pointer; font-size:16px}
+.engage input{width:24px; height:24px; margin-top:2px; accent-color:#E935C5}
+.decl .sigl{margin-top:22px; display:flex; justify-content:flex-end}
+.decl .sigl div{text-align:center; min-width:280px}
+.decl .sigl input{width:100%; border:0; border-bottom:2px dashed #8A8FB0; font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:26px; text-align:center; padding:4px; background:#FFFBEA; color:#2A2F7A}
+.decl .sigl input:focus{outline:none; border-bottom-style:solid}
+.decl .sigl small{display:block; color:#6B6F88; font-size:13px; margin-top:4px}
+.decl .signed{font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:26px; color:#2A2F7A}
+.chk{list-style:none; display:grid; gap:4px; margin-top:12px}
+.chk li{font-size:14px; color:var(--dim)}
+.chk li.ok{color:var(--emerald)}
+.chk li::before{content:"○ "} .chk li.ok::before{content:"✓ "}
+@media (max-width:1000px){ .boutique-grid,.duo{grid-template-columns:1fr} .goals{grid-template-columns:1fr} }
+@media (max-width:640px){ .pcols{grid-template-columns:1fr} .pcol + .pcol{border-left:0; border-top:2px solid #E3E5EF} .decl li{flex-direction:column; gap:0} }
+
 #print-area{display:none}
 @media print{
   body{background:#fff}
   body > *:not(#print-area){display:none !important}
   body::after{display:none}
   #print-area{display:block}
-  #print-area .paper{box-shadow:none; max-width:none; page-break-after:always; padding:10mm 6mm}
+  #print-area .idcard,#print-area .patri,#print-area .biz{box-shadow:none; margin:0 0 10mm}
+  #print-area .front-wrap{background:#fff; max-width:160mm}
 }
 @media (max-width:1000px){
   .layout{grid-template-columns:1fr}
@@ -343,7 +437,7 @@ aside{position:sticky; top:128px}
 </head>
 <body>
 <div class="mesh" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div><div class="blob b5"></div></div>
-<div class="banner wrap" role="region" aria-label="Information"><span class="pulse" aria-hidden="true"></span>Économie de l'entreprise · 3P Vente · Mission 1 : crée ton entreprise</div>
+<div class="banner wrap" role="region" aria-label="Information"><span class="pulse" aria-hidden="true"></span>Économie de l'entreprise · 3P Vente · Mission 1 : crée ton entreprise, elle te suivra toute l'année</div>
 <header class="top wrap" id="top">
   <div class="top-in">
     <div class="logo" aria-hidden="true">SL</div>
@@ -368,10 +462,10 @@ const CONFIG = {
   ENDPOINT_URL: "https://script.google.com/macros/s/AKfycbwkApoh4ASdA7c9OOUMZTRjPFXZ-7jWGQ_VUsdJaVwIzYxLxoQw5dJjyjCcmHX_6KATGA/exec",
   APP_ID: "mini-entreprise-3p",
   MISSION: "1",
-  VERSION: "2.0",
+  VERSION: "3.0",
   DOMAINE: "istlm.org",
   CLASSE_DEFAUT: "3P Vente",
-  STORAGE_PREFIX: "mini-entreprise-3p-m1-"
+  STORAGE_PREFIX: "mini-entreprise-3p-m1v3-"
 };
 // ======================================================================
 //  CATALOGUE — 8 entreprises (fictives), 10 achats et 4 fournisseurs chacune
@@ -435,57 +529,103 @@ const TYPES = [
   fournisseurs:[["Animal Distribution","SA","Avenue de l'Industrie 40","6040","Jumet","Belgique","Grossiste en produits pour animaux","Grand choix"],["PetFood Europe","BV","Ringbaan-Oost 102","5013 CD","Tilburg","Pays-Bas","Fabricant de croquettes","Prix bas"],["Croq'Pro","SAS","Rue Jules Verne 12","80000","Amiens","France","Spécialiste des accessoires pour animaux","Qualité premium"],["Tierbedarf Rhein","GmbH","Rheinweg 44","53113","Bonn","Allemagne","Grossiste qui livre toute l'Europe","Livraison rapide"]]}
 ];
 
+// ======================================================================
+//  COMPLÉMENTS PAR ENTREPRISE : stratégies, symboles du logo, vitrine
+// ======================================================================
+const EXTRAS = {
+  ferme:{ symboles:["🐄","🌾","🥕","🧀","🥚","🌻"], vitrine:["🥕","🥚","🧀","🥛"],
+    strat:["Des légumes et du lait à petits prix, pour les familles qui veulent économiser.","Des produits frais et de qualité, à des prix corrects.","Des produits bio et des fromages affinés : plus chers, mais d'exception."] },
+  pepiniere:{ symboles:["🌱","🌷","🌻","🌳","🍓","🌵"], vitrine:["🌷","🌻","🌵","🌳"],
+    strat:["Des plantes et des fleurs pas chères, vendues en grande quantité.","Un grand choix de plantes en bonne santé, à prix raisonnables.","Des plantes rares et des conseils de spécialiste, à prix élevés."] },
+  chocolaterie:{ symboles:["🍫","🍬","🎁","💝","🌰","👑"], vitrine:["🍫","🍬","🎁","💝"],
+    strat:["Des tablettes simples à petit prix, pour tous les jours.","De bonnes pralines, pour se faire plaisir sans se ruiner.","Des pralines de luxe dans des coffrets élégants, pour les grandes occasions."] },
+  textile:{ symboles:["👕","🎨","✂️","⚡","🔥","⭐"], vitrine:["👕","🧢","🎨","👕"],
+    strat:["Des T-shirts imprimés à petits prix, prêts en un jour.","Des vêtements de bonne qualité, personnalisés avec soin.","Des pièces uniques en coton bio, avec des dessins faits sur mesure."] },
+  baskets:{ symboles:["👟","⚡","🏃","⭐","🔥","👑"], vitrine:["👟","🧦","👟","🎒"],
+    strat:["Des baskets à petits prix pour tout le monde (environ 30 € la paire).","Des baskets confortables et tendance (environ 70 € la paire).","Des baskets haut de gamme et des éditions limitées (plus de 150 € la paire)."] },
+  gaming:{ symboles:["🎮","🕹️","🎧","👾","⚡","🏆"], vitrine:["🎮","🎧","🕹️","👾"],
+    strat:["Des accessoires pas chers et des jeux d'occasion.","Le bon matériel au bon prix, avec de bons conseils.","Du matériel haut de gamme pour les joueurs les plus exigeants."] },
+  velos:{ symboles:["🚲","⚙️","🏁","🌍","⚡","⛰️"], vitrine:["🚲","⛑️","🔧","🚲"],
+    strat:["Des vélos simples et solides, à petits prix.","De bons vélos pour tous les jours, avec un entretien sérieux.","Des vélos électriques et sportifs haut de gamme, avec un service sur mesure."] },
+  animalerie:{ symboles:["🐶","🐱","🐾","🐟","🦴","❤️"], vitrine:["🐶","🐱","🐟","🦴"],
+    strat:["De la nourriture et des accessoires à petits prix.","Des produits de qualité et de bons conseils.","Des produits haut de gamme et des soins pour les animaux les plus choyés."] }
+};
+TYPES.forEach(t => Object.assign(t, EXTRAS[t.id]));
+
+const STRATEGIES = [
+  { id:"petit", nom:"Petits prix", icone:"💰", cls:"st-petit", atout:"Prix bas",
+    texte:"Tu vends pas cher. Beaucoup de clients viennent chez toi, mais tu gagnes peu d'argent sur chaque vente : il faudra vendre beaucoup !",
+    jauge:{prix:1, qualite:1, clients:3} },
+  { id:"milieu", nom:"Bon rapport qualité-prix", icone:"⚖️", cls:"st-milieu", atout:"Grand choix",
+    texte:"Des produits de bonne qualité à des prix raisonnables. C'est l'équilibre : ni les moins chers, ni les plus chers.",
+    jauge:{prix:2, qualite:2, clients:2} },
+  { id:"haut", nom:"Haut de gamme", icone:"💎", cls:"st-haut", atout:"Qualité premium",
+    texte:"Tu vends cher des produits de grande qualité, avec un service aux petits soins. Moins de clients, mais tu gagnes plus sur chaque vente.",
+    jauge:{prix:3, qualite:3, clients:1} }
+];
+const RAISONS = ["Mes futurs clients ont peu d'argent","Je veux vendre beaucoup","Je veux proposer de la qualité","Je veux gagner plus sur chaque vente","Je veux me démarquer des autres magasins","Je veux prendre le temps de conseiller mes clients"];
+
+const COULEURS2 = [["Blanc","#FFFFFF"],["Noir","#1D1F33"],["Doré","#D4A537"],["Crème","#F5EBD8"],["Bleu nuit","#1E2A5A"]];
+const FACADES = [["brique","Brique","Chaleureuse et classique"],["bois","Bois","Nature et artisanale"],["pierre","Pierre","Élégante et ancienne"],["moderne","Moderne","Vitrée et épurée"]];
+const AUVENTS = [["raye","Rayé"],["uni","Uni"],["sans","Sans auvent"]];
+const AMBIANCES = [["chaleureuse","Chaleureuse","#FFD89A","#F4A259"],["lumineuse","Lumineuse","#F4F7FF","#BFD7FF"],["nature","Nature","#D6F2D2","#86CF95"],["prestige","Prestige","#3A2D45","#C9A34E"]];
+const ACCUEILS = ["Bienvenue chez nous !","Entrez, c'est ouvert !","Au plaisir de vous conseiller","Ici, chaque client compte"];
+
+const APPORT = 10000;
+const FRAIS = { seul:150, plusieurs:3000 };   // seul = entreprise individuelle ; plusieurs = société (SRL), avec 1 à 5 personnes
+const euro = (n) => n.toLocaleString("fr-BE") + " €";
+
 const SECTEURS = { primaire:"Secteur primaire", secondaire:"Secteur secondaire", tertiaire:"Secteur tertiaire" };
 const COMMUNES = [["Frameries","7080"],["Mons","7000"],["Jemappes","7012"],["Quaregnon","7390"],["Colfontaine","7340"],["Boussu","7300"],["Saint-Ghislain","7330"],["Dour","7370"]];
 const RUES = ["Rue du Commerce","Rue de la Gare","Grand-Place","Place du Marché","Rue Neuve","Rue des Artisans","Avenue des Tilleuls","Rue de l'Industrie"];
 const COULEURS = [["Rouge","#E5484D"],["Orange","#F76B15"],["Jaune","#FFC53D"],["Vert","#30A46C"],["Turquoise","#12A594"],["Bleu","#3E63DD"],["Violet","#8E4EC6"],["Rose","#E93D82"]];
 const STYLES = [["moderne","Moderne"],["elegant","Élégant"],["fun","Fun"],["street","Street"]];
-const DELAIS = ["dans la semaine","dans les 2 semaines","dans le mois"];
+const POLICES = { moderne:"Outfit, Arial, sans-serif", elegant:"'Playfair Display', Georgia, serif", fun:"Fredoka, 'Comic Sans MS', sans-serif", street:"'Bebas Neue', Impact, sans-serif" };
 const STEPS = [
   {key:"accueil"},
   {key:"type", label:"Activité", badge:["💡","Idée lancée"]},
+  {key:"strategie", label:"Stratégie", badge:["🎯","Stratège"], mot:"strategie"},
   {key:"nom", label:"Nom", badge:["🏷️","Nom de marque"], mot:"denomination"},
   {key:"logo", label:"Logo", badge:["🎨","Designer"]},
+  {key:"boutique", label:"Boutique", badge:["🏪","Déco réussie"]},
   {key:"adresse", label:"Adresse", badge:["📍","Pignon sur rue"], mot:"siege"},
-  {key:"direction", label:"Direction", badge:["🧭","Aux commandes"]},
-  {key:"produits", label:"Achats", badge:["🛒","Achats malins"]},
-  {key:"fournisseurs", label:"Fournisseurs", badge:["🤝","Bon réseau"], mot:"fournisseur"},
+  {key:"direction", label:"Direction", badge:["🧭","Aux commandes"], mot:"apport"},
   {key:"reveal", label:"Officiel", badge:["📇","Officiel"]},
-  {key:"demande", label:"Demande de prix", badge:["✉️","Premier document"], mot:"demandeprix"},
+  {key:"lancement", label:"Lancement", badge:["🚀","C'est parti !"]},
   {key:"fin"}
 ];
-const BONUS_BADGES = { adresse:["🔎","Détective"], produits:["💶","Enquête de prix"] };
+const BONUS_BADGES = { adresse:["🔎","Détective"] };
 const MOTS = {
+  strategie:{mot:"Stratégie", def:"Le plan que tu choisis pour attirer tes clients : petits prix, bon rapport qualité-prix ou haut de gamme."},
   denomination:{mot:"Dénomination", def:"Le nom officiel d'une entreprise."},
   siege:{mot:"Siège social", def:"L'adresse officielle d'une entreprise."},
   individuelle:{mot:"Entreprise individuelle", def:"Une entreprise qui appartient à une seule personne."},
-  srl:{mot:"Société (SRL)", def:"Une entreprise créée par plusieurs associés. SRL veut dire « société à responsabilité limitée »."},
-  fournisseur:{mot:"Fournisseur", def:"L'entreprise qui te vend ce dont tu as besoin pour travailler."},
-  demandeprix:{mot:"Demande de prix", def:"Le document qu'on envoie aux fournisseurs pour connaître leurs prix."}
+  srl:{mot:"Société (SRL)", def:"Une entreprise qui a sa propre existence, créée par une ou plusieurs personnes (les associés). SRL veut dire « société à responsabilité limitée »."},
+  apport:{mot:"Apport", def:"L'argent que le ou les créateurs mettent dans l'entreprise au départ."}
 };
-const NIVEAUX = [[0,"Idée en poche"],[250,"Projet en route"],[500,"Commerce en vue"],[750,"Entreprise lancée"],[950,"Boss du business"]];
+const NIVEAUX = [[0,"Idée en poche"],[250,"Projet en route"],[500,"Commerce en vue"],[700,"Entreprise lancée"],[900,"Boss du business"]];
 const COACH = {
   type:"Tout commence par une idée ! Lis bien chaque activité et choisis celle où tu te vois le plus. <b>Tu achèteras</b> et <b>tu vendras</b> t'aident à imaginer ton futur quotidien.",
+  strategie:"C'est une décision très importante : elle va guider tous tes choix de l'année (tes fournisseurs, tes prix, ta boutique). Il n'y a pas de mauvaise réponse, mais il faut <b>une bonne raison</b>.",
   nom:"Un bon nom, c'est court, facile à retenir et ça donne envie d'entrer. Invente le tien ou pioche dans mes idées.",
-  logo:"Choisis la couleur de ton entreprise et regarde ton enseigne s'allumer à droite !",
-  adresse:"Où s'installe ton entreprise ? Choisis une commune de la région et une rue. C'est l'adresse qui figurera sur tous tes documents.",
-  direction:"Grande question : tu te lances seul ou avec des associés ? Les deux sont possibles, mais ça ne donne pas le même type d'entreprise.",
-  produits:"Pour démarrer, ton entreprise doit acheter ce dont elle a besoin. Choisis <b>2 ou 3 articles</b> : on va demander leurs prix.",
-  fournisseurs:"Un bon acheteur ne demande jamais le prix à une seule entreprise. Choisis <b>3 fournisseurs</b> : tu compareras leurs réponses.",
+  logo:"Ton logo, c'est le visage de ton entreprise. Il doit plaire à tes clients et coller à ta stratégie. Regarde ton enseigne s'allumer à droite !",
+  boutique:"Fais rêver tes clients ! Une boutique donne envie d'entrer… ou pas. Pense à tes clients : que vont-ils ressentir en passant devant ?",
+  adresse:"Où s'installe ton entreprise ? C'est l'adresse qui figurera sur tous tes documents officiels.",
+  direction:"Tu démarres avec <b>10 000 €</b> d'économies. Entreprise individuelle ou société ? Chaque choix a un prix et des conséquences. Lis bien avant de décider.",
   reveal:"Ton entreprise existe officiellement ! Regarde bien ta carte d'identité : des numéros mystérieux viennent d'apparaître…",
-  demande:"Dernière étape : ton premier document professionnel. Complète la demande de prix, signe-la et envoie-la à tes 3 fournisseurs."
+  lancement:"Dernière étape : relis tes choix. Une fois ta déclaration signée, ils sont définitifs et te suivront toute l'année. Prends le temps !"
 };
 
 // ======================================================================
 //  ÉTAT
 // ======================================================================
-let MODE = "login";          // login | ferme | mission | consultation
+let MODE = "login";          // login | briefing | ferme | mission | consultation
 let SESSION = { email:"", compteurs:{}, max:4, reouvert:false };
-const fresh = () => ({ v:2, step:1, eleve:{email:"", prenom:"", nom:"", classe:CONFIG.CLASSE_DEFAUT},
-  typeId:null, nom:"", slogan:"", couleur:null, style:null, commune:null, rue:null, numero:"",
-  direction:null, nbAssocies:2, produits:[], fournisseurs:[], quantites:{}, delai:"", signature:"",
-  bonus:{concurrent:"", prixProduit:"", prixSite:"", prixMontant:""}, bonusDone:{},
-  ids:null, dateDoc:null, xp:0, done:{}, mots:[], envoi:null, tab:0, startedAt:null, finishedAt:null, majLocale:0 });
+const fresh = () => ({ v:3, step:1, briefing:false, eleve:{email:"", prenom:"", nom:"", classe:CONFIG.CLASSE_DEFAUT},
+  typeId:null, strategie:null, raisons:[], nom:"", slogan:"", couleur:null, couleur2:null, style:null, symbole:null,
+  facade:null, auvent:null, ambiance:null, accueil:null, commune:null, rue:null, numero:"", direction:null, nbAssocies:1,
+  engagement:false, signature:"", bonus:{concurrent:""}, bonusDone:{}, ids:null, dateCreation:null,
+  xp:0, done:{}, mots:[], envoi:null, startedAt:null, finishedAt:null, majLocale:0 });
 let S = fresh();
 const cleLocale = () => CONFIG.STORAGE_PREFIX + (S.eleve.email || SESSION.email);
 const save = () => { if (MODE === "login") return; S.majLocale = Date.now(); try { localStorage.setItem(cleLocale(), JSON.stringify(S)); } catch(e) {} };
@@ -497,9 +637,7 @@ const lireLocal = (email) => { try { const r = localStorage.getItem(CONFIG.STORA
 const $ = (s, r=document) => r.querySelector(s);
 const esc = (t) => String(t ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const type = () => TYPES.find(t => t.id === S.typeId);
-const prod = (id) => { const t = TYPES.find(x => id.startsWith(x.id + "-")); const p = t.produits[+id.split("-p")[1]]; return {id, nom:p[0], unite:p[1], desc:p[2]}; };
-const four = (id) => { const t = TYPES.find(x => id.startsWith(x.id + "-")); const f = t.fournisseurs[+id.split("-f")[1]];
-  return {id, nom:f[0], forme:f[1], rue:f[2], cp:f[3], ville:f[4], pays:f[5], desc:f[6], atout:f[7]}; };
+const strat = () => STRATEGIES.find(s => s.id === S.strategie);
 const deno = () => S.nom.trim() + (S.direction === "plusieurs" ? " SRL" : "");
 const forme = () => S.direction === "plusieurs" ? "Société (SRL)" : (S.direction === "seul" ? "Entreprise individuelle" : "");
 const commune = () => COMMUNES.find(c => c[0] === S.commune);
@@ -507,20 +645,29 @@ const adresse1 = () => S.rue && S.numero ? `${S.rue} ${S.numero}` : "";
 const adresse2 = () => commune() ? `${commune()[1]} ${commune()[0]}` : "";
 const niveau = () => NIVEAUX.filter(n => S.xp >= n[0]).pop()[1];
 const slug = (t) => t.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"").slice(0,24) || "entreprise";
+const emailPro = () => S.nom.trim() ? `contact@${slug(S.nom)}.be` : "";
 const today = () => new Date().toLocaleDateString("fr-BE", {day:"numeric", month:"long", year:"numeric"});
 const emailOk = (e) => new RegExp("^[a-z0-9-]+(\\.[a-z0-9-]+)+@" + CONFIG.DOMAINE.replace(".","\\.") + "$").test(e);
 const wait = (ms) => new Promise(r => setTimeout(r, ms));
-const numDP = (i) => `DP-${new Date().getFullYear()}-${String(i+1).padStart(3,"0")}`;
+const frais = () => S.direction ? FRAIS[S.direction] : 0;
+const enBanque = () => APPORT - frais();
+const fonction = () => S.direction === "plusieurs" ? (S.nbAssocies > 1 ? "Gérant(e) et associé(e)" : "Gérant(e)") : "Indépendant(e)";
 function nomDepuisEmail(email){
   const cap = s => s.split("-").map(w => w ? w[0].toUpperCase() + w.slice(1) : w).join("-");
   const parts = email.split("@")[0].split(".");
   return { prenom: cap(parts[0] || ""), nom: parts.slice(1).map(cap).join(" ") };
 }
+const lum = (hex) => { const n = parseInt(hex.slice(1),16); return (0.299*((n>>16)&255) + 0.587*((n>>8)&255) + 0.114*(n&255))/255; };
 function setBrand(hex){
   const r = document.documentElement.style;
   if (!hex){ r.removeProperty("--brand"); r.removeProperty("--on-brand"); return; }
-  const n = parseInt(hex.slice(1),16), R=(n>>16)&255, G=(n>>8)&255, B=n&255;
-  r.setProperty("--brand", hex); r.setProperty("--on-brand", (0.299*R + 0.587*G + 0.114*B)/255 > .62 ? "#1D1F33" : "#FFFFFF");
+  r.setProperty("--brand", hex); r.setProperty("--on-brand", lum(hex) > .62 ? "#1D1F33" : "#FFFFFF");
+}
+/** Couleur du texte sur l'enseigne : la couleur d'accompagnement si elle est lisible, sinon blanc ou noir. */
+function texteSurMarque(){
+  const fond = S.couleur || "#8E4EC6", c2 = S.couleur2;
+  if (c2 && Math.abs(lum(c2) - lum(fond)) > .35) return c2;
+  return lum(fond) > .62 ? "#1D1F33" : "#FFFFFF";
 }
 function genBCE(){
   const base = "1" + String(Math.floor(Math.random()*1e7)).padStart(7,"0");
@@ -554,14 +701,13 @@ function jsonp(params, timeout = 15000){
 function envoyer(statut){
   const data = payload(statut);
   S.lastPayload = data;
-  return fetch(CONFIG.ENDPOINT_URL, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body:JSON.stringify(data) })
-    .catch(() => null);
+  return fetch(CONFIG.ENDPOINT_URL, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body:JSON.stringify(data) }).catch(() => null);
 }
 const connexion = () => jsonp({action:"connexion", email:SESSION.email, mission:CONFIG.MISSION});
 
-/** Paquet détaillé envoyé au Google Sheet (tout ce que l'élève a choisi). */
+/** Paquet détaillé envoyé au Google Sheet. */
 function payload(statut){
-  const t = type(), c = commune();
+  const t = type(), c = commune(), st = strat();
   const p = {
     app: CONFIG.APP_ID, version: CONFIG.VERSION, mission: +CONFIG.MISSION, statut, envoyeLe: new Date().toISOString(),
     eleve: { email:S.eleve.email, prenom:S.eleve.prenom, nom:S.eleve.nom, classe:S.eleve.classe },
@@ -569,34 +715,37 @@ function payload(statut){
   };
   if (t) p.entreprise = {
     typeId:t.id, activite:t.nom, secteur:t.secteur, emoji:t.emoji, achete:t.achete, vend:t.vend,
-    nom:S.nom.trim(), denomination:deno(), forme:forme(), direction:S.direction || "",
+    strategie: st ? { id:st.id, nom:st.nom, atoutFournisseurRecommande:st.atout, raisons:S.raisons, exemple:t.strat[STRATEGIES.indexOf(st)] } : null,
+    nom:S.nom.trim(), denomination:deno(), slogan:S.slogan.trim(), forme:forme(), direction:S.direction || "",
     nbAssocies: S.direction === "plusieurs" ? S.nbAssocies : (S.direction === "seul" ? 1 : ""),
-    dirigeant: `${S.eleve.prenom} ${S.eleve.nom}`.trim(), slogan:S.slogan.trim(), couleur:S.couleur || "", styleLogo:S.style || "",
+    dirigeant:`${S.eleve.prenom} ${S.eleve.nom}`.trim(), fonction: S.direction ? fonction() : "",
+    identiteVisuelle:{ couleurPrincipale:S.couleur || "", couleurAccompagnement:S.couleur2 || "", styleEcriture:S.style || "", symbole:S.symbole || "" },
+    boutique:{ facade:S.facade || "", auvent:S.auvent || "", ambiance:S.ambiance || "", phraseAccueil:S.accueil || "" },
     adresse:{ rue:S.rue || "", numero:String(S.numero || ""), cp: c ? c[1] : "", commune: c ? c[0] : "" },
-    email: S.nom.trim() ? `contact@${slug(S.nom)}.be` : "",
-    numeroEntreprise: S.ids ? S.ids.bce : "", numeroTVA: S.ids ? "BE " + S.ids.bce : "", iban: S.ids ? S.ids.iban : ""
+    email: emailPro(),
+    numeroEntreprise: S.ids ? S.ids.bce : "", numeroTVA: S.ids ? "BE " + S.ids.bce : "", iban: S.ids ? S.ids.iban : "",
+    dateCreation: S.dateCreation || "",
+    argent: S.direction ? { argentDeDepart:APPORT, fraisDeCreation:frais(), argentEnBanque:enBanque() } : null
   };
-  p.achats = S.produits.map(id => { const x = prod(id); return { id, designation:x.nom, unite:x.unite, description:x.desc, quantite: +S.quantites[id] || 0 }; });
-  p.fournisseurs = S.fournisseurs.map(id => { const f = four(id); return { id, nom:f.nom, forme:f.forme, denomination:`${f.nom} ${f.forme}`, rue:f.rue, cp:f.cp, ville:f.ville, pays:f.pays, description:f.desc, atout:f.atout }; });
-  if (S.fournisseurs.length && S.ids) p.demandePrix = {
-    date:S.dateDoc, livraisonSouhaitee:S.delai, signature:S.signature.trim(),
-    documents: S.fournisseurs.map((id,i) => ({ numero:numDP(i), destinataire:four(id).nom }))
+  if (S.direction) p.patrimoine = {
+    possede:[{ libelle:"Argent en banque", montant:enBanque() }],
+    origine:[{ libelle:"Argent de départ (apport)", montant:APPORT }, { libelle:"Déjà dépensé : frais de création", montant:-frais() }],
+    valeur: enBanque()
   };
-  p.bonus = { concurrent:S.bonus.concurrent.trim(), concurrentValide:!!S.bonusDone.adresse,
-    prixArticle:S.bonus.prixProduit, prixMagasin:S.bonus.prixSite.trim(), prixMontant:S.bonus.prixMontant.trim(), prixValide:!!S.bonusDone.produits };
+  p.declaration = { engagement:S.engagement, signature:S.signature.trim() };
+  p.bonus = { concurrent:S.bonus.concurrent.trim(), concurrentValide:!!S.bonusDone.adresse };
   p.recompenses = { xp:S.xp, niveau:niveau(),
     badges: STEPS.filter(s => s.badge && S.done[s.key]).map(s => s.badge[1]).concat(Object.keys(S.bonusDone).filter(k => S.bonusDone[k]).map(k => BONUS_BADGES[k][1])),
     motsDePro: S.mots.map(m => MOTS[m].mot) };
   p.xp = S.xp;
   p.dureeMinutes = S.startedAt ? Math.round((Date.now() - S.startedAt)/60000) : null;
-  p.etatApp = { step:S.step, typeId:S.typeId, nom:S.nom, slogan:S.slogan, couleur:S.couleur, style:S.style, commune:S.commune, rue:S.rue, numero:S.numero,
-    direction:S.direction, nbAssocies:S.nbAssocies, produits:S.produits, fournisseurs:S.fournisseurs, quantites:S.quantites, delai:S.delai, signature:S.signature,
-    bonus:S.bonus, bonusDone:S.bonusDone, ids:S.ids, dateDoc:S.dateDoc, xp:S.xp, done:S.done, mots:S.mots, startedAt:S.startedAt, finishedAt:S.finishedAt };
+  const e = {}; Object.keys(fresh()).forEach(k => { if (!["eleve","envoi","lastPayload","majLocale"].includes(k)) e[k] = S[k]; });
+  p.etatApp = e;
   return p;
 }
 function restaurer(etat){
   const s = fresh();
-  if (etat) Object.keys(etat).forEach(k => { if (etat[k] !== undefined && etat[k] !== null) s[k] = etat[k]; });
+  if (etat && etat.v === 3) Object.keys(etat).forEach(k => { if (etat[k] !== undefined && etat[k] !== null && k in s) s[k] = etat[k]; });
   s.bonus = Object.assign(fresh().bonus, s.bonus || {});
   return s;
 }
@@ -604,7 +753,11 @@ function restaurer(etat){
 // ======================================================================
 //  RÉCOMPENSES
 // ======================================================================
-function toast(html, cls=""){ const t = document.createElement("div"); t.className = "toast " + cls; t.innerHTML = html; $("#toasts").appendChild(t); setTimeout(() => t.remove(), 4200); }
+function toast(html, cls=""){
+  const box = $("#toasts"), t = document.createElement("div"); t.className = "toast " + cls; t.innerHTML = html;
+  box.appendChild(t); while (box.children.length > 3) box.firstChild.remove();
+  setTimeout(() => t.remove(), 3500);
+}
 function award(key, pts, badge){
   if (S.done[key]) return;
   S.done[key] = true; S.xp += pts;
@@ -617,7 +770,7 @@ function unlockMot(id){
 }
 function confetti(){
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  const cols = ["#ff3d8b","#e935c5","#9d4edd","#22d3ee","#a3e635","#fbbf24","#fb923c"];
+  const cols = ["#ff3d8b","#e935c5","#9d4edd","#22d3ee","#a3e635","#fbbf24","#fb923c", S.couleur || "#fff"];
   for (let i=0;i<80;i++){
     const c = document.createElement("div"); c.className = "confetti";
     c.style.left = Math.random()*100 + "vw"; c.style.background = cols[i % cols.length];
@@ -631,132 +784,192 @@ const CONFETTI_LAYER = `<div class="confetti-layer" aria-hidden="true">${"<span>
 // ======================================================================
 //  VALIDATION
 // ======================================================================
+const complet = (id) => SESSION.max > 0 && (SESSION.compteurs[id] || 0) >= SESSION.max;
 const VALID = {
   type: () => !!S.typeId && !complet(S.typeId),
+  strategie: () => !!S.strategie && S.raisons.length >= 1,
   nom: () => S.nom.trim().length >= 2 && S.slogan.trim().length >= 3,
-  logo: () => !!S.couleur && !!S.style,
+  logo: () => !!S.couleur && !!S.couleur2 && !!S.style && !!S.symbole,
+  boutique: () => !!S.facade && !!S.auvent && !!S.ambiance && !!S.accueil,
   adresse: () => !!S.commune && !!S.rue && /^\d{1,3}$/.test(String(S.numero)) && +S.numero >= 1,
-  direction: () => S.direction === "seul" || (S.direction === "plusieurs" && S.nbAssocies >= 2 && S.nbAssocies <= 5),
-  produits: () => S.produits.length >= 2 && S.produits.length <= 3,
-  fournisseurs: () => S.fournisseurs.length === 3,
+  direction: () => S.direction === "seul" || (S.direction === "plusieurs" && S.nbAssocies >= 1 && S.nbAssocies <= 5),
   reveal: () => true,
-  demande: () => S.produits.every(id => +S.quantites[id] >= 1 && Number.isInteger(+S.quantites[id])) && !!S.delai && S.signature.trim().length >= 3
+  lancement: () => S.engagement && S.signature.trim().length >= 3
 };
 const MANQUE = {
-  type:"Choisis une activité (encore disponible) pour continuer.", nom:"Donne un nom (au moins 2 lettres) et un slogan à ton entreprise.",
-  logo:"Choisis une couleur et un style d'écriture.", adresse:"Choisis une rue, un numéro et une commune.", direction:"Choisis : seul ou à plusieurs ?",
-  produits:"Choisis 2 ou 3 articles à acheter.", fournisseurs:"Choisis exactement 3 fournisseurs.", demande:"Complète les quantités, le délai de livraison et ta signature."
+  type:"Choisis une activité (encore disponible) pour continuer.", strategie:"Choisis une stratégie et au moins une raison.",
+  nom:"Donne un nom (au moins 2 lettres) et un slogan à ton entreprise.", logo:"Choisis tes deux couleurs, ton style d'écriture et ton symbole.",
+  boutique:"Choisis la façade, l'auvent, l'ambiance et ta phrase d'accueil.", adresse:"Choisis une rue, un numéro et une commune.",
+  direction:"Choisis : entreprise individuelle ou société ?", lancement:"Coche ton engagement et signe ta déclaration."
 };
-const complet = (id) => SESSION.max > 0 && (SESSION.compteurs[id] || 0) >= SESSION.max;
 
 // ======================================================================
-//  AFFICHAGE GÉNÉRAL
+//  ÉLÉMENTS VISUELS : vitrine, logo, carte de visite, carte d'identité, patrimoine
 // ======================================================================
-function updateTop(){
-  $("#xpPill").textContent = S.xp + " XP";
-  $("#lvlName").textContent = niveau();
-  const enMission = MODE === "mission" || MODE === "consultation";
-  $("#lvlBox").style.visibility = enMission ? "visible" : "hidden";
-  $("#xpPill").parentElement.style.visibility = enMission ? "visible" : "hidden";
-  $("#who").innerHTML = MODE !== "login" && S.eleve.email ? `<b>${esc(S.eleve.prenom)} ${esc(S.eleve.nom)}</b><button data-act="logout">Changer de compte</button>` : "";
-  const st = $("#steps");
-  st.style.display = MODE === "mission" && S.step >= 1 && S.step <= 9 ? "grid" : "none";
-  st.innerHTML = STEPS.slice(1,10).map((s,i) => {
-    const n = i+1, cls = S.step > n ? "done" : (S.step === n ? "now" : "");
-    return `<div class="seg ${cls}" title="Étape ${n} : ${esc(s.label)}"><span>Étape ${n} sur 9 : ${esc(s.label)}</span></div>`;
-  }).join("");
+function vitrine(uid){
+  const t = type(), brand = S.couleur || "#8E4EC6", c2 = S.couleur2 || "#FFFFFF";
+  const nom = S.nom.trim() || "Ton enseigne", fontFam = POLICES[S.style || "moderne"];
+  const fs = Math.max(13, Math.min(30, 250 / (0.56 * Math.max(nom.length, 6))));
+  const amb = AMBIANCES.find(a => a[0] === S.ambiance) || ["", "", "#4A3F73", "#2E2654"];
+  const facadeFill = { brique:`url(#pb-${uid})`, bois:`url(#pw-${uid})`, pierre:`url(#ps-${uid})`, moderne:`url(#pm-${uid})` }[S.facade] || "#3a3160";
+  const porte = S.facade === "moderne" ? "#1d2230" : "#3b2a20";
+  const produits = (t ? t.vitrine : ["✨","✨","✨","✨"]).map((e,i) => `<text x="${78 + i*46}" y="206" font-size="26" text-anchor="middle">${e}</text>`).join("");
+  const scallops = Array.from({length:10}, (_,i) => `<circle cx="${40 + i*21 + 10}" cy="118" r="10.5" fill="${S.auvent === "raye" ? `url(#pst-${uid})` : brand}"/>`).join("");
+  const auvent = S.auvent === "sans" || !S.auvent ? "" :
+    `<polygon points="36,94 254,94 262,118 28,118" fill="${S.auvent === "raye" ? `url(#pst-${uid})` : brand}" stroke="rgba(0,0,0,.25)"/>${scallops}`;
+  const accueil = S.accueil || "";
+  return `<svg class="front" viewBox="0 0 400 300" role="img" aria-label="Vitrine de ton entreprise">
+    <defs>
+      <pattern id="pb-${uid}" width="24" height="12" patternUnits="userSpaceOnUse"><rect width="24" height="12" fill="#A0503A"/><path d="M0 .5H24M0 6.5H24M12 0V6M.5 6V12M23.5 6V12" stroke="#7B3726" stroke-width="1"/></pattern>
+      <pattern id="pw-${uid}" width="16" height="40" patternUnits="userSpaceOnUse"><rect width="16" height="40" fill="#8B5A2B"/><path d="M15.5 0V40" stroke="#5E3B1A"/><path d="M4 8q3 6 0 12" stroke="#7a4d24" fill="none"/></pattern>
+      <pattern id="ps-${uid}" width="40" height="24" patternUnits="userSpaceOnUse"><rect width="40" height="24" fill="#A8A29E"/><path d="M0 .5H40M0 12.5H40M20 0V12M.5 12V24M39.5 12V24" stroke="#86807B"/></pattern>
+      <pattern id="pm-${uid}" width="50" height="60" patternUnits="userSpaceOnUse"><rect width="50" height="60" fill="#2F3440"/><path d="M49.5 0V60M0 59.5H50" stroke="#3E4452"/></pattern>
+      <pattern id="pst-${uid}" width="28" height="30" patternUnits="userSpaceOnUse"><rect width="14" height="30" fill="${brand}"/><rect x="14" width="14" height="30" fill="#FFFFFF"/></pattern>
+      <linearGradient id="amb-${uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${amb[2]}"/><stop offset="1" stop-color="${amb[3]}"/></linearGradient>
+    </defs>
+    <rect x="14" y="6" width="372" height="10" rx="3" fill="#2B2340"/>
+    <rect x="20" y="14" width="360" height="250" fill="${facadeFill}"/>
+    <rect x="40" y="26" width="320" height="56" rx="9" fill="${brand}" stroke="rgba(0,0,0,.25)"/>
+    <circle cx="72" cy="54" r="19" fill="${c2}"/>
+    <text x="72" y="61" font-size="20" text-anchor="middle">${S.symbole || (t ? t.emoji : "★")}</text>
+    <text x="218" y="${54 + fs*0.35}" font-size="${fs.toFixed(1)}" text-anchor="middle" fill="${texteSurMarque()}" style="font-family:${fontFam}; font-weight:${S.style === "street" ? 400 : 700}; ${S.style === "elegant" ? "font-style:italic;" : ""}">${esc(nom)}</text>
+    <rect x="44" y="116" width="202" height="124" fill="url(#amb-${uid})" stroke="#1b1b1b" stroke-width="${S.facade === "moderne" ? 2 : 5}"/>
+    <path d="M56 208H236" stroke="rgba(0,0,0,.25)" stroke-width="3"/>
+    ${produits}
+    <polygon points="60,122 96,122 70,234 44,234" fill="rgba(255,255,255,.18)"/>
+    ${auvent}
+    <rect x="276" y="108" width="80" height="156" fill="${porte}" stroke="#141414" stroke-width="3"/>
+    <rect x="286" y="120" width="60" height="84" fill="url(#amb-${uid})" opacity=".85"/>
+    <rect x="294" y="130" width="44" height="15" rx="3" fill="#fff"/><text x="316" y="141" font-size="9" text-anchor="middle" fill="#1D1F33" style="font-family:Outfit,Arial;font-weight:700">OUVERT</text>
+    <circle cx="344" cy="190" r="4" fill="#E8C66A"/>
+    ${S.numero ? `<rect x="362" y="118" width="26" height="20" rx="4" fill="#1E2A5A"/><text x="375" y="132" font-size="11" text-anchor="middle" fill="#fff" style="font-family:Outfit,Arial;font-weight:700">${esc(S.numero)}</text>` : ""}
+    <rect x="0" y="262" width="400" height="38" fill="#3b3552"/><rect x="0" y="262" width="400" height="3" fill="#57507a"/>
+    ${accueil ? `<rect x="84" y="244" width="172" height="34" rx="5" fill="#1f2a24" stroke="#8b6b3a" stroke-width="3"/><text x="170" y="266" font-size="11" text-anchor="middle" fill="#fff" style="font-family:Fredoka,'Comic Sans MS',sans-serif">${esc(accueil)}</text>` : ""}
+    <text x="30" y="258" font-size="22">🌿</text>
+  </svg>`;
 }
-function renderSide(){
-  const side = $("#side");
-  if (MODE !== "mission" || S.step === 10){ side.innerHTML = ""; $("#layout").classList.add("full"); return; }
-  $("#layout").classList.remove("full");
-  const t = type();
-  const rows = [
-    ["Activité", t ? `${t.emoji} ${t.nom}` : ""], ["Secteur", t ? SECTEURS[t.secteur] : ""],
-    ["Adresse", adresse1() && commune() ? `${adresse1()}, ${adresse2()}` : ""],
-    ["Direction", S.direction ? (S.direction === "seul" ? "Seul(e) aux commandes" : `${S.nbAssocies} associés`) : ""],
-    ["Achats", S.produits.length ? S.produits.map(id => prod(id).nom).join(", ") : ""],
-    ["Fournisseurs", S.fournisseurs.length ? S.fournisseurs.map(id => four(id).nom).join(", ") : ""]
-  ];
-  if (S.ids) rows.push(["N° d'entreprise", S.ids.bce, true]);
-  const filled = [t, S.nom.trim(), S.couleur, adresse1() && commune(), S.direction, S.produits.length >= 2, S.fournisseurs.length === 3, S.ids, S.done.demande].filter(Boolean).length;
-  const pct = Math.round(filled/9*100), lit = S.nom.trim() || S.couleur;
-  side.innerHTML = `<div class="sign glass">
-    <div class="sign-face ${lit ? "" : "empty"}">
-      ${lit ? `<div class="emb">${t ? t.emoji : "★"}</div><div class="nm f-${S.style || "moderne"}">${esc(S.nom.trim() || "Ton nom ici")}</div><div class="sl">${esc(S.slogan)}</div>`
-            : `<div class="nm" style="font-size:21px;font-family:var(--serif)">Ton enseigne</div><div class="sl">Elle s'allumera quand tu auras choisi un nom.</div>`}
+function logoMark(size){
+  const c2 = S.couleur2 || "#FFFFFF";
+  return `<div class="lg-mark" style="background:${S.couleur || "#8E4EC6"}; box-shadow:0 0 0 4px ${c2}, 0 8px 20px rgba(0,0,0,.25); ${size ? `width:${size}px;height:${size}px;font-size:${size/2}px` : ""}">${S.symbole || (type() ? type().emoji : "★")}</div>`;
+}
+const couleurNomSurBlanc = () => S.couleur && lum(S.couleur) <= .62 ? S.couleur : "#1D1F33";
+function logoBlock(){
+  return `<div class="logo-prev">${logoMark()}<div><div class="lg-name f-${S.style || "moderne"}" style="color:${couleurNomSurBlanc()}">${esc(S.nom.trim() || "Ton nom")}</div><div class="lg-sl">${esc(S.slogan)}</div></div></div>`;
+}
+function carteVisite(){
+  return `<div class="biz"><div class="l">${logoMark(60)}</div>
+    <div class="r"><div class="bn f-${S.style || "moderne"}" style="color:${couleurNomSurBlanc()}">${esc(deno())}</div><div class="bs">${esc(S.slogan)}</div>
+      <div class="who2">${esc(S.eleve.prenom)} ${esc(S.eleve.nom)}</div><div>${esc(fonction())}</div>
+      <div>${esc(adresse1())}, ${esc(adresse2())}</div><div>${esc(emailPro())}</div></div></div>`;
+}
+function idcard(){ const t = type(), bce = S.ids.bce, st = strat();
+  return `<div class="idcard">
+      <div class="hd"><div class="emb">${S.symbole || t.emoji}</div><div><h3 class="f-${S.style}">${esc(deno())}</h3><p>${esc(S.slogan)}</p></div></div>
+      <div class="idgrid">
+        <div class="k">Activité</div><div>${esc(t.nom)}</div>
+        <div class="k">Stratégie</div><div>${st ? st.icone + " " + esc(st.nom) : ""}</div>
+        <div class="k">Forme</div><div>${esc(forme())}</div>
+        <div class="k">Adresse officielle</div><div>${esc(adresse1())}, ${esc(adresse2())}</div>
+        <div class="k">Dirigée par</div><div>${esc(S.eleve.prenom)} ${esc(S.eleve.nom)}${S.direction === "plusieurs" && S.nbAssocies > 1 ? ` et ${S.nbAssocies - 1} associé${S.nbAssocies > 2 ? "s" : ""}` : ""}</div>
+        <div class="k">Numéro mystère n° 1</div><div><span class="num">${bce}</span></div>
+        <div class="k">Numéro mystère n° 2</div><div><span class="num">BE ${bce}</span></div>
+        <div class="k">Numéro mystère n° 3</div><div><span class="num">${S.ids.iban}</span></div>
+        <div class="k">E-mail</div><div>${esc(emailPro())}</div>
+      </div>
+      <div class="fict">Entreprise et numéros fictifs – projet scolaire, Institut Saint-Luc de Frameries.</div>
+      <div class="stamp show">ENREGISTRÉE</div></div>`; }
+function patrimoine(){
+  return `<div class="patri"><h4>Le patrimoine de ${esc(deno())} au départ</h4>
+    <div class="pcols">
+      <div class="pcol"><h5>Ce que ton entreprise possède</h5><div class="pl"><span>💶 Argent en banque</span><span>${euro(enBanque())}</span></div></div>
+      <div class="pcol"><h5>D'où vient cet argent</h5><div class="pl"><span>Argent de départ (apport)</span><span>${euro(APPORT)}</span></div>
+        <div class="pl neg"><span>Déjà dépensé : frais de création</span><span>− ${euro(frais())}</span></div></div>
     </div>
-    <div class="sign-body"><h3>Mon entreprise</h3>
-      ${rows.map(r => `<div class="srow"><div class="k">${r[0]}</div><div class="v ${r[1] ? (r[2] ? "mono" : "") : "todo"}">${r[1] ? esc(r[1]) : "à compléter"}</div></div>`).join("")}
-      <div class="pbar"><i style="width:${pct}%"></i></div><div class="help">Entreprise construite à ${pct} %</div>
-    </div></div>`;
+    <div class="ptot"><span>Valeur de ton entreprise</span><span>${euro(enBanque())}</span></div></div>`;
 }
-const coach = (key) => COACH[key] ? `<div class="coach glass"><div class="av" aria-hidden="true">💼</div><p><b>Coach Max :</b> ${COACH[key]}</p></div>` : "";
-function nav(key, opts={}){
-  const ok = VALID[key]();
-  return `<div class="nav">
-    ${S.step > 1 ? `<button class="btn btn-ghost" data-act="back">Retour</button>` : "<span></span>"}
-    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
-      <span class="hint" style="visibility:${ok ? "hidden" : "visible"}">${MANQUE[key] || ""}</span>
-      <button class="btn btn-main" data-act="next" ${ok ? "" : "disabled"}>${opts.label || "Continuer"}</button>
-    </div></div>`;
-}
-const head = (n, titre, lead) => `<div class="chip-label"><span class="led"></span>Étape ${n} sur 9</div><h2 class="title">${titre}</h2>${lead ? `<p class="lead">${lead}</p>` : ""}`;
 
 // ======================================================================
-//  ÉCRANS HORS MISSION : connexion et accès fermé
+//  ÉCRANS HORS MISSION
 // ======================================================================
 const R = {};
 let LOGIN = { email:"", busy:false, err:"" };
+const ROAD = [["Crée ton entreprise","Aujourd'hui"],["Équipe ton entreprise","Le matériel pour démarrer"],["Compare les prix","Demandes et offres de prix"],["Passe commande","Choisis ton fournisseur"],["Reçois la livraison","Vérifie ce qui arrive"],["Facture et paiement","Payer, c'est aussi gérer"]];
+const road = () => `<ol class="road">${ROAD.map((r,i) => `<li class="glass ${i === 0 ? "now" : ""}"><span class="n">${i+1}</span><span class="t">${r[0]}<small>${r[1]}</small></span>${i ? "🔒" : ""}</li>`).join("")}</ol>`;
 
 R.login = () => `<div class="hero">${CONFETTI_LAYER}
     <div class="badge-school glass"><div class="logo">SL</div><span>Institut Saint-Luc de Frameries</span></div>
-    <h2>Aujourd'hui, tu crées<br><span class="grad">ton entreprise</span></h2>
-    <p class="sub">Choisis ton activité, donne-lui un nom, un logo, une adresse… puis envoie ton tout premier document professionnel à tes fournisseurs. Chaque bon choix te rapporte des XP !</p>
-    <div class="hero-meta"><span class="meta-chip glass">🏪 8 entreprises au choix</span><span class="meta-chip glass">🏅 11 badges à gagner</span><span class="meta-chip glass">✉️ Ton premier document pro</span></div>
+    <h2>Aujourd'hui, tu crées<br><span class="grad">ta propre entreprise</span></h2>
+    <p class="sub">Ton activité, ta stratégie, ton nom, ton logo, ta boutique… Chaque décision compte : ton entreprise te suivra toute l'année !</p>
+    <div class="hero-meta"><span class="meta-chip glass">🏪 8 entreprises au choix</span><span class="meta-chip glass">🎨 Une boutique à ton image</span><span class="meta-chip glass">📅 Toute l'année avec toi</span></div>
     <div class="login glass card">
       <label class="f" for="em">Ton adresse e-mail de l'école</label>
       <input class="inp" id="em" type="text" inputmode="email" autocapitalize="off" value="${esc(LOGIN.email)}" placeholder="prenom.nom@istlm.org" autocomplete="email" spellcheck="false">
       ${LOGIN.err ? `<div class="err">${LOGIN.err}</div>` : `<div class="help">Écris-la en entier, en minuscules, sans accents.</div>`}
       <div class="nav" style="margin-top:20px"><span></span>
-        <button class="btn btn-main ${LOGIN.busy ? "busy" : ""}" data-act="login" ${emailOk(LOGIN.email.trim().toLowerCase()) && !LOGIN.busy ? "" : "disabled"}>${LOGIN.busy ? `<span class="spin"></span>Connexion…` : "Je lance ma mission"}</button>
-      </div>
+        <button class="btn btn-main ${LOGIN.busy ? "busy" : ""}" data-act="login" ${emailOk(LOGIN.email.trim().toLowerCase()) && !LOGIN.busy ? "" : "disabled"}>${LOGIN.busy ? `<span class="spin"></span>Connexion…` : "J'entre"}</button>
+      </div></div>
+    <h3 class="sub" style="margin-top:44px">L'année de ton entreprise</h3>${road()}</div>`;
+
+R.briefing = () => `<div class="brief">
+    <div class="chip-label"><span class="led"></span>Avant de commencer</div>
+    <h2 class="title">${esc(S.eleve.prenom)}, voici <span class="grad">ta mission</span></h2>
+    <p class="lead">Aujourd'hui, tu deviens chef d'entreprise. Pas pour de faux : pendant toute l'année, tu vas faire vivre l'entreprise que tu crées maintenant.</p>
+    <div class="goals">
+      <div class="goal glass"><div class="gi">🏗️</div><b>Créer ta propre entreprise</b><p>Choisir ton activité, ton nom, ton adresse et décider entre entreprise individuelle et société.</p></div>
+      <div class="goal glass"><div class="gi">🎯</div><b>Choisir ta stratégie</b><p>Petits prix ou haut de gamme ? Ce choix guidera toutes tes décisions de l'année.</p></div>
+      <div class="goal glass"><div class="gi">🎨</div><b>Lui donner une personnalité</b><p>Logo, couleurs, boutique : c'est ce que tes clients verront en premier. Fais-les rêver !</p></div>
+      <div class="goal glass"><div class="gi">🤝</div><b>Prendre de bonnes décisions</b><p>Plus tard, tu choisiras un fournisseur plutôt qu'un autre… toujours pour de bonnes raisons.</p></div>
     </div>
-    <h3 class="sub" style="margin-top:44px">Le parcours de ton entreprise</h3>
-    <ol class="road">
-      <li class="glass now"><span class="n">1</span><span class="t">Crée ton entreprise<small>Aujourd'hui</small></span></li>
-      <li class="glass"><span class="n">2</span><span class="t">Les offres arrivent<small>Tes fournisseurs répondent</small></span>🔒</li>
-      <li class="glass"><span class="n">3</span><span class="t">Je passe commande<small>Le bon de commande</small></span>🔒</li>
-      <li class="glass"><span class="n">4</span><span class="t">La livraison<small>Le bon de livraison</small></span>🔒</li>
-      <li class="glass"><span class="n">5</span><span class="t">La facture<small>On calcule la TVA</small></span>🔒</li>
-      <li class="glass"><span class="n">6</span><span class="t">Le paiement<small>Payer son fournisseur</small></span>🔒</li>
-    </ol></div>`;
+    <div class="warn"><div class="wi">⚠️</div><div><b>Tes choix te suivront toute l'année.</b> Ils seront utilisés dans toutes les prochaines missions : acheter ton matériel, commander tes marchandises, recevoir tes livraisons, payer tes factures… Prends cette première étape très au sérieux !</div></div>
+    <h3 class="sub">Aujourd'hui, tu vas décider :</h3>
+    <div class="today">${STEPS.slice(1,10).map((s,i) => `<span class="meta-chip glass">${s.badge[0]} ${i+1}. ${esc(s.label)}</span>`).join("")}</div>
+    <div class="nav"><span class="hint">Tu gagnes des XP et des badges à chaque étape.</span><button class="btn btn-main" data-act="brief">C'est parti, je suis prêt(e) !</button></div>
+  </div>`;
 
 R.ferme = () => `<div class="hero">
     <div style="font-size:64px;margin-bottom:10px">🔒</div>
     <h2>La mission est <span class="grad">fermée</span></h2>
     <p class="sub">${esc(S.eleve.prenom)}, ton professeur n'a pas encore ouvert l'accès (ou la séance est terminée). Ton travail est bien sauvegardé : tu reprendras exactement là où tu t'es arrêté(e).</p>
-    <div class="nav" style="justify-content:center"><button class="btn btn-main" data-act="retry">Réessayer</button></div>
-  </div>`;
+    <div class="nav" style="justify-content:center"><button class="btn btn-main" data-act="retry">Réessayer</button></div></div>`;
 
 // ======================================================================
 //  ÉCRANS DE LA MISSION
 // ======================================================================
+const coach = (key, html) => `<div class="coach glass"><div class="av" aria-hidden="true">💼</div><p><b>Coach Max :</b> ${html || COACH[key]}</p></div>`;
+function nav(key, opts={}){
+  const ok = VALID[key]();
+  return `<div class="nav">${S.step > 1 ? `<button class="btn btn-ghost" data-act="back">Retour</button>` : "<span></span>"}
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="hint" style="visibility:${ok ? "hidden" : "visible"}">${MANQUE[key] || ""}</span>
+      <button class="btn btn-main" data-act="${opts.act || "next"}" ${ok ? "" : "disabled"}>${opts.label || "Continuer"}</button></div></div>`;
+}
+const head = (n, titre, lead) => `<div class="chip-label"><span class="led"></span>Étape ${n} sur 9</div><h2 class="title">${titre}</h2>${lead ? `<p class="lead">${lead}</p>` : ""}`;
+
 R.type = () => {
   const card = (t) => { const full = complet(t.id) && S.typeId !== t.id, on = S.typeId === t.id;
     return `<button class="choice sec-${t.secteur} ${on ? "on" : ""} ${full ? "full" : ""}" data-pick="type" data-id="${t.id}" aria-pressed="${on}" ${full ? 'aria-disabled="true"' : ""}>
       <div class="ico" aria-hidden="true">${t.emoji}</div><h4>${esc(t.nom)}</h4><p>${esc(t.desc)}</p>
       <div class="meta"><div><b>Tu achèteras :</b> ${esc(t.achete)}</div><div><b>Tu vendras :</b> ${esc(t.vend)}</div></div>
-      ${full ? `<span class="tag full">Complet : ${SESSION.max} élèves ont déjà choisi</span>` : ""}</button>`; };
+      ${full ? `<span class="tag full">Complet : ${SESSION.max} élèves l'ont déjà choisie</span>` : ""}</button>`; };
   return (SESSION.reouvert ? `<div class="status wait" style="margin:0 0 20px">🔄 Ton professeur a rouvert ta mission. Tes choix précédents sont déjà remplis : modifie seulement ce qui doit l'être.</div>` : "")
-    + head(1, "Quelle entreprise veux-tu <span class='grad'>créer</span> ?", "Huit activités t'attendent, rangées en trois groupes. Choisis celle qui te plaît le plus.")
-    + coach("type")
+    + head(1, "Quelle entreprise veux-tu <span class='grad'>créer</span> ?", "Huit activités t'attendent, rangées en trois groupes. Choisis celle qui te plaît le plus.") + coach("type")
     + ["primaire","secondaire","tertiaire"].map(s => `<div class="sector-h"><span class="chip-label" style="margin:0"><span class="led"></span>${SECTEURS[s]}</span><div class="rule"></div></div>
        <div class="grid g2">${TYPES.filter(t => t.secteur === s).map(card).join("")}</div>`).join("") + nav("type");
 };
 
+R.strategie = () => { const t = type();
+  const jauge = (n, lab, g) => `<div class="gauge">${[1,2,3].map(i => `<i class="${i <= n ? "on" : ""}"></i>`).join("")}</div><div class="glab"><span>${lab}</span><span>${["","faible","moyen","élevé"][n]}</span></div>`;
+  return head(2, "Quelle sera ta <span class='grad'>stratégie</span> ?", `Comment veux-tu attirer tes clients ? Choisis une seule stratégie pour ${esc(t.nom.toLowerCase())}.`) + coach("strategie")
+    + `<div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">${STRATEGIES.map((s,i) => `<button class="choice strat ${s.cls} ${S.strategie === s.id ? "on" : ""}" data-set="strategie" data-val="${s.id}">
+        <div class="big">${s.icone}</div><h4>${esc(s.nom)}</h4><p>${esc(s.texte)}</p>
+        <div class="ex"><b>Chez toi :</b> ${esc(t.strat[i])}</div>
+        ${jauge(s.jauge.prix, "Prix")}${jauge(s.jauge.qualite, "Qualité")}${jauge(s.jauge.clients, "Nombre de clients")}</button>`).join("")}</div>
+    ${S.strategie ? `<div class="card glass" style="margin-top:18px"><label class="f">Pourquoi ce choix ? Choisis une ou deux raisons :</label>
+      <div class="chips">${RAISONS.map(r => `<button class="chip ${S.raisons.includes(r) ? "on" : ""}" data-raison="${esc(r)}">${esc(r)}</button>`).join("")}</div></div>` : ""}`
+    + nav("strategie");
+};
+
 R.nom = () => { const t = type();
-  return head(2, "Comment s'appelle <span class='grad'>ton entreprise</span> ?", "C'est le nom que tes clients verront sur la vitrine, les sacs, les documents…") + coach("nom")
+  return head(3, "Comment s'appelle <span class='grad'>ton entreprise</span> ?", "C'est le nom que tes clients verront sur ta vitrine, tes sacs, tes documents… pendant toute l'année.") + coach("nom")
     + `<div class="card glass">
       <label class="f" for="nm">Le nom de ton entreprise</label>
       <input class="inp" id="nm" data-bind="nom" maxlength="30" value="${esc(S.nom)}" placeholder="Invente un nom…" autocomplete="off">
@@ -767,15 +980,39 @@ R.nom = () => { const t = type();
       <div class="chips">${t.slogans.map(n => `<button class="chip ${S.slogan === n ? "on" : ""}" data-set="slogan" data-val="${esc(n)}">${esc(n)}</button>`).join("")}</div>
     </div>` + nav("nom"); };
 
-R.logo = () => head(3, "Crée ton <span class='grad'>logo</span>", "Choisis la couleur de ton entreprise et le style de son écriture.") + coach("logo")
-  + `<div class="card glass"><h3 class="sub" style="margin-top:0">Ta couleur</h3>
+R.logo = () => { const t = type();
+  return head(4, "Crée ton <span class='grad'>logo</span>", "Tes couleurs, ton symbole et ton style d'écriture : c'est la personnalité de ton entreprise.") + coach("logo")
+  + `<div class="card glass">${logoBlock()}
+     <h3 class="sub" style="margin-top:0">Ta couleur principale</h3>
      <div class="swatches">${COULEURS.map(c => `<button class="sw ${S.couleur === c[1] ? "on" : ""}" style="background:${c[1]}" data-set="couleur" data-val="${c[1]}" aria-label="${c[0]}"><span>${c[0]}</span></button>`).join("")}</div>
-     <h3 class="sub">Ton style d'écriture</h3>
+     <h3 class="sub">Ta couleur d'accompagnement</h3>
+     <div class="swatches">${COULEURS2.map(c => `<button class="sw small ${S.couleur2 === c[1] ? "on" : ""}" style="background:${c[1]}" data-set="couleur2" data-val="${c[1]}" aria-label="${c[0]}"><span>${c[0]}</span></button>`).join("")}</div>
+     <h3 class="sub">Ton symbole</h3>
+     <div class="swatches">${t.symboles.map(e => `<button class="sym ${S.symbole === e ? "on" : ""}" data-set="symbole" data-val="${e}">${e}</button>`).join("")}</div>
+     <h3 class="sub" style="margin-top:6px">Ton style d'écriture</h3>
      <div class="grid g2">${STYLES.map(s => `<button class="choice stylebtn f-${s[0]} ${S.style === s[0] ? "on" : ""}" data-set="style" data-val="${s[0]}">${esc(S.nom)}<small>${s[1]}</small></button>`).join("")}</div>
-     </div>` + nav("logo");
+  </div>` + nav("logo"); };
+
+R.boutique = () => {
+  let conseil = COACH.boutique;
+  if (S.strategie === "petit" && S.ambiance === "prestige") conseil = "Attention : une boutique très luxueuse peut faire croire à tes clients que tes prix sont élevés… alors que ta stratégie, ce sont les petits prix. C'est toi qui décides !";
+  else if (S.strategie === "haut" && S.ambiance && S.ambiance !== "prestige") conseil = "Pour une stratégie haut de gamme, l'ambiance Prestige peut renforcer ton image de qualité… mais d'autres choix peuvent aussi fonctionner. C'est toi qui décides !";
+  const opts = (key, list, withDot) => `<div class="opt-row">${list.map(o => `<button class="opt ${S[key] === o[0] ? "on" : ""}" data-set="${key}" data-val="${o[0]}">${withDot ? `<span class="dot" style="background:linear-gradient(${o[2]},${o[3]})"></span>` : ""}${esc(o[1])}${o[2] && !withDot ? `<small style="opacity:.75">· ${esc(o[2])}</small>` : ""}</button>`).join("")}</div>`;
+  return head(5, "Imagine <span class='grad'>ta boutique</span>", "Voici la façade de ton entreprise. Fais les choix qui donneront envie à tes clients d'entrer !") + coach("boutique", conseil)
+  + `<div class="boutique-grid">
+      <div class="card glass">
+        <h3 class="sub" style="margin-top:0">La façade</h3>${opts("facade", FACADES)}
+        <h3 class="sub">L'auvent au-dessus de la vitrine</h3>${opts("auvent", AUVENTS)}
+        <h3 class="sub">L'ambiance à l'intérieur</h3>${opts("ambiance", AMBIANCES, true)}
+        <h3 class="sub">Ta phrase d'accueil</h3>
+        <div class="chips">${ACCUEILS.map(a => `<button class="chip ${S.accueil === a ? "on" : ""}" data-set="accueil" data-val="${esc(a)}">${esc(a)}</button>`).join("")}</div>
+      </div>
+      <div class="front-wrap glass">${vitrine("main")}</div>
+    </div>` + nav("boutique");
+};
 
 R.adresse = () => { const t = type(), done = S.bonusDone.adresse;
-  return head(4, "Où s'installe <span class='grad'>ton entreprise</span> ?", "Choisis une rue, un numéro et une commune de la région.") + coach("adresse")
+  return head(6, "Où s'installe <span class='grad'>ton entreprise</span> ?", "Choisis une rue, un numéro et une commune de la région.") + coach("adresse")
     + `<div class="card glass">
       <div class="row row3">
         <div><label class="f" for="ru">Rue</label><select class="inp" id="ru" data-bind="rue"><option value="">Choisis…</option>${RUES.map(r => `<option ${S.rue === r ? "selected" : ""}>${esc(r)}</option>`).join("")}</select></div>
@@ -787,129 +1024,110 @@ R.adresse = () => { const t = type(), done = S.bonusDone.adresse;
       ${adresse1() && commune() ? `<p class="help" style="font-size:17px;margin-top:18px">Ton adresse : <b style="color:#fff">${esc(adresse1())}, ${esc(adresse2())}</b></p>` : ""}
     </div>
     <div class="bonus ${done ? "won" : ""}"><h4>${done ? "✓ Défi réussi : +50 XP" : "Défi bonus : +50 XP"}</h4>
-      <p>Cherche sur internet un vrai magasin qui fait la même activité que toi (${esc(t.nom.toLowerCase())}) dans ta commune ou pas loin. Note son nom et sa commune.</p>
+      <p>Cherche sur internet un vrai magasin qui fait la même activité que toi (${esc(t.nom.toLowerCase())}) dans ta commune ou pas loin. Note son nom et sa commune : ce sera ton concurrent !</p>
       <div class="row" style="margin:0"><input class="inp" data-bind="bonus.concurrent" value="${esc(S.bonus.concurrent)}" placeholder="Ex. : nom du magasin, commune" ${done ? "disabled" : ""}>
         ${done ? "" : `<button class="btn btn-gold" data-act="bonus" data-b="adresse">Valider mon défi</button>`}</div></div>` + nav("adresse"); };
 
-R.direction = () => head(5, "Tu te lances seul ou <span class='grad'>à plusieurs</span> ?", "Tu peux diriger ton entreprise tout(e) seul(e) ou t'associer avec d'autres personnes.") + coach("direction")
+R.direction = () => head(7, "Entreprise individuelle ou <span class='grad'>société</span> ?", "Tu démarres avec 10 000 € d'économies. Chaque formule a un prix et des conséquences.") + coach("direction")
   + `<div class="grid g2">
-    <button class="choice ${S.direction === "seul" ? "on" : ""}" data-set="direction" data-val="seul"><div class="ico">🙋</div><h4>Seul(e) aux commandes</h4><p>Tu prends toutes les décisions et tu gardes tous les bénéfices… mais tu assumes aussi tous les risques.</p></button>
-    <button class="choice ${S.direction === "plusieurs" ? "on" : ""}" data-set="direction" data-val="plusieurs"><div class="ico">🤝</div><h4>À plusieurs, avec des associés</h4><p>Vous décidez ensemble, vous partagez le travail, les bénéfices… et les risques.</p></button>
+    <button class="choice ${S.direction === "seul" ? "on" : ""}" data-set="direction" data-val="seul"><div class="ico">🙋</div><h4>Entreprise individuelle</h4>
+      <p>Tu travailles en ton nom propre : tu es indépendant(e) et l'entreprise, c'est toi.</p><span class="cost">Frais de création : environ ${euro(FRAIS.seul)}</span>
+      <span class="pro">✓ Simple et peu coûteux à créer</span><span class="pro">✓ Tu décides seul(e) et tu gardes tous les bénéfices</span>
+      <span class="con">✗ Si ton entreprise a des dettes, tu dois les payer avec tes biens personnels (tes économies, ta voiture…)</span></button>
+    <button class="choice ${S.direction === "plusieurs" ? "on" : ""}" data-set="direction" data-val="plusieurs"><div class="ico">🏢</div><h4>Société (SRL)</h4>
+      <p>Tu crées une société, une entreprise qui a sa propre existence. Tu peux la créer seul(e) ou avec des associés.</p><span class="cost">Frais de création : environ ${euro(FRAIS.plusieurs)}</span>
+      <span class="pro">✓ Tes biens personnels sont protégés</span><span class="pro">✓ Tu peux être seul(e) ou partager le travail avec des associés</span>
+      <span class="con">✗ Plus cher à créer (notaire, papiers officiels) et chaque année, il faut payer un comptable</span><span class="con">✗ Avec des associés, il faut se mettre d'accord et partager les bénéfices</span></button>
   </div>
-  ${S.direction === "plusieurs" ? `<div class="card glass" style="margin-top:16px;display:flex;align-items:center;gap:18px;flex-wrap:wrap"><span style="font-weight:600">Combien d'associés en tout, toi compris ?</span>
-     <div class="chips" style="margin:0">${[2,3,4,5].map(n => `<button class="chip ${S.nbAssocies === n ? "on" : ""}" data-set="nbAssocies" data-val="${n}">${n}</button>`).join("")}</div></div>` : ""}
-  ${S.direction ? `<p class="help" style="font-size:17px;margin-top:18px">Nom officiel de ton entreprise : <b style="color:#fff">${esc(deno())}</b></p>` : ""}` + nav("direction");
-
-R.produits = () => { const t = type(), n = S.produits.length, done = S.bonusDone.produits;
-  return head(6, "Qu'est-ce que ton entreprise doit <span class='grad'>acheter</span> ?", `Pour démarrer, ${esc(deno())} a besoin de marchandises. Choisis 2 ou 3 articles.`) + coach("produits")
-    + `<p style="margin-bottom:12px">Articles choisis : <span class="counter">${n} / 3</span></p>
-    <div class="grid g2">${t.produits.map((p,i) => { const id = `${t.id}-p${i}`, on = S.produits.includes(id), off = !on && n >= 3;
-      return `<button class="choice sec-${t.secteur} ${on ? "on" : ""} ${off ? "off" : ""}" data-pick="produit" data-id="${id}" aria-pressed="${on}"><h4 style="margin-top:0">${esc(p[0])}</h4><p>${esc(p[2])}</p><span class="tag">Vendu par ${esc(p[1])}</span></button>`; }).join("")}</div>
-    <div class="bonus ${done ? "won" : ""}"><h4>${done ? "✓ Défi réussi : +50 XP" : "Défi bonus : +50 XP"}</h4>
-      <p>Enquête : cherche sur internet combien un vrai magasin vend l'un de tes articles à ses clients.</p>
-      <div class="row" style="margin:0 0 10px">
-        <select class="inp" data-bind="bonus.prixProduit" ${done ? "disabled" : ""}><option value="">Quel article ?</option>${S.produits.map(id => `<option ${S.bonus.prixProduit === prod(id).nom ? "selected" : ""}>${esc(prod(id).nom)}</option>`).join("")}</select>
-        <input class="inp" data-bind="bonus.prixSite" value="${esc(S.bonus.prixSite)}" placeholder="Nom du magasin ou du site" ${done ? "disabled" : ""}></div>
-      <div class="row" style="margin:0"><input class="inp" data-bind="bonus.prixMontant" value="${esc(S.bonus.prixMontant)}" placeholder="Prix trouvé (en €)" inputmode="decimal" ${done ? "disabled" : ""}>
-        ${done ? "" : `<button class="btn btn-gold" data-act="bonus" data-b="produits">Valider mon défi</button>`}</div></div>` + nav("produits"); };
-
-R.fournisseurs = () => { const t = type(), n = S.fournisseurs.length;
-  return head(7, "À qui vas-tu demander <span class='grad'>les prix</span> ?", "Voici 4 fournisseurs qui vendent tout ce dont tu as besoin. Choisis-en 3.") + coach("fournisseurs")
-    + `<p style="margin-bottom:12px">Fournisseurs choisis : <span class="counter">${n} / 3</span></p>
-    <div class="grid g2">${t.fournisseurs.map((f,i) => { const id = `${t.id}-f${i}`, on = S.fournisseurs.includes(id), off = !on && n >= 3;
-      return `<button class="choice ${on ? "on" : ""} ${off ? "off" : ""}" data-pick="fournisseur" data-id="${id}" aria-pressed="${on}">
-        <h4 style="margin-top:0">${esc(f[0])} ${esc(f[1])}</h4><p>${esc(f[6])}</p>
-        <div class="meta"><div>${esc(f[2])}, ${esc(f[3])} ${esc(f[4])}</div><div><b>${esc(f[5])}</b></div></div>
-        <span class="tag">Son point fort : ${esc(f[7])}</span></button>`; }).join("")}</div>` + nav("fournisseurs"); };
-
-function idcard(){ const t = type(), bce = S.ids.bce;
-  return `<div class="idcard">
-      <div class="hd"><div class="emb">${t.emoji}</div><div><h3 class="f-${S.style}">${esc(deno())}</h3><p>${esc(S.slogan)}</p></div></div>
-      <div class="idgrid">
-        <div class="k">Activité</div><div>${esc(t.nom)}</div>
-        <div class="k">Forme</div><div>${esc(forme())}</div>
-        <div class="k">Adresse officielle</div><div>${esc(adresse1())}, ${esc(adresse2())}</div>
-        <div class="k">Dirigée par</div><div>${esc(S.eleve.prenom)} ${esc(S.eleve.nom)}${S.direction === "plusieurs" ? ` et ${S.nbAssocies - 1} associé${S.nbAssocies > 2 ? "s" : ""}` : ""}</div>
-        <div class="k">Numéro mystère n° 1</div><div><span class="num">${bce}</span></div>
-        <div class="k">Numéro mystère n° 2</div><div><span class="num">BE ${bce}</span></div>
-        <div class="k">Numéro mystère n° 3</div><div><span class="num">${S.ids.iban}</span></div>
-        <div class="k">E-mail</div><div>contact@${slug(S.nom)}.be</div>
-      </div>
-      <div class="fict">Entreprise et numéros fictifs – projet scolaire, Institut Saint-Luc de Frameries.</div>
-      <div class="stamp show">ENREGISTRÉE</div></div>`; }
+  ${S.direction === "plusieurs" ? `<div class="card glass" style="margin-top:16px;display:flex;align-items:center;gap:18px;flex-wrap:wrap"><span style="font-weight:600">Combien de personnes dans ta société, toi compris ?</span>
+     <div class="chips" style="margin:0">${[1,2,3,4,5].map(n => `<button class="chip ${S.nbAssocies === n ? "on" : ""}" data-set="nbAssocies" data-val="${n}">${n === 1 ? "1 : rien que moi" : n}</button>`).join("")}</div></div>` : ""}
+  ${S.direction ? `<div class="money glass"><div class="mi">🏦</div><div>Après les frais de création, il restera <b>${euro(enBanque())}</b> sur le compte en banque de <b style="color:#fff;font-family:var(--ui)">${esc(deno())}</b>.<div class="help">Montants simplifiés pour le jeu.</div></div></div>` : ""}`
+  + nav("direction");
 
 R.reveal = () => {
   if (!S.ids){ S.ids = {bce:genBCE(), iban:genIBAN()}; save(); setTimeout(confetti, 300); }
-  if (!S.dateDoc) S.dateDoc = today();
+  if (!S.dateCreation) S.dateCreation = today();
   return head(8, "Ton entreprise est <span class='grad'>officiellement créée</span> !", "") + coach("reveal") + idcard()
-    + `<div class="coach glass" style="margin-top:24px"><div class="av">🕵️</div><p><b>Trois numéros mystérieux sont apparus.</b> Chaque entreprise en reçoit à sa création. À quoi servent-ils ? Garde-les bien : on découvre leur secret au prochain cours.</p></div>`
-    + nav("reveal", {label:"Écrire mon premier document"});
+    + `<div class="coach glass" style="margin-top:24px"><div class="av">🕵️</div><p><b>Trois numéros mystérieux sont apparus.</b> Chaque entreprise en reçoit à sa création. À quoi servent-ils ? Garde-les bien : on découvre leur secret au prochain cours.</p></div>
+    <h3 class="sub" style="text-align:center">Ce que possède ton entreprise aujourd'hui</h3>
+    <p class="lead" style="text-align:center;margin:0 auto">À gauche, ce que ton entreprise possède. À droite, d'où vient cet argent. Les deux côtés sont toujours égaux !</p>
+    ${patrimoine()}` + nav("reveal", {label:"Relire et signer"});
 };
 
-function docHTML(fid, idx, lecture){
-  const t = type(), f = four(fid);
-  const q = (id) => lecture ? `<b>${esc(S.quantites[id] || "")}</b>` :
-    `<input class="qin ${+S.quantites[id] >= 1 ? "ok" : ""}" data-qty="${id}" inputmode="numeric" maxlength="4" value="${esc(S.quantites[id] || "")}" aria-label="Quantité de ${esc(prod(id).nom)}">`;
-  return `<div class="paper">
-    <div class="dh">
-      <div class="from"><div class="emb">${t.emoji}</div><div>
-        <div class="co f-${S.style}">${esc(deno())}</div>
-        <p>${esc(adresse1())}<br>${esc(adresse2())}<br>contact@${slug(S.nom)}.be</p>
-        <p class="ids">N° d'entreprise ${S.ids.bce}<br>TVA BE ${S.ids.bce}<br>IBAN ${S.ids.iban}</p></div></div>
-      <div class="to"><div class="lbl">Destinataire</div><b>${esc(f.nom)} ${esc(f.forme)}</b><br>${esc(f.rue)}<br>${esc(f.cp)} ${esc(f.ville)}<br>${esc(f.pays.toUpperCase())}</div>
+R.lancement = () => { const t = type(), st = strat(), ok = VALID.lancement();
+  const ligne = (k, v) => `<li><b>${k}</b><span>${v}</span></li>`;
+  return head(9, "Je lance <span class='grad'>mon entreprise</span>", "Relis bien ta déclaration. Si tu veux changer quelque chose, clique sur « Retour ». Une fois signée, elle est définitive.") + coach("lancement")
+    + `<div class="decl"><h3>Déclaration de création</h3><div class="sub2">${esc(S.commune)}, le ${esc(S.dateCreation)}</div>
+      <ul>${ligne("Nom officiel", esc(deno()))}${ligne("Activité", `${t.emoji} ${esc(t.nom)}`)}${ligne("Stratégie", `${st.icone} ${esc(st.nom)}`)}
+        ${ligne("Forme", esc(forme()))}${ligne("Adresse officielle", `${esc(adresse1())}, ${esc(adresse2())}`)}
+        ${ligne("Personnalité", `${S.symbole} style ${esc(STYLES.find(s => s[0] === S.style)[1].toLowerCase())}, façade ${esc(FACADES.find(f => f[0] === S.facade)[1].toLowerCase())}, ambiance ${esc(AMBIANCES.find(a => a[0] === S.ambiance)[1].toLowerCase())}`)}
+        ${ligne("Argent de départ", euro(APPORT))}${ligne("Frais de création", "− " + euro(frais()))}${ligne("Argent en banque", `<b>${euro(enBanque())}</b>`)}</ul>
+      <label class="engage"><input type="checkbox" id="eng" ${S.engagement ? "checked" : ""}><span>Je comprends que ces choix sont <b>définitifs</b> et qu'ils me suivront <b>toute l'année</b>.</span></label>
+      <div class="sigl"><div><input data-bind="signature" value="${esc(S.signature)}" placeholder="Signe ici (prénom et nom)" maxlength="40" aria-label="Signature"><small>${esc(S.eleve.prenom)} ${esc(S.eleve.nom)}, ${esc(fonction().toLowerCase())}</small></div></div>
     </div>
-    <div class="place">${esc(S.commune)}, le ${esc(S.dateDoc)}</div>
-    <h3 class="doc">DEMANDE DE PRIX</h3><div class="ref">N° ${numDP(idx)}</div>
-    <p>Madame, Monsieur,</p>
-    <p>Nous souhaitons acheter les articles ci-dessous. Pourriez-vous nous faire parvenir votre meilleure offre de prix ?</p>
-    <table><thead><tr><th>Désignation</th><th>Unité</th><th>Quantité souhaitée</th></tr></thead>
-      <tbody>${S.produits.map(id => `<tr><td>${esc(prod(id).nom)}</td><td>${esc(prod(id).unite)}</td><td class="q">${q(id)}</td></tr>`).join("")}</tbody></table>
-    <p>Livraison souhaitée : ${lecture ? `<b>${esc(S.delai)}</b>` : `<select class="din" data-bind="delai"><option value="">à choisir…</option>${DELAIS.map(d => `<option ${S.delai === d ? "selected" : ""}>${d}</option>`).join("")}</select>`}.</p>
-    <p>Merci de nous indiquer dans votre offre : le prix de chaque article, les remises éventuelles, le délai de livraison, les frais de transport et les conditions de paiement.</p>
-    <p>Dans l'attente de votre réponse, nous vous prions d'agréer, Madame, Monsieur, nos salutations distinguées.</p>
-    <div class="sig"><div>${lecture ? `<div class="signed">${esc(S.signature)}</div>` : `<input data-bind="signature" value="${esc(S.signature)}" placeholder="Signe ici (prénom et nom)" maxlength="40" aria-label="Signature">`}
-      <small>${esc(S.eleve.prenom)} ${esc(S.eleve.nom)}, ${S.direction === "plusieurs" ? "gérant(e)" : "responsable"}</small></div></div>
-    <div class="foot">Document fictif – projet pédagogique, Institut Saint-Luc de Frameries</div></div>`;
-}
-const tabs = () => `<div class="tabs" role="tablist">${S.fournisseurs.map((id,i) => `<button class="tab ${S.tab === i ? "on" : ""}" data-tab="${i}" role="tab" aria-selected="${S.tab === i}">Pour ${esc(four(id).nom)}</button>`).join("")}</div>`;
-
-R.demande = () => { const qOk = S.produits.every(id => +S.quantites[id] >= 1), ok = VALID.demande();
-  return head(9, "Ton premier document <span class='grad'>professionnel</span>", "Une demande de prix, c'est une lettre qu'on envoie à un fournisseur pour savoir combien il demande. La même demande part chez tes 3 fournisseurs.") + coach("demande")
-    + tabs() + docHTML(S.fournisseurs[S.tab] || S.fournisseurs[0], S.tab, false)
-    + `<ul class="checklist">
-      <li class="${qOk ? "ok" : ""}">J'indique la quantité souhaitée pour chaque article (cases jaunes)</li>
-      <li class="${S.delai ? "ok" : ""}">Je choisis quand je veux être livré(e)</li>
-      <li class="${S.signature.trim().length >= 3 ? "ok" : ""}">Je signe ma demande</li></ul>
+    <ul class="chk"><li class="${S.engagement ? "ok" : ""}">Je coche mon engagement</li><li class="${S.signature.trim().length >= 3 ? "ok" : ""}">Je signe ma déclaration</li></ul>
     <div class="nav"><button class="btn btn-ghost" data-act="back">Retour</button>
-      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="hint" style="visibility:${ok ? "hidden" : "visible"}">${MANQUE.demande}</span>
-        <button class="btn btn-main" data-act="send" ${ok ? "" : "disabled"}>Envoyer à mes 3 fournisseurs ✉️</button></div></div>`; };
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="hint" style="visibility:${ok ? "hidden" : "visible"}">${MANQUE.lancement}</span>
+        <button class="btn btn-main" data-act="send" ${ok ? "" : "disabled"}>Je lance mon entreprise 🚀</button></div></div>`; };
 
 R.fin = () => {
   const lecture = MODE === "consultation";
   const badges = STEPS.filter(s => s.badge).map(s => [s.badge, !!S.done[s.key]]).concat(Object.entries(BONUS_BADGES).map(([k,b]) => [b, !!S.bonusDone[k]]));
   const e = S.envoi || {};
-  const status = lecture ? `<div class="status ok">🔒 Ta mission est terminée et enregistrée chez ton professeur. Tes choix sont définitifs : si tu dois changer quelque chose, parles-en à ton professeur.</div>`
-    : e.mode === "ok" ? `<div class="status ok">✓ Ta mission est bien enregistrée chez ton professeur.</div>`
+  const status = lecture ? `<div class="status ok">🔒 Ton entreprise est enregistrée chez ton professeur. Tes choix sont définitifs : si tu dois changer quelque chose, parles-en à ton professeur.</div>`
+    : e.mode === "ok" ? `<div class="status ok">✓ Ton entreprise est bien enregistrée chez ton professeur.</div>`
     : e.mode === "ferme" ? `<div class="status err">L'accès a été fermé avant l'envoi. Demande à ton professeur de rouvrir l'accès, puis clique sur « Réessayer l'envoi ». <button class="btn btn-ghost" data-act="resend" style="margin-left:8px;padding:8px 16px;font-size:15px">Réessayer l'envoi</button></div>`
     : e.mode === "err" ? `<div class="status err">L'envoi n'a pas pu être confirmé. Vérifie ta connexion puis clique sur « Réessayer l'envoi ». <button class="btn btn-ghost" data-act="resend" style="margin-left:8px;padding:8px 16px;font-size:15px">Réessayer l'envoi</button></div>`
     : `<div class="status wait"><span class="spin"></span>Enregistrement chez ton professeur en cours…</div>`;
-  const noms = S.fournisseurs.map(id => esc(four(id).nom)).join(", ").replace(/, ([^,]*)$/, " et $1");
   return `<div class="hero" style="padding-top:10px">${CONFETTI_LAYER}
       <div class="chip-label"><span class="led"></span>${lecture ? "Mission 1 terminée" : "Mission 1 accomplie"}</div>
       <h2>Bravo ${esc(S.eleve.prenom)},<br><span class="grad">${esc(deno())}</span> est lancée !</h2>
-      <p class="sub">Ta demande de prix est partie chez ${noms}.</p></div>
+      <p class="sub">${esc(S.slogan)}</p></div>
     <div class="stats"><div class="stat glass"><b>${S.xp}</b><span>XP gagnés</span></div>
       <div class="stat glass"><b style="font-family:var(--serif);font-size:24px;padding:6px 0">${niveau()}</b><span>Ton niveau</span></div>
       <div class="stat glass"><b>${badges.filter(b => b[1]).length}/${badges.length}</b><span>Badges</span></div></div>
     ${status}
-    ${lecture ? `<h3 class="sub">Ta carte d'identité d'entreprise</h3>${idcard()}<h3 class="sub">Ta demande de prix</h3>${tabs()}${docHTML(S.fournisseurs[S.tab] || S.fournisseurs[0], S.tab, true)}` : ""}
+    <div class="duo"><div class="front-wrap glass">${vitrine("fin")}</div><div>${carteVisite()}<p class="help" style="margin-top:10px">Ta carte de visite de chef d'entreprise.</p></div></div>
+    ${lecture ? `<h3 class="sub">Ta carte d'identité d'entreprise</h3>${idcard()}${patrimoine()}` : ""}
     <div class="card glass" style="margin-top:22px"><h3 class="sub" style="margin-top:0">Tes badges</h3>
       <div class="badges">${badges.map(([b,on]) => `<div class="badge glass ${on ? "" : "lockd"}"><div class="i">${on ? b[0] : "🔒"}</div><b>${esc(b[1])}</b></div>`).join("")}</div>
       <h3 class="sub">Ton carnet de mots de pro</h3>
       <div class="words">${S.mots.map(m => `<div class="word"><b>${esc(MOTS[m].mot)}</b><span>${esc(MOTS[m].def)}</span></div>`).join("")}</div>
-      <div class="nav" style="margin-top:22px"><button class="btn btn-ghost" data-act="print">Imprimer mes demandes de prix</button></div></div>
-    <div class="next glass"><div class="ic">⏳</div><div><b>Mission 2 : les offres arrivent.</b><br><span class="hint">Tes fournisseurs préparent leur réponse. La semaine prochaine, tu découvriras leurs prix et tu choisiras le meilleur.</span></div></div>`;
+      <div class="nav" style="margin-top:22px"><button class="btn btn-ghost" data-act="print">Imprimer ma carte d'entreprise</button></div></div>
+    <div class="next glass"><div class="ic">🧰</div><div><b>Prochaine mission : équipe ton entreprise.</b><br><span class="hint">Avec les ${euro(enBanque())} de ton compte en banque, tu achèteras le matériel dont ton entreprise a besoin pour fonctionner… sans tout dépenser !</span></div></div>`;
 };
+
+// ======================================================================
+//  COLONNE DE DROITE : l'enseigne et la vitrine qui grandissent
+// ======================================================================
+function renderSide(){
+  const side = $("#side");
+  if (MODE !== "mission" || S.step === 10 || STEPS[S.step].key === "boutique"){ side.innerHTML = ""; $("#layout").classList.add("full"); return; }
+  $("#layout").classList.remove("full");
+  const t = type(), st = strat(), key = STEPS[S.step].key;
+  const rows = [["Activité", t ? `${t.emoji} ${t.nom}` : ""], ["Stratégie", st ? `${st.icone} ${st.nom}` : ""],
+    ["Adresse", adresse1() && commune() ? `${adresse1()}, ${adresse2()}` : ""], ["Forme", forme()],
+    ["En banque", S.direction ? euro(enBanque()) : ""]];
+  const filled = [t, st, S.nom.trim(), VALID.logo(), VALID.boutique(), adresse1() && commune(), S.direction, S.ids, S.done.lancement].filter(Boolean).length;
+  const pct = Math.round(filled/9*100);
+  side.innerHTML = `<div class="sign glass">
+    ${key === "boutique" ? "" : `<div class="front-wrap" style="border-radius:0">${vitrine("side")}</div>`}
+    <div class="sign-body"><h3>Mon entreprise${S.nom.trim() ? " : " + esc(deno()) : ""}</h3>
+      ${rows.map(r => `<div class="srow"><div class="k">${r[0]}</div><div class="v ${r[1] ? "" : "todo"}">${r[1] ? esc(r[1]) : "à compléter"}</div></div>`).join("")}
+      <div class="pbar"><i style="width:${pct}%"></i></div><div class="help">Entreprise construite à ${pct} %</div></div></div>`;
+}
+function updateTop(){
+  $("#xpPill").textContent = S.xp + " XP";
+  $("#lvlName").textContent = niveau();
+  const enMission = MODE === "mission" || MODE === "consultation";
+  $("#lvlBox").style.visibility = enMission ? "visible" : "hidden";
+  $("#xpPill").parentElement.style.visibility = enMission ? "visible" : "hidden";
+  $("#who").innerHTML = MODE !== "login" && S.eleve.email ? `<b>${esc(S.eleve.prenom)} ${esc(S.eleve.nom)}</b><button data-act="logout">Changer de compte</button>` : "";
+  const st = $("#steps");
+  st.style.display = MODE === "mission" && S.step >= 1 && S.step <= 9 ? "grid" : "none";
+  st.innerHTML = STEPS.slice(1,10).map((s,i) => { const n = i+1, cls = S.step > n ? "done" : (S.step === n ? "now" : "");
+    return `<div class="seg ${cls}" title="Étape ${n} : ${esc(s.label)}"><span>Étape ${n} sur 9 : ${esc(s.label)}</span></div>`; }).join("");
+}
 
 // ======================================================================
 //  CONNEXION, SAUVEGARDE, NAVIGATION
@@ -939,9 +1157,10 @@ function appliquerConnexion(r, email){
   if (r.statut === "termine"){
     S = restaurer(serveur); MODE = "consultation"; S.step = 10; S.envoi = {mode:"ok"};
   } else if (!r.ouvert){
-    S = restaurer(serveur || (local && local.eleve && local.eleve.email === email ? local : null)); MODE = "ferme";
+    S = restaurer(serveur || local); MODE = "ferme";
   } else if (r.statut === "reinitialise"){
     S = restaurer(serveur); S.step = 1; S.done = {}; S.xp = 0; S.mots = []; S.bonusDone = {}; S.envoi = null; S.finishedAt = null;
+    S.engagement = false; S.signature = ""; S.briefing = true;
     SESSION.reouvert = true; MODE = "mission";
   } else if (r.statut === "en_cours"){
     const dernierServeur = m.dernier_envoi ? Date.parse(m.dernier_envoi) : 0;
@@ -952,19 +1171,16 @@ function appliquerConnexion(r, email){
   S.eleve = idEleve;
   if (!S.startedAt) S.startedAt = Date.now();
   if (MODE === "mission" && (S.step < 1 || S.step > 9)) S.step = 1;
+  if (MODE === "mission" && !S.briefing) MODE = "briefing";
   save(); render(true);
 }
 async function verifierOuvert(){
   try { const r = await jsonp({action:"ping"}, 10000); return !!(r && r.acces && (r.missionsOuvertes || []).indexOf(CONFIG.MISSION) >= 0); }
-  catch(e) { return true; }    // souci réseau : on laisse continuer, la sauvegarde locale protège le travail
+  catch(e) { return true; }
 }
-/** Contrôles en arrière-plan : l'élève n'attend jamais le serveur pour passer à l'étape suivante. */
 async function controlerEnFond(key){
-  if (!(await verifierOuvert())){
-    if (MODE === "mission"){ MODE = "ferme"; save(); render(true); }
-    return;
-  }
-  if (key === "type"){              // l'entreprise choisie était-elle encore libre ? (vérifié après l'enregistrement)
+  if (!(await verifierOuvert())){ if (MODE === "mission"){ MODE = "ferme"; save(); render(true); } return; }
+  if (key === "type"){
     await wait(3500);
     try {
       const r = await connexion();
@@ -972,13 +1188,12 @@ async function controlerEnFond(key){
       SESSION.compteurs = r.compteurs || {}; if (r.max != null) SESSION.max = r.max;
       const surServeur = r.dossier && r.dossier.entreprise ? r.dossier.entreprise.typeId : null;
       if (surServeur !== S.typeId && complet(S.typeId)){
-        S.typeId = null; S.produits = []; S.fournisseurs = []; S.quantites = {}; S.step = 1; save(); render(true);
-        toast("<div>Oups ! Cette entreprise vient d'être complétée par tes camarades. Choisis-en une autre : ton nom et ton slogan sont gardés.</div>");
+        S.typeId = null; S.strategie = null; S.raisons = []; S.symbole = null; S.step = 1; save(); render(true);
+        toast("<div>Oups ! Cette entreprise vient d'être complétée par tes camarades. Choisis-en une autre : tes autres choix sont gardés.</div>");
       }
     } catch(e) {}
   }
 }
-/** Rafraîchit en arrière-plan les places disponibles quand l'élève arrive sur le choix de l'activité. */
 let MAJ_COMPTEURS = 0;
 function rafraichirCompteurs(){
   if (Date.now() - MAJ_COMPTEURS < 20000) return;
@@ -995,21 +1210,21 @@ function suivant(){
   if (!VALID[key]()) return;
   const st = STEPS[S.step];
   award(key, 100, st.badge);
-  if (st.mot) unlockMot(st.mot);
   if (key === "direction") unlockMot(S.direction === "plusieurs" ? "srl" : "individuelle");
-  S.step++; S.tab = 0;
-  save(); render(true);                 // passage immédiat à l'étape suivante
-  envoyer("en_cours");                  // sauvegarde dans le Sheet, en arrière-plan
-  controlerEnFond(key);                 // vérifications, en arrière-plan
+  if (st.mot) unlockMot(st.mot);
+  S.step++;
+  save(); render(true);
+  envoyer("en_cours");
+  controlerEnFond(key);
 }
 async function envoyerFinal(btn){
-  if (!VALID.demande()) return;
+  if (!VALID.lancement()) return;
   const r0 = btn.getBoundingClientRect();
   if (!matchMedia("(prefers-reduced-motion: reduce)").matches)
-    [0,1,2].forEach(i => { const f = document.createElement("div"); f.className = "fly"; f.textContent = "✉️";
+    ["🚀","✨","🎉"].forEach((em,i) => { const f = document.createElement("div"); f.className = "fly"; f.textContent = em;
       f.style.left = (r0.left + 20 + i*30) + "px"; f.style.top = (r0.top - 10) + "px"; f.style.animationDelay = (i*.2) + "s";
       document.body.appendChild(f); setTimeout(() => f.remove(), 2200); });
-  award("demande", 100, STEPS[9].badge); unlockMot("demandeprix");
+  award("lancement", 100, STEPS[9].badge);
   S.finishedAt = Date.now(); S.step = 10; S.envoi = {mode:"wait"};
   save();
   setTimeout(() => { render(true); confetti(); }, 1100);
@@ -1030,22 +1245,22 @@ async function confirmerEnvoi(){
 
 function render(scroll){
   setBrand(MODE === "login" ? null : S.couleur);
-  const key = MODE === "login" ? "login" : MODE === "ferme" ? "ferme" : MODE === "consultation" ? "fin" : STEPS[S.step].key;
+  const key = MODE === "login" ? "login" : MODE === "ferme" ? "ferme" : MODE === "briefing" ? "briefing" : MODE === "consultation" ? "fin" : STEPS[S.step].key;
   $("#main").innerHTML = R[key]();
   $("#topSub").textContent = key === "fin" ? "Mission 1 accomplie" : "Mission 1 : crée ton entreprise";
   updateTop(); renderSide();
   if (key === "type") rafraichirCompteurs();
-  if (MODE === "login"){ const em = $("#em"); if (em && !LOGIN.busy) { em.focus(); em.setSelectionRange(em.value.length, em.value.length); } }
+  if (MODE === "login"){ const em = $("#em"); if (em && !LOGIN.busy) em.focus(); }
   if (scroll) window.scrollTo({top:0, behavior:"smooth"});
 }
-function refreshNav(){
+function refreshLive(){
   if (MODE !== "mission") return;
   const key = STEPS[S.step].key; if (!VALID[key]) return;
   const ok = VALID[key]();
   document.querySelectorAll('[data-act="next"],[data-act="send"]').forEach(b => b.disabled = !ok);
   const hint = $("#main .nav .hint"); if (hint) hint.style.visibility = ok ? "hidden" : "visible";
-  if (key === "demande"){ const lis = document.querySelectorAll(".checklist li");
-    if (lis.length){ lis[0].classList.toggle("ok", S.produits.every(id => +S.quantites[id] >= 1)); lis[1].classList.toggle("ok", !!S.delai); lis[2].classList.toggle("ok", S.signature.trim().length >= 3); } }
+  if (key === "lancement"){ const lis = document.querySelectorAll(".chk li"); if (lis.length){ lis[0].classList.toggle("ok", S.engagement); lis[1].classList.toggle("ok", S.signature.trim().length >= 3); } }
+  if (key === "nom" || key === "logo"){ const lp = $(".logo-prev"); if (lp) lp.outerHTML = logoBlock(); }
   renderSide();
 }
 function setPath(path, val){ const p = path.split("."); let o = S; while (p.length > 1) o = o[p.shift()]; o[p[0]] = val; }
@@ -1053,18 +1268,17 @@ function setPath(path, val){ const p = path.split("."); let o = S; while (p.leng
 document.addEventListener("input", (e) => {
   const el = e.target;
   if (el.id === "em"){ LOGIN.email = el.value; const b = $('[data-act="login"]'); if (b) b.disabled = !emailOk(el.value.trim().toLowerCase()); return; }
-  if (MODE !== "mission") return;
-  if (el.dataset.bind){ setPath(el.dataset.bind, el.value); save();
-    if (el.dataset.bind === "nom" || el.dataset.bind === "slogan") document.querySelectorAll(`.chip[data-set="${el.dataset.bind}"]`).forEach(c => c.classList.toggle("on", c.dataset.val === el.value));
-    if (el.tagName === "SELECT" && STEPS[S.step].key === "adresse"){ render(); return; }
-    refreshNav(); }
-  if (el.dataset.qty){ el.value = el.value.replace(/\D/g,""); S.quantites[el.dataset.qty] = el.value; el.classList.toggle("ok", +el.value >= 1); save(); refreshNav(); }
+  if (MODE !== "mission" || !el.dataset.bind) return;
+  setPath(el.dataset.bind, el.value); save();
+  if (el.dataset.bind === "nom" || el.dataset.bind === "slogan") document.querySelectorAll(`.chip[data-set="${el.dataset.bind}"]`).forEach(c => c.classList.toggle("on", c.dataset.val === el.value));
+  if (el.tagName === "SELECT"){ render(); return; }
+  refreshLive();
 });
-document.addEventListener("change", (e) => { if (MODE === "mission" && (e.target.dataset.bind === "delai" || e.target.dataset.bind === "bonus.prixProduit")){ setPath(e.target.dataset.bind, e.target.value); save(); refreshNav(); } });
+document.addEventListener("change", (e) => { if (MODE === "mission" && e.target.id === "eng"){ S.engagement = e.target.checked; save(); refreshLive(); } });
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") $("#modal").hidden = true;
   if (e.key === "Enter" && e.target.id === "em"){ const b = $('[data-act="login"]'); if (b && !b.disabled) b.click(); }
-  if (e.ctrlKey && e.altKey && e.key.toLowerCase() === "d"){   // Ctrl+Alt+D : données envoyées (professeur)
+  if (e.ctrlKey && e.altKey && e.key.toLowerCase() === "d"){
     const m = $("#modal"); m.innerHTML = `<div class="box glass" role="dialog"><h3 style="font-family:var(--serif)">Données de la mission (format envoyé au Google Sheet)</h3><pre>${esc(JSON.stringify(S.lastPayload || payload("apercu"), null, 2))}</pre><button class="btn btn-main" data-act="close">Fermer</button></div>`; m.hidden = false; }
 });
 document.addEventListener("click", (e) => {
@@ -1073,19 +1287,19 @@ document.addEventListener("click", (e) => {
   if (b.dataset.act === "retry"){ seConnecter(S.eleve.email || SESSION.email); return; }
   if (b.dataset.act === "logout"){ save(); MODE = "login"; LOGIN = {email:"", busy:false, err:""}; S = fresh(); render(true); return; }
   if (b.dataset.act === "close"){ $("#modal").hidden = true; return; }
-  if (b.dataset.act === "print"){ $("#print-area").innerHTML = S.fournisseurs.map((id,i) => docHTML(id, i, true)).join(""); window.print(); return; }
-  if (b.dataset.tab !== undefined){ S.tab = +b.dataset.tab; render(); return; }
+  if (b.dataset.act === "brief"){ S.briefing = true; MODE = "mission"; save(); render(true); return; }
+  if (b.dataset.act === "print"){ $("#print-area").innerHTML = idcard() + patrimoine() + `<div style="display:flex;gap:10mm;align-items:center;margin-top:8mm"><div class="front-wrap" style="width:55%">${vitrine("print")}</div>${carteVisite()}</div>`; window.print(); return; }
   if (b.dataset.act === "resend"){ S.envoi = {mode:"wait"}; render(); envoyer("termine").then(confirmerEnvoi); return; }
   if (MODE !== "mission") return;
 
   if (b.dataset.pick === "type"){
     if (complet(b.dataset.id) && S.typeId !== b.dataset.id){ toast("<div>Cette entreprise est complète. Choisis-en une autre !</div>"); return; }
-    if (S.typeId !== b.dataset.id){ S.typeId = b.dataset.id; S.produits = []; S.fournisseurs = []; S.quantites = {}; S.bonusDone.produits = false; S.bonus.prixProduit = ""; }
+    if (S.typeId !== b.dataset.id){ S.typeId = b.dataset.id; S.symbole = null; }
     save(); render(); return;
   }
-  if (b.dataset.pick === "produit" || b.dataset.pick === "fournisseur"){
-    const arr = b.dataset.pick === "produit" ? S.produits : S.fournisseurs, id = b.dataset.id, i = arr.indexOf(id);
-    if (i >= 0) arr.splice(i,1); else if (arr.length < 3) arr.push(id); else { toast(`<div>Maximum 3 ${b.dataset.pick === "produit" ? "articles" : "fournisseurs"} : retire d'abord un choix.</div>`); return; }
+  if (b.dataset.raison){
+    const r = b.dataset.raison, i = S.raisons.indexOf(r);
+    if (i >= 0) S.raisons.splice(i,1); else if (S.raisons.length < 2) S.raisons.push(r); else { toast("<div>Deux raisons maximum : retire d'abord une raison.</div>"); return; }
     save(); render(); return;
   }
   if (b.dataset.set){ S[b.dataset.set] = b.dataset.set === "nbAssocies" ? +b.dataset.val : b.dataset.val; save(); render(); return; }
@@ -1095,10 +1309,8 @@ document.addEventListener("click", (e) => {
     case "rndnum": S.numero = String(1 + Math.floor(Math.random()*180)); save(); render(); break;
     case "send": envoyerFinal(b); break;
     case "bonus": {
-      const k = b.dataset.b;
-      const ok = k === "adresse" ? S.bonus.concurrent.trim().length >= 3 : (S.bonus.prixProduit && S.bonus.prixSite.trim().length >= 2 && /\d/.test(S.bonus.prixMontant));
-      if (!ok){ toast(`<div>${k === "adresse" ? "Écris le nom du magasin trouvé et sa commune." : "Complète l'article, le magasin et le prix trouvé."}</div>`); return; }
-      S.bonusDone[k] = true; S.xp += 50; toast(`<b>+50 XP</b><div>${BONUS_BADGES[k][0]} Badge débloqué : ${BONUS_BADGES[k][1]}</div>`); save(); render(); break; }
+      if (S.bonus.concurrent.trim().length < 3){ toast("<div>Écris le nom du magasin trouvé et sa commune.</div>"); return; }
+      S.bonusDone.adresse = true; S.xp += 50; toast(`<b>+50 XP</b><div>${BONUS_BADGES.adresse[0]} Badge débloqué : ${BONUS_BADGES.adresse[1]}</div>`); save(); render(); break; }
   }
 });
 
