@@ -406,6 +406,16 @@ aside{position:sticky; top:128px}
 @media (max-width:1000px){ .boutique-grid,.duo{grid-template-columns:1fr} .goals{grid-template-columns:1fr} }
 @media (max-width:640px){ .pcols{grid-template-columns:1fr} .pcol + .pcol{border-left:0; border-top:2px solid #E3E5EF} .decl li{flex-direction:column; gap:0} }
 
+
+/* ═══ Patrimoine présenté comme un bilan ═══ */
+.patri .pcol{display:flex; flex-direction:column}
+.patri .psub{font-size:12px; font-weight:700; color:#8A5BD0; margin:8px 0 2px; text-transform:none; letter-spacing:0}
+.patri .pl.vide span{color:#9A9DB4; font-style:italic}
+.patri .ptot2{margin-top:auto; padding-top:8px; display:flex; justify-content:space-between; gap:10px; font-weight:800; font-size:16px; border-top:2px solid #1D1F33}
+.patri .ptot2 span:last-child{font-family:var(--mono); white-space:nowrap}
+.patri .ptot{font-size:15px; gap:12px}
+.patri .ptot span:last-child{white-space:nowrap}
+
 #print-area{display:none}
 @media print{
   body{background:#fff}
@@ -883,11 +893,16 @@ function idcard(){ const t = type(), bce = S.ids.bce, st = strat();
 function patrimoine(){
   return `<div class="patri"><h4>Le patrimoine de ${esc(deno())} au départ</h4>
     <div class="pcols">
-      <div class="pcol"><h5>Ce que ton entreprise possède</h5><div class="pl"><span>💶 Argent en banque</span><span>${euro(enBanque())}</span></div></div>
-      <div class="pcol"><h5>D'où vient cet argent</h5><div class="pl"><span>Argent de départ (apport)</span><span>${euro(APPORT)}</span></div>
-        <div class="pl neg"><span>Déjà dépensé : frais de création</span><span>− ${euro(frais())}</span></div></div>
+      <div class="pcol"><h5>Ce que ton entreprise possède</h5>
+        <div class="psub">Le matériel (il reste dans l'entreprise)</div><div class="pl vide"><span>Pas encore de matériel</span><span>0 €</span></div>
+        <div class="psub">L'argent disponible</div><div class="pl"><span>💶 Argent en banque</span><span>${euro(enBanque())}</span></div>
+        <div class="ptot2"><span>Total</span><span>${euro(enBanque())}</span></div></div>
+      <div class="pcol"><h5>D'où vient cet argent</h5>
+        <div class="psub">Ce que les créateurs ont apporté</div><div class="pl"><span>Argent de départ (apport)</span><span>${euro(APPORT)}</span></div>
+        <div class="pl neg"><span>Déjà dépensé : frais de création</span><span>− ${euro(frais())}</span></div>
+        <div class="ptot2"><span>Total</span><span>${euro(enBanque())}</span></div></div>
     </div>
-    <div class="ptot"><span>Valeur de ton entreprise</span><span>${euro(enBanque())}</span></div></div>`;
+    <div class="ptot"><span>✔ Les deux totaux sont égaux : c'est la valeur de ton entreprise</span><span>${euro(enBanque())}</span></div></div>`;
 }
 
 // ======================================================================
