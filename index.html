@@ -762,6 +762,33 @@ function restaurer(etat){
   return s;
 }
 
+
+// ======================================================================
+//  SAUVEGARDES ESPACÉES : une classe entière ne doit pas saturer Google
+//  (au plus un envoi « en_cours » toutes les 30 s par élève, sauf étape importante ;
+//   l'état le plus récent part toujours, avec un petit décalage aléatoire)
+// ======================================================================
+let DERNIERE_SAUVEGARDE = 0, SAUVEGARDE_PREVUE = null, DERNIER_PING = 0;
+const PAUSE_SAUVEGARDE = 30000, PAUSE_PING = 60000;
+function sauvegarder(force){
+  const ecoule = Date.now() - DERNIERE_SAUVEGARDE;
+  if (force || ecoule >= PAUSE_SAUVEGARDE){
+    annulerSauvegardePrevue(); DERNIERE_SAUVEGARDE = Date.now(); envoyer("en_cours"); return;
+  }
+  if (!SAUVEGARDE_PREVUE) SAUVEGARDE_PREVUE = setTimeout(() => {
+    SAUVEGARDE_PREVUE = null;
+    if (MODE === "mission"){ DERNIERE_SAUVEGARDE = Date.now(); envoyer("en_cours"); }
+  }, PAUSE_SAUVEGARDE - ecoule + Math.random() * 8000);
+}
+function annulerSauvegardePrevue(){ clearTimeout(SAUVEGARDE_PREVUE); SAUVEGARDE_PREVUE = null; }
+const pingAutorise = () => { if (Date.now() - DERNIER_PING < PAUSE_PING) return false; DERNIER_PING = Date.now(); return true; };
+// Si l'élève ferme la page avec une sauvegarde en attente, on l'envoie quand même.
+window.addEventListener("pagehide", () => {
+  if (SAUVEGARDE_PREVUE && MODE === "mission" && navigator.sendBeacon){
+    try { navigator.sendBeacon(CONFIG.ENDPOINT_URL, new Blob([JSON.stringify(payload("en_cours"))], {type:"text/plain;charset=utf-8"})); } catch(e) {}
+  }
+});
+
 // ======================================================================
 //  RÉCOMPENSES
 // ======================================================================
@@ -1210,7 +1237,8 @@ async function verifierOuvert(){
   catch(e) { return true; }
 }
 async function controlerEnFond(key){
-  if (!(await verifierOuvert())){ if (MODE === "mission"){ MODE = "ferme"; save(); render(true); } return; }
+  if (pingAutorise() && !(await verifierOuvert())){
+    annulerSauvegardePrevue(); if (MODE === "mission"){ MODE = "ferme"; save(); render(true); } return; }
   if (key === "type"){
     await wait(3500);
     try {
@@ -1245,7 +1273,7 @@ function suivant(){
   if (st.mot) unlockMot(st.mot);
   S.step++;
   save(); render(true);
-  envoyer("en_cours");
+  sauvegarder(key === "type" || key === "reveal");   // choix de l'activité (places limitées) et numéros : tout de suite
   controlerEnFond(key);
 }
 async function envoyerFinal(btn){
@@ -1256,6 +1284,7 @@ async function envoyerFinal(btn){
       f.style.left = (r0.left + 20 + i*30) + "px"; f.style.top = (r0.top - 10) + "px"; f.style.animationDelay = (i*.2) + "s";
       document.body.appendChild(f); setTimeout(() => f.remove(), 2200); });
   award("lancement", 100, STEPS[9].badge);
+  annulerSauvegardePrevue();
   S.finishedAt = Date.now(); S.step = 10; S.envoi = {mode:"wait"};
   save();
   setTimeout(() => { render(true); confetti(); }, 1100);
