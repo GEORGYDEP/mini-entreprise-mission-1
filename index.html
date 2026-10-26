@@ -6,7 +6,7 @@
 <title>Mission 1 – Crée ton entreprise</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&family=Playfair+Display:ital,wght@1,700&family=Fredoka:wght@600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&family=Playfair+Display:ital,wght@1,700&family=Fredoka:wght@600&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg-deep:#0a0618; --bg-0:#120827; --bg-1:#1a1033;
@@ -443,6 +443,723 @@ aside{position:sticky; top:128px}
   *,*::before,*::after{animation:none !important; transition:none !important}
   .stamp{opacity:.9}
 }
+/* ═══ KIT RÉALISTE COMMUN v1 — début (identique dans les missions 1, 2 et 3 : ne pas modifier ici, modifier le kit) ═══ */
+:root{
+  --papier:#fffdf8; --papier-2:#f6f2e8; --encre:#1f2433; --encre-douce:#4a5068; --encre-bleue:#1d3b8f;
+  --ombre-papier:0 1px 1px rgba(0,0,0,.05), 0 2px 4px rgba(0,0,0,.07), 0 12px 24px rgba(0,0,0,.22), 0 32px 64px rgba(0,0,0,.30);
+  --ombre-objet:0 2px 3px rgba(0,0,0,.25), 0 18px 40px rgba(0,0,0,.45);
+  --doc:'Inter','Segoe UI',Arial,sans-serif; --main:'Caveat','Segoe Script','Bradley Hand',cursive;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45  0 0 0 0 .38  0 0 0 0 .3  0 0 0 .055 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  --encre-usee:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.4 1.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23t)'/%3E%3C/svg%3E");
+}
+
+/* ─── Ambiance : la ville le soir (remplace les taches de couleur) ─── */
+body{background:radial-gradient(130% 85% at 50% -10%, #241a52 0%, #120d2c 45%, #08070f 100%) fixed var(--bg-deep)}
+.mesh .blob{filter:blur(120px); opacity:.22}
+.mesh::after{content:""; position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(circle at 8% 78%, rgba(255,196,110,.30) 0 5px, transparent 34px),
+    radial-gradient(circle at 17% 64%, rgba(255,140,90,.22) 0 7px, transparent 46px),
+    radial-gradient(circle at 29% 83%, rgba(120,190,255,.20) 0 4px, transparent 30px),
+    radial-gradient(circle at 46% 72%, rgba(255,214,140,.22) 0 6px, transparent 40px),
+    radial-gradient(circle at 61% 86%, rgba(255,120,170,.18) 0 5px, transparent 36px),
+    radial-gradient(circle at 74% 69%, rgba(140,220,255,.18) 0 8px, transparent 52px),
+    radial-gradient(circle at 88% 80%, rgba(255,200,120,.26) 0 6px, transparent 42px),
+    radial-gradient(circle at 95% 62%, rgba(200,160,255,.16) 0 4px, transparent 28px);
+  filter:blur(1.5px); animation:kit-bokeh 26s ease-in-out infinite alternate}
+@keyframes kit-bokeh{to{transform:translate3d(-18px,-10px,0) scale(1.03); opacity:.85}}
+.kit-skyline{position:absolute; left:0; right:0; bottom:0; width:100%; height:34vh; min-height:180px; opacity:.9; pointer-events:none}
+
+/* ─── Papier : feuille réelle (grain, ombre portée, arrivée sur le bureau) ─── */
+.paper,.decl,.idcard,.patri,.offre,.resu,.mail,.receipt{background-color:var(--papier)}
+.paper,.decl{background-image:var(--grain); color:var(--encre); font-family:var(--doc); box-shadow:var(--ombre-papier); border-radius:3px; position:relative}
+.paper::after,.decl::after{content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit;
+  background:linear-gradient(180deg, rgba(255,255,255,.16), transparent 18%), linear-gradient(180deg, transparent 33%, rgba(0,0,0,.035) 33.2%, transparent 33.6%, transparent 66.4%, rgba(0,0,0,.035) 66.6%, transparent 67%)}
+.paper th{font-family:var(--doc)}
+.paper.agrafe::before,.agrafe::before{content:""; position:absolute; top:14px; left:18px; width:34px; height:6px; border-radius:3px; z-index:3;
+  background:linear-gradient(180deg,#e9ecf2,#9aa1b1 55%,#cfd4de); box-shadow:0 1px 1px rgba(0,0,0,.35); transform:rotate(-24deg)}
+.perfore{padding-left:56px !important}
+.perfore::before{content:""; position:absolute; left:16px; top:50%; width:14px; height:14px; margin-top:-70px; border-radius:50%; background:#2a2440;
+  box-shadow:0 126px 0 #2a2440, inset 0 1px 2px rgba(0,0,0,.6); z-index:3}
+.trombone::before{content:""; position:absolute; top:-14px; right:42px; width:16px; height:52px; z-index:3; border:3px solid #a9b0bf; border-radius:10px;
+  box-shadow:inset 0 0 0 3px transparent; border-bottom-color:#8d94a5; transform:rotate(8deg)}
+.bureau{position:relative; border-radius:24px; padding:30px; overflow:hidden;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.025) 0 2px, transparent 2px 7px),
+    repeating-linear-gradient(90deg, rgba(0,0,0,.06) 0 1px, transparent 1px 19px, rgba(0,0,0,.04) 19px 20px, transparent 20px 37px),
+    linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.25)),
+    linear-gradient(90deg,#5b3a22,#6d4528 18%,#5f3c23 37%,#77502f 58%,#64412a 79%,#573823);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.08), inset 0 -14px 34px rgba(0,0,0,.4), 0 24px 60px rgba(0,0,0,.45)}
+.bureau::before{content:""; position:absolute; inset:0; pointer-events:none; background:radial-gradient(70% 60% at 30% 0%, rgba(255,220,160,.20), transparent 70%)}
+.bureau > *{position:relative}
+
+/* ─── Signature manuscrite (stylo bleu) ─── */
+.signed,.paper .sig .signed,.decl .signed,.decl .sigl .signed{font-family:var(--main) !important; font-style:normal !important; font-weight:700 !important; color:var(--encre-bleue) !important;
+  font-size:36px !important; line-height:1 !important; display:inline-block; transform:rotate(-3deg); letter-spacing:.01em}
+.paper .sig input,.decl .sigl input,.sigrow input,input.signature{font-family:var(--main) !important; font-style:normal !important; font-weight:700 !important; color:var(--encre-bleue) !important;
+  font-size:34px !important; background:linear-gradient(180deg, transparent 62%, rgba(255,226,120,.38) 62%) !important; border:0 !important; border-bottom:2px dotted #8f96ad !important; border-radius:0 !important}
+.paper .sig input::placeholder,.decl .sigl input::placeholder,.sigrow input::placeholder{font-family:var(--doc); font-size:15px; font-weight:500; color:#9aa0b6}
+.ecrit{animation:kit-ecrire 1.1s steps(18,end) both}
+@keyframes kit-ecrire{from{clip-path:inset(-20% 100% -20% 0)} to{clip-path:inset(-20% -5% -20% 0)}}
+
+/* ─── Tampon encreur ─── */
+.tampon,.stamp,.stamp-paid{display:inline-block; color:var(--tampon,#c62828); border:4px double currentColor; border-radius:9px; padding:5px 14px 4px; background:transparent;
+  font:800 19px/1.1 var(--doc); letter-spacing:.16em; text-transform:uppercase; mix-blend-mode:multiply;
+  -webkit-mask-image:var(--encre-usee); mask-image:var(--encre-usee); -webkit-mask-size:220px; mask-size:220px}
+.tampon{transform:rotate(-9deg); opacity:.86}
+.tampon.vert,.stamp{--tampon:#1f7a45}
+.tampon.bleu{--tampon:#1d3b8f}
+.stamp-paid{--tampon:#c62828}
+.tampon.frappe,.stamp.show{animation:kit-tampon .5s cubic-bezier(.3,1.5,.5,1) both}
+.tampon.frappe{animation-delay:var(--delai,.15s)}
+.stamp.show{animation-delay:.9s}
+@keyframes kit-tampon{0%{opacity:0; transform:rotate(-9deg) scale(2.6)} 55%{opacity:.95; transform:rotate(-9deg) scale(.9)} 75%{transform:rotate(-9deg) scale(1.04)} 100%{opacity:.86; transform:rotate(-9deg) scale(1)}}
+.secoue{animation:kit-secoue .35s ease-out}
+@keyframes kit-secoue{20%{transform:translate(2px,1px)} 40%{transform:translate(-2px,-1px)} 60%{transform:translate(1px,-1px)} 80%{transform:translate(-1px,1px)}}
+
+/* ─── Coach Max (avatar dessiné) ─── */
+.coach .av{overflow:hidden; padding:0; background:linear-gradient(160deg,#ffd79e,#ff9f6b) !important; box-shadow:0 0 0 3px rgba(255,255,255,.18), 0 0 18px rgba(251,146,60,.4) !important}
+.coach .av svg{width:100%; height:100%; display:block}
+.coach .av.parle{animation:kit-parle 2.6s ease-in-out infinite}
+@keyframes kit-parle{0%,100%{transform:translateY(0)} 50%{transform:translateY(-2px)}}
+
+/* ─── Bouton son ─── */
+.kit-son{font:700 15px var(--ui); padding:7px 12px; border-radius:999px; color:#fff; background:var(--glass); border:1px solid var(--border); cursor:pointer; line-height:1}
+.kit-son:hover{background:var(--glass-hover)}
+.kit-son[aria-pressed="false"]{opacity:.6}
+
+/* ─── Smartphone ─── */
+.phone{width:296px; margin:0 auto; position:relative; border:0 !important; border-radius:50px !important; padding:58px 16px 30px !important;
+  background:radial-gradient(120% 70% at 20% 0%, #5b3fd1 0%, transparent 60%), radial-gradient(90% 60% at 100% 100%, #e2457f 0%, transparent 60%), linear-gradient(160deg,#1a1440,#0d0b1e) !important;
+  box-shadow:inset 0 0 0 11px #0b0c10, inset 0 0 0 13px #3d414b, inset 0 0 0 14px #101114, 0 32px 70px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.06) !important}
+.phone::before{content:""; position:absolute !important; top:22px; left:50%; width:96px !important; height:28px !important; margin:0 !important; transform:translateX(-50%); border-radius:20px !important; background:#050506 !important; box-shadow:inset -18px 0 0 -12px #1b2a44}
+.phone::after{content:""; position:absolute; right:-3px; top:140px; width:4px; height:64px; border-radius:2px; background:#2b2e36; box-shadow:-299px -40px 0 #2b2e36, -299px 30px 0 #2b2e36}
+.phone .tel-barre{position:absolute; top:24px; left:34px; right:34px; display:flex; justify-content:space-between; font:600 13px var(--doc); color:#fff}
+.phone .clock{font-family:var(--doc) !important; font-weight:300; font-size:64px !important; letter-spacing:-.02em; color:#fff; text-shadow:0 2px 12px rgba(0,0,0,.25); line-height:1.05}
+.phone .date{color:rgba(255,255,255,.85) !important; font:500 15px var(--doc) !important; margin-bottom:22px !important}
+.notif{background:rgba(246,246,250,.86) !important; -webkit-backdrop-filter:blur(18px); backdrop-filter:blur(18px); border-radius:22px !important; padding:11px 13px !important; color:#111 !important; font:400 14px/1.35 var(--doc) !important; box-shadow:0 10px 26px rgba(0,0,0,.28)}
+.notif .nh{display:flex; align-items:center; gap:7px; font-size:12.5px !important; color:#5d6070 !important; margin-bottom:3px}
+.notif .nh span:last-child{margin-left:auto}
+.notif b{display:block; font-weight:700; color:#111}
+.app-ico{display:inline-grid; place-items:center; width:20px; height:20px; border-radius:6px; font-size:12px; color:#fff; flex:none; background:linear-gradient(160deg,#5eb5ff,#1d6fe5)}
+.app-ico.sms{background:linear-gradient(160deg,#6fe67c,#20b037)}
+.app-ico.banque{background:linear-gradient(160deg,#ffd36b,#e8942a)}
+.app-ico.colis{background:linear-gradient(160deg,#c9a06a,#8b5e34)}
+
+/* ─── Terminal de paiement ─── */
+.terminal{width:268px !important; margin:0 auto; position:relative; border:0 !important; border-radius:28px 28px 44px 44px !important; padding:24px 20px 28px !important;
+  background:linear-gradient(165deg,#434957 0%,#262a33 45%,#15171d 100%) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18), inset 0 -6px 14px rgba(0,0,0,.55), 0 26px 60px rgba(0,0,0,.6) !important}
+.terminal::before{content:""; position:absolute; top:-7px; left:50%; width:126px; height:12px; transform:translateX(-50%); background:linear-gradient(#0a0b0e,#22252d); border-radius:8px 8px 3px 3px; box-shadow:inset 0 2px 3px rgba(0,0,0,.8)}
+.terminal::after{content:"TerrilPay"; position:absolute; bottom:9px; left:0; right:0; text-align:center; font:700 10px var(--doc); letter-spacing:.3em; color:rgba(255,255,255,.28)}
+.terminal .scr{background:linear-gradient(180deg,#0e2a3b,#071a25) !important; color:#c9f3ff !important; font-family:var(--doc) !important; border-radius:12px !important; min-height:132px !important;
+  box-shadow:inset 0 0 0 2px #04111a, inset 0 0 40px rgba(0,170,255,.16) !important; text-shadow:0 0 8px rgba(120,220,255,.45); position:relative}
+.terminal .scr .amt{font-family:var(--mono) !important; font-size:30px !important; color:#fff !important}
+.terminal .keys span{background:linear-gradient(#f0f2f6,#c7cbd4) !important; color:#1c1f27 !important; border-radius:10px !important; font-weight:800; box-shadow:0 2px 0 #7f8492, 0 4px 8px rgba(0,0,0,.45); transition:transform .08s}
+.terminal .keys span:nth-child(10){background:linear-gradient(#ff7a7a,#d22f2f) !important; color:#fff !important}
+.terminal .keys span:nth-child(12){background:linear-gradient(#5ff0b4,#0fa86b) !important; color:#fff !important}
+.terminal .keys span.appuie{transform:translateY(2px); box-shadow:0 0 0 #7f8492, 0 1px 3px rgba(0,0,0,.45)}
+.sans-contact{display:inline-block; width:26px; height:26px; vertical-align:middle;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c9f3ff' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M8.5 7.5a6 6 0 0 1 0 9M12 5a10 10 0 0 1 0 14M15.5 2.5a14 14 0 0 1 0 19M5 10a2.5 2.5 0 0 1 0 4'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* ─── Ticket de caisse (papier thermique) ─── */
+.receipt{background:linear-gradient(180deg,#f6f6f3,#ffffff 12%) !important; color:#222 !important; box-shadow:0 2px 3px rgba(0,0,0,.18), 0 16px 34px rgba(0,0,0,.4) !important; border-radius:2px 2px 0 0 !important}
+.receipt.imprime{animation:kit-ticket 1.4s steps(14,end) both}
+@keyframes kit-ticket{from{clip-path:inset(0 0 100% 0)} to{clip-path:inset(0 0 -12px 0)}}
+
+/* ─── Carte bancaire de l'entreprise (fictive) ─── */
+.carte-bq{width:min(330px,100%); aspect-ratio:85.6/54; perspective:1000px; cursor:pointer; margin:0 auto; display:block; background:none; border:0; padding:0; font:inherit; color:inherit}
+.carte-bq .cb-in{display:block; position:relative; width:100%; height:100%; transform-style:preserve-3d; transition:transform .8s cubic-bezier(.3,.8,.3,1)}
+.carte-bq.retournee .cb-in{transform:rotateY(180deg)}
+.carte-bq .cb-face{position:absolute; inset:0; border-radius:16px; overflow:hidden; backface-visibility:hidden; -webkit-backface-visibility:hidden; color:#fff; text-align:left;
+  background:radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--c1,#3e63dd) 85%, #fff) 0%, var(--c1,#3e63dd) 35%, var(--c2,#1e2a5a) 100%);
+  box-shadow:0 2px 4px rgba(0,0,0,.3), 0 22px 44px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.35)}
+.carte-bq .cb-face::after{content:""; position:absolute; inset:-40%; background:linear-gradient(115deg, transparent 40%, rgba(255,255,255,.28) 48%, rgba(255,255,255,0) 56%); animation:kit-reflet 5s ease-in-out infinite}
+@keyframes kit-reflet{0%,60%{transform:translateX(-35%)} 100%{transform:translateX(35%)}}
+.carte-bq .cb-verso{transform:rotateY(180deg)}
+.cb-banque{position:absolute; top:16px; left:20px; font:800 15px var(--doc); letter-spacing:.02em}
+.cb-banque small{display:block; font-weight:500; font-size:10px; opacity:.8; letter-spacing:.14em; text-transform:uppercase}
+.cb-puce{position:absolute; top:58px; left:22px; width:46px; height:35px; border-radius:7px;
+  background:linear-gradient(135deg,#f6dd8f,#c9a24a 55%,#f0d58a); box-shadow:inset 0 0 0 1px rgba(90,60,10,.45)}
+.cb-puce::before{content:""; position:absolute; inset:7px 10px; border:1px solid rgba(90,60,10,.5); border-radius:4px}
+.cb-sc{position:absolute; top:62px; left:80px; width:26px; height:26px; opacity:.9;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M8.5 7.5a6 6 0 0 1 0 9M12 5a10 10 0 0 1 0 14M15.5 2.5a14 14 0 0 1 0 19'/%3E%3C/svg%3E") center/contain no-repeat}
+.cb-num{position:absolute; left:22px; right:16px; top:108px; font:600 19px var(--mono); letter-spacing:.11em; text-shadow:0 1px 1px rgba(0,0,0,.45)}
+.cb-bas{position:absolute; left:22px; right:20px; bottom:16px; display:flex; justify-content:space-between; align-items:flex-end; gap:10px; font:600 13px var(--doc); text-transform:uppercase; letter-spacing:.06em}
+.cb-bas small{display:block; font-size:8.5px; opacity:.75; letter-spacing:.14em}
+.cb-bas .nm{max-width:190px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.cb-marque{position:absolute; top:16px; right:18px; font:800 italic 15px var(--doc); opacity:.92}
+.cb-piste{position:absolute; top:22px; left:0; right:0; height:40px; background:#14161c}
+.cb-verso .cb-sig{position:absolute; top:76px; left:20px; right:80px; height:32px; background:repeating-linear-gradient(135deg,#f3efe3 0 6px,#e8e2d0 6px 12px); border-radius:3px;
+  font:700 22px var(--main); color:var(--encre-bleue); padding:2px 10px; white-space:nowrap; overflow:hidden}
+.cb-verso .cb-iban{position:absolute; left:20px; right:16px; bottom:40px; font:600 13.5px var(--mono); letter-spacing:.05em}
+.cb-verso .cb-iban small{display:block; font:600 9px var(--doc); letter-spacing:.14em; opacity:.75}
+.cb-verso .cb-mention{position:absolute; left:20px; right:16px; bottom:14px; font:500 9.5px var(--doc); opacity:.75}
+.cb-astuce{text-align:center; font-size:13px; color:var(--dim); margin-top:8px}
+
+/* ─── Camion de livraison ─── */
+.kit-route{position:relative; height:170px; border-radius:var(--r); overflow:hidden; margin-bottom:18px; border:1px solid var(--border);
+  background:linear-gradient(180deg,#26335c 0%,#3b3f6b 48%,#4a4552 48.5%,#55505c 62%,#2d2c33 62.5%,#2a2930 100%)}
+.kit-route::before{content:""; position:absolute; left:0; right:0; bottom:30px; height:4px; background:repeating-linear-gradient(90deg,#f2f2f2 0 34px,transparent 34px 70px); opacity:.7}
+.kit-route .kit-boutique{position:absolute; right:18px; bottom:64px; font-size:58px; filter:drop-shadow(0 6px 10px rgba(0,0,0,.4))}
+.kit-route .kit-camion{position:absolute; bottom:16px; left:max(8px, calc(100% - 400px)); width:270px; animation:kit-camion 2.8s cubic-bezier(.15,.75,.25,1) both}
+@keyframes kit-camion{from{transform:translateX(-110vw)} to{transform:none}}
+.kit-camion .roue{transform-box:fill-box; transform-origin:center; animation:kit-roue .5s linear 5.6}
+@keyframes kit-roue{to{transform:rotate(360deg)}}
+.kit-camion .fumee{animation:kit-fumee 1.4s ease-out 4 both; transform-box:fill-box; transform-origin:center}
+@keyframes kit-fumee{from{opacity:.55; transform:translate(0,0) scale(.6)} to{opacity:0; transform:translate(-26px,-10px) scale(1.6)}}
+
+/* ─── Colis en carton ─── */
+.colis{position:relative; width:230px; height:168px; margin:30px auto 0; border-radius:6px; color:#3b2a18; font-family:var(--doc);
+  background:linear-gradient(180deg,#d9a86c,#c48f52 60%,#b27f45); box-shadow:inset 0 -8px 16px rgba(0,0,0,.18), 0 18px 34px rgba(0,0,0,.45)}
+.colis::before{content:""; position:absolute; left:50%; top:0; bottom:0; width:42px; transform:translateX(-50%); background:linear-gradient(90deg,rgba(255,255,255,.18),rgba(255,255,255,.32),rgba(255,255,255,.18)); border-left:1px solid rgba(0,0,0,.08); border-right:1px solid rgba(0,0,0,.08)}
+.colis .rabat{position:absolute; top:-22px; width:50%; height:26px; background:linear-gradient(180deg,#e3b77d,#cf9a5b); border:1px solid rgba(0,0,0,.08); transform-origin:bottom center; transition:transform .7s cubic-bezier(.3,1.4,.5,1)}
+.colis .rabat.g{left:0; border-radius:4px 0 0 0; transform:rotateX(0)}
+.colis .rabat.d{right:0; border-radius:0 4px 0 0}
+.colis.ouvert .rabat.g{transform:perspective(400px) rotateX(-150deg) rotateZ(-8deg)}
+.colis.ouvert .rabat.d{transform:perspective(400px) rotateX(-150deg) rotateZ(8deg)}
+.colis .etiquette{position:absolute; right:12px; bottom:12px; width:118px; background:#fff; border-radius:3px; padding:6px 7px; font-size:8.5px; line-height:1.25; box-shadow:0 1px 2px rgba(0,0,0,.25); transform:rotate(-2deg)}
+.colis .etiquette b{display:block; font-size:9.5px}
+.colis .etiquette svg{display:block; width:100%; height:22px; margin-top:4px}
+.colis .fragile{position:absolute; left:12px; top:14px; background:#d93636; color:#fff; font:800 10px var(--doc); letter-spacing:.12em; padding:3px 7px; border-radius:2px; transform:rotate(-6deg)}
+.colis .fleches{position:absolute; left:16px; bottom:14px; font:900 18px var(--doc); color:rgba(60,40,20,.55); letter-spacing:-2px}
+.colis .contenu{position:absolute; left:50%; top:10px; font-size:58px; transform:translate(-50%,40px) scale(.4); opacity:0; transition:transform .7s .35s cubic-bezier(.3,1.6,.5,1), opacity .4s .35s; filter:drop-shadow(0 8px 12px rgba(0,0,0,.35))}
+.colis.ouvert .contenu{transform:translate(-50%,-78px) scale(1); opacity:1}
+.colis .nb{position:absolute; left:12px; bottom:40px; font:800 12px var(--doc); color:rgba(60,40,20,.7)}
+
+/* ─── Animations à la première apparition seulement (pas à chaque clic) ─── */
+.kit-anim{animation:kit-pose .6s cubic-bezier(.2,.9,.25,1) both}
+.kit-anim.d1{animation-delay:.08s} .kit-anim.d2{animation-delay:.16s} .kit-anim.d3{animation-delay:.24s}
+@keyframes kit-pose{from{opacity:0; transform:translateY(24px) rotate(-1deg) scale(.985)} to{opacity:1; transform:none}}
+.kit-deja-vu,.kit-deja-vu *{animation:none !important}
+.kit-deja-vu .spin{animation:sp .8s linear infinite !important}   /* les roues de chargement tournent toujours */
+.kit-deja-vu .receipt.imprime,.kit-deja-vu.receipt.imprime{clip-path:none}
+
+/* ─── Boutons : un vrai bouton qu'on enfonce ─── */
+.btn:active:not(:disabled){transform:translateY(1px) scale(.99)}
+
+@media (max-width:640px){
+  .bureau{padding:16px; border-radius:16px}
+  .phone{width:270px}
+  .kit-route .kit-camion{width:220px}
+  .colis{transform:scale(.9)}
+}
+@media (prefers-reduced-motion:reduce){
+  .mesh::after,.kit-route .kit-camion,.carte-bq .cb-face::after{animation:none !important}
+  .kit-route .kit-camion{transform:none}
+}
+@media print{ .kit-skyline,.kit-son{display:none !important} .paper::after,.decl::after{display:none} }
+/* ═══ KIT RÉALISTE COMMUN v1 — fin ═══ */
+/* ═══ Design réaliste mission 1 ═══ */
+/* Styles propres à la mission 1, placés après le kit commun : objets du monde réel, documents, animations utiles.
+   Les animations d'arrivée utilisent data-anim (elles ne se rejouent pas quand l'écran est redessiné). */
+:root{
+  --brique:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='32'%3E%3Crect width='64' height='32' fill='%23c9b6a0'/%3E%3Cg fill='%23a4513a'%3E%3Crect x='1' y='1' width='30' height='14'/%3E%3Crect x='33' y='1' width='30' height='14' fill='%23963f2c'/%3E%3Crect x='-15' y='17' width='30' height='14' fill='%23ab5a41'/%3E%3Crect x='17' y='17' width='30' height='14'/%3E%3Crect x='49' y='17' width='30' height='14' fill='%23ab5a41'/%3E%3C/g%3E%3Cpath d='M1 1.5h30M33 1.5h30M17 17.5h30M0 17.5h15M49 17.5h15' stroke='%23fff' stroke-opacity='.18'/%3E%3C/svg%3E");
+  --punaise:radial-gradient(circle at 35% 30%, #ff9e9e 0, #e23b3b 38%, #9f1717 76%);
+  --ombre-doc:0 2px 3px rgba(0,0,0,.22), 0 16px 32px rgba(0,0,0,.4);
+}
+
+/* ─── Boutons qu'on enfonce, compteur d'XP qui saute ─── */
+.btn-main{box-shadow:0 4px 0 #8a1f6e, 0 12px 28px rgba(233,53,197,.35)}
+.btn-main:hover{box-shadow:0 4px 0 #8a1f6e, 0 16px 34px rgba(233,53,197,.5)}
+.btn-main:active:not(:disabled){transform:translateY(3px); box-shadow:0 1px 0 #8a1f6e, 0 6px 16px rgba(233,53,197,.35)}
+.btn-main:disabled{box-shadow:none}
+.xp-pill.gagne{animation:m1-xp .7s cubic-bezier(.3,1.6,.5,1)}
+@keyframes m1-xp{35%{transform:scale(1.22); box-shadow:0 0 0 3px rgba(251,191,36,.5), 0 0 26px rgba(251,191,36,.7)}}
+
+/* ─── Coach Max : une vraie bulle de discussion ─── */
+.coach.glass{background:none; border:0; -webkit-backdrop-filter:none; backdrop-filter:none; padding:0; border-radius:0; align-items:flex-end; gap:12px}
+.coach .av{width:56px; height:56px; font-size:28px}
+.coach p{position:relative; flex:1; min-width:0; padding:13px 18px; border-radius:20px 20px 20px 6px; background:#fffdf7; color:#23263a; font-size:17px; line-height:1.45;
+  box-shadow:0 1px 0 rgba(0,0,0,.05), 0 12px 28px rgba(0,0,0,.35)}
+.coach p::before{content:""; position:absolute; left:-8px; bottom:0; width:16px; height:16px; background:#fffdf7; clip-path:polygon(100% 0,100% 100%,0 100%)}
+.coach b{color:#b4530a}
+
+/* ─── Notifications (XP, badges, mots de pro) comme sur un téléphone ─── */
+.toast,.toast.word{position:relative; min-width:280px; padding:12px 18px 12px 60px; border:0; border-radius:18px; background:rgba(252,252,255,.97); color:#1f2433;
+  -webkit-backdrop-filter:none; backdrop-filter:none; box-shadow:0 2px 4px rgba(0,0,0,.2), 0 16px 34px rgba(0,0,0,.45)}
+.toast::before{content:"💬"; position:absolute; left:14px; top:12px; width:34px; height:34px; border-radius:10px; display:grid; place-items:center; font-size:18px;
+  background:linear-gradient(160deg,#a9bcff,#5b6ee8); box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
+.toast.xp::before{content:"⭐"; background:linear-gradient(160deg,#ffe08a,#f0a020)}
+.toast.word::before{content:"📘"; background:linear-gradient(160deg,#cdbfff,#7c5ce0)}
+.toast b{font-family:var(--mono); font-size:20px; color:#b45309}
+.toast.word b{font-family:var(--serif); color:#5b3bc4}
+.toast div{color:#2a2d40; font-size:15px}
+.toast .wd{color:#4a5068}
+#toasts .toast{max-width:calc(100vw - 44px)}
+
+/* ─── Connexion : la rue, le local à louer, la fiche d'accueil sur un porte-bloc ─── */
+.accueil-rue{display:grid; grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr); gap:30px; align-items:center; max-width:1080px; margin:40px auto 0; text-align:left}
+.rue-local{position:relative; margin:0; border-radius:22px; overflow:hidden; box-shadow:0 30px 70px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.08)}
+.rue-local svg{display:block; width:100%; height:auto}
+.postit{position:absolute; right:16px; bottom:18px; max-width:min(230px,52%); margin:0; padding:12px 14px 14px; border-radius:2px 2px 16px 2px;
+  background:linear-gradient(180deg,#fff7a8,#ffe45c); color:#3b3000; font:700 22px/1.08 var(--main); text-align:left; transform:rotate(3deg);
+  box-shadow:0 2px 2px rgba(0,0,0,.15), 0 12px 20px rgba(0,0,0,.35)}
+.postit::before{content:""; position:absolute; top:-9px; left:50%; width:62px; height:18px; margin-left:-31px; background:rgba(255,255,255,.55); transform:rotate(-4deg); box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.login.fiche-accueil{max-width:none; margin:0; position:relative; padding:30px 16px 16px; border-radius:18px;
+  background:linear-gradient(160deg,#a8743f,#7d512c 70%,#6b4424); box-shadow:inset 0 1px 0 rgba(255,255,255,.25), inset 0 -4px 10px rgba(0,0,0,.3), 0 26px 50px rgba(0,0,0,.5)}
+.fiche-accueil::before{content:""; position:absolute; z-index:2; top:-14px; left:50%; width:130px; height:40px; margin-left:-65px; border-radius:12px 12px 8px 8px;
+  background:linear-gradient(180deg,#f4f6fa,#aab1be 52%,#dfe3ea); box-shadow:0 4px 8px rgba(0,0,0,.45), inset 0 -3px 0 rgba(0,0,0,.18)}
+.fiche-accueil::after{content:""; position:absolute; z-index:3; top:-4px; left:50%; width:46px; height:12px; margin-left:-23px; border-radius:6px; background:#7c8494; box-shadow:inset 0 2px 3px rgba(0,0,0,.5)}
+.fa-papier{position:relative; padding:30px 24px 20px; border-radius:3px; color:var(--encre); font-family:var(--doc); background-color:var(--papier); background-image:var(--grain); box-shadow:0 1px 2px rgba(0,0,0,.25)}
+.fa-tete{display:flex; align-items:center; gap:12px; padding-bottom:12px; margin-bottom:16px; border-bottom:3px double #1f2433}
+.fa-logo{width:42px; height:42px; flex:none; border-radius:50%; display:grid; place-items:center; color:#fff; font:700 16px var(--serif); background:linear-gradient(135deg,var(--pink),var(--magenta) 40%,var(--violet))}
+.fa-tete b{display:block; font:800 19px var(--doc); text-transform:uppercase; letter-spacing:.06em; color:#1f2433}
+.fa-tete small{display:block; font-size:15px; color:#5b5f73}
+.fiche-accueil label.f{color:#1f2433}
+.fiche-accueil .inp{background:#fff; color:#1f2433; border:2px solid #cfc8b8; border-radius:10px; font-family:var(--doc)}
+.fiche-accueil .inp:focus{border-color:#1d3b8f; box-shadow:0 0 0 4px rgba(29,59,143,.18)}
+.fiche-accueil .inp::placeholder{color:#8f8a7c}
+.fiche-accueil .help{color:#5b5f73}
+.fiche-accueil .help[style]{color:#8a5a00 !important}
+.fiche-accueil .err{color:#b42318; font-weight:600}
+.fiche-accueil .btn-main:disabled{background:#e6e1d5; color:#6f6a5e; box-shadow:inset 0 0 0 1px #cfc8b8}
+.fa-tampon{font-size:15px; letter-spacing:.12em; padding:4px 10px 3px}
+.road li.glass{background:#fffaf0; color:#2a2d40; border:0; -webkit-backdrop-filter:none; backdrop-filter:none; border-radius:6px; transform:rotate(var(--r,0deg));
+  box-shadow:0 2px 0 rgba(0,0,0,.1), 0 12px 24px rgba(0,0,0,.35)}
+.road li:nth-child(odd){--r:-.6deg} .road li:nth-child(even){--r:.5deg}
+.road li .n{background:#ece6d6; color:#4a4e68}
+.road li .t small{color:#6b6f88}
+.road li.now{box-shadow:0 0 0 3px #fbbf24, 0 14px 30px rgba(251,191,36,.28)}
+.road li:not(.now){opacity:.86}
+
+/* ─── Briefing : l'ordre de mission épinglé sur le bureau ─── */
+.brief-bureau{margin:22px 0}
+.brief-bureau .goals{margin:0; gap:22px}
+.goal.glass{position:relative; padding-top:22px; border:0; border-radius:3px; -webkit-backdrop-filter:none; backdrop-filter:none; color:#2a2d40;
+  background-color:#fffaf0; background-image:var(--grain); transform:rotate(var(--r,0deg)); box-shadow:0 2px 3px rgba(0,0,0,.2), 0 14px 26px rgba(0,0,0,.35)}
+.goal.glass::before{content:""; position:absolute; top:-8px; left:50%; width:20px; height:20px; margin-left:-10px; border-radius:50%; background:var(--punaise); box-shadow:0 4px 5px rgba(0,0,0,.45)}
+.goal b{color:#1f2433}
+.goal p{color:#4a5068}
+.warn{position:relative; border:0; border-radius:4px; background:#fff5c9; color:#3a3000; box-shadow:0 12px 26px rgba(0,0,0,.35)}
+.warn b{color:#b42318}
+.warn::after{content:"Important"; position:absolute; right:14px; top:-15px; padding:2px 10px; border:3px double currentColor; border-radius:8px; color:#c62828; background:#fff5c9;
+  font:800 14px var(--doc); letter-spacing:.14em; text-transform:uppercase; transform:rotate(4deg); -webkit-mask-image:var(--encre-usee); mask-image:var(--encre-usee); -webkit-mask-size:220px; mask-size:220px}
+
+/* ─── Étape 1 : les activités comme des fiches punaisées sur un panneau en liège ─── */
+.sector-h .chip-label{background:#f3e7c9; color:#4a3a1a; border:0; border-radius:2px; font-weight:700; transform:rotate(-1.2deg); box-shadow:0 2px 4px rgba(0,0,0,.3)}
+.sector-h .chip-label .led{background:#6b8e23; box-shadow:none}
+.liege{position:relative; padding:32px 26px 26px; border-radius:16px; background-color:#b98955;
+  background-image:radial-gradient(rgba(70,40,15,.28) 1px, transparent 1.6px), radial-gradient(rgba(255,236,200,.22) 1px, transparent 1.8px), radial-gradient(rgba(110,66,30,.3) 1.3px, transparent 2.1px);
+  background-size:9px 9px, 13px 13px, 17px 17px; background-position:0 0, 4px 6px, 9px 3px;
+  box-shadow:inset 0 0 0 9px #6f4b2c, inset 0 0 0 11px #503420, inset 0 6px 20px rgba(0,0,0,.4), 0 18px 40px rgba(0,0,0,.35)}
+.liege.grid{gap:28px 22px; overflow:hidden}
+.seg:nth-child(n+6) span{left:auto; right:0}   /* l'étiquette des dernières étapes ne déborde plus de l'écran */
+.choice.fiche-act{padding:14px 14px 16px; border:0; border-radius:3px; -webkit-backdrop-filter:none; backdrop-filter:none; color:#2a2d40;
+  background-color:#fffdf7; background-image:var(--grain); transform:rotate(var(--rot,0deg)); box-shadow:0 2px 3px rgba(0,0,0,.25), 0 14px 26px rgba(0,0,0,.35)}
+.choice.fiche-act::before{content:""; inset:auto; top:-8px; left:50%; width:20px; height:20px; margin-left:-10px; padding:0; border-radius:50%; background:var(--punaise);
+  -webkit-mask:none; mask:none; opacity:1; z-index:3; box-shadow:0 4px 5px rgba(0,0,0,.45); transition:none}
+.choice.fiche-act:hover{transform:rotate(0deg) translateY(-5px); background-color:#fff}
+.choice.fiche-act:hover::before{opacity:1}
+.choice.fiche-act.on{transform:rotate(0deg) translateY(-6px); background-color:#fff; box-shadow:0 0 0 4px var(--g1), 0 24px 44px rgba(0,0,0,.45)}
+.choice.fiche-act.on::after{display:none}
+.fiche-act .fa-photo{position:relative; display:grid; place-items:center; height:122px; margin-bottom:12px; border-radius:2px; overflow:hidden; box-shadow:inset 0 0 0 1px rgba(0,0,0,.1)}
+.sec-primaire .fa-photo{background:radial-gradient(circle at 84% 24%, #fff6c2 0 14px, rgba(255,246,194,0) 15px), repeating-linear-gradient(172deg, transparent 0 9px, rgba(60,110,30,.22) 9px 11px) 0 64px/100% 60px no-repeat, linear-gradient(180deg,#bfe3ff 0 52%,#8cc152 52%,#6ea83a)}
+.sec-secondaire .fa-photo{background:radial-gradient(rgba(40,55,75,.3) 1.4px, transparent 1.9px) 0 0/14px 14px, linear-gradient(180deg,#e2e8ef,#b5c1cf)}
+.sec-tertiaire .fa-photo{background:repeating-linear-gradient(180deg, transparent 0 38px, rgba(120,40,80,.22) 38px 41px), linear-gradient(180deg,#ffe4f0,#f6b8d3)}
+.fiche-act .fa-photo .ico{width:auto; height:auto; border:0; border-radius:0; background:none; box-shadow:none; font-size:66px; line-height:1; text-shadow:0 12px 10px rgba(0,0,0,.28)}
+.choice.fiche-act:hover .ico{transform:scale(1.08) rotate(-5deg)}
+.fiche-act h4{color:#1f2433; margin:4px 0 6px; padding-right:0}
+.fiche-act p{color:#4a5068}
+.fiche-act .meta{margin-top:12px; padding-top:10px; border-top:1px dashed #d8d1bf; color:#2a2d40}
+.fiche-act .meta b{color:var(--g-encre)}
+.fiche-act.sec-primaire{--g-encre:#2e7d32} .fiche-act.sec-secondaire{--g-encre:#0b6782} .fiche-act.sec-tertiaire{--g-encre:#a3205f}
+.fiche-act .mi{display:inline-block; width:24px}
+.fiche-act .fa-tampon{position:absolute; top:24px; right:14px; z-index:3; font-size:21px; --tampon:#11592f; mix-blend-mode:normal}
+.choice.fiche-act.full{opacity:1; cursor:not-allowed}
+.choice.fiche-act.full:hover{transform:rotate(var(--rot,0deg))}
+.fiche-act.full .ico,.fiche-act.full h4,.fiche-act.full p,.fiche-act.full .meta{filter:grayscale(1); opacity:.5}
+.fiche-act .bande-complet{position:absolute; z-index:2; top:30px; left:-46px; width:210px; padding:6px 0; transform:rotate(-30deg); text-align:center; background:#d62828; color:#fff;
+  font:800 15px var(--doc); letter-spacing:.24em; text-transform:uppercase; box-shadow:0 4px 10px rgba(0,0,0,.35)}
+.fiche-act .tag.full{background:#fde8ea; color:#9b1c2c; border-color:#f3a8b1}
+
+/* ─── Étape 2 : les stratégies comme de vraies étiquettes de prix en carton ─── */
+.grid.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tringle{position:relative; z-index:1; height:12px; margin:8px 2px -4px; border-radius:6px; background:linear-gradient(180deg,#f1f3f7,#9aa1ae 55%,#cfd4dd); box-shadow:0 5px 10px rgba(0,0,0,.4)}
+.etiquettes{gap:26px; align-items:start}
+.choice.etiq-prix{padding:40px 0 0; border:0; border-radius:0; background:none; -webkit-backdrop-filter:none; backdrop-filter:none; filter:drop-shadow(0 14px 14px rgba(0,0,0,.4));
+  transform-origin:50% 0; transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.choice.etiq-prix::before{display:none}
+.choice.etiq-prix:hover{background:none; transform:rotate(-1.5deg)}
+.choice.etiq-prix.on{background:none; box-shadow:none}
+.choice.etiq-prix.on::after{display:none}
+.etiq-prix.on[data-anim]{animation:m1-balance 1.3s ease-out both}
+@keyframes m1-balance{0%{transform:rotate(0)} 18%{transform:rotate(5deg)} 40%{transform:rotate(-3.5deg)} 62%{transform:rotate(2deg)} 82%{transform:rotate(-.8deg)} 100%{transform:rotate(0)}}
+.ep-ficelle{position:absolute; z-index:2; top:-6px; left:50%; width:3px; height:68px; margin-left:-1.5px; border-radius:2px; background:repeating-linear-gradient(160deg,#efe4cf 0 3px,#b8a37d 3px 6px)}
+.ep-carton{display:block; position:relative; padding:48px 18px 20px; border-radius:3px 3px 12px 12px; color:#3b2a18; text-align:left;
+  background-color:#d6b27c; background-image:var(--grain), linear-gradient(180deg,#dfbf8b,#c99f63); clip-path:polygon(18% 0,82% 0,100% 8%,100% 100%,0 100%,0 8%)}
+.etiq-prix.on .ep-carton{background-image:var(--grain), linear-gradient(180deg,#eed4a2,#d8b073)}
+.ep-trou{position:absolute; top:16px; left:50%; width:16px; height:16px; margin-left:-8px; border-radius:50%; background:#2a1e3a; box-shadow:0 0 0 4px #c39860, 0 0 0 5px rgba(60,40,20,.35), inset 0 2px 3px rgba(0,0,0,.6)}
+.ep-prix{position:absolute; top:12px; right:18px; font:800 24px var(--doc); color:rgba(59,42,24,.5); letter-spacing:-.02em}
+.etiq-prix .big{font-size:42px; line-height:1}
+.etiq-prix h4{color:#2a1c0e; padding-right:0; margin:8px 0 6px}
+.etiq-prix p{color:#4d3920}
+.etiq-prix .ex{background:rgba(255,255,255,.42); color:#2a1c0e; border:1px dashed rgba(59,42,24,.35)}
+.etiq-prix .ex b{color:#7a3b00}
+.etiq-prix .gauge i{background:rgba(59,42,24,.14); box-shadow:inset 0 0 0 1px rgba(59,42,24,.3)}
+.etiq-prix .gauge i.on{background:#3b2a18; box-shadow:none}
+.etiq-prix .glab{color:#5a4630}
+.ep-tampon{position:absolute; right:12px; top:52px; font-size:17px}
+.carnet-raisons.glass{position:relative; padding:22px 22px 22px 70px; border:0; border-radius:4px; -webkit-backdrop-filter:none; backdrop-filter:none; color:#2a2d40;
+  background-color:#fffdf5; background-image:linear-gradient(90deg,transparent 52px,#f3a5a5 52px,#f3a5a5 54px,transparent 54px), repeating-linear-gradient(180deg,transparent 0 35px,#cfe0f3 35px 36px);
+  box-shadow:0 2px 3px rgba(0,0,0,.2), 0 14px 30px rgba(0,0,0,.35)}
+.carnet-raisons label.f{color:#1f2433}
+.carnet-raisons .chip{position:relative; padding:8px 14px 8px 42px; border:2px solid #d3d9e6; border-radius:10px; background:#fff; color:#2a2d40}
+.carnet-raisons .chip::before{content:""; position:absolute; left:12px; top:50%; width:18px; height:18px; margin-top:-9px; border:2px solid #4a5068; border-radius:3px; background:#fff}
+.carnet-raisons .chip:hover{background:#f6f8fc}
+.carnet-raisons .chip.on{background:#eef4ff; border-color:#1d3b8f; color:#1d3b8f; font-weight:600}
+.carnet-raisons .chip.on::after{content:"✓"; position:absolute; left:12px; top:50%; transform:translateY(-62%) rotate(-6deg); font:700 30px/1 var(--main); color:#1d3b8f}
+
+/* ─── Étapes 3 et 4 : l'enseigne qui s'allume, sur un vrai mur ─── */
+.logo-prev.enseigne-live{display:block; position:relative; margin-bottom:24px; padding:54px 24px 26px; border-radius:16px; overflow:hidden; color:inherit;
+  background-color:#9b4a35; background-image:linear-gradient(180deg, rgba(0,0,0,.38), rgba(0,0,0,.05) 38%, rgba(0,0,0,.42)), var(--brique); background-size:auto, 64px 32px;
+  box-shadow:inset 0 0 50px rgba(0,0,0,.45), 0 16px 34px rgba(0,0,0,.35)}
+.el-panneau{position:relative; z-index:1; display:flex; align-items:center; gap:18px; padding:16px 24px; border-radius:6px; background:var(--b); color:var(--t);
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.3), inset 0 -4px 0 rgba(0,0,0,.25), 0 0 0 5px rgba(20,16,30,.55), 0 16px 26px rgba(0,0,0,.5); filter:brightness(.6) saturate(.7)}
+.enseigne-live.allumee .el-panneau{filter:none}
+.el-logo{width:64px; height:64px; flex:none; border-radius:50%; display:grid; place-items:center; font-size:32px; line-height:1; box-shadow:0 0 0 4px rgba(0,0,0,.18), 0 6px 14px rgba(0,0,0,.3)}
+.el-textes{min-width:0; flex:1}
+.enseigne-live .lg-name{font-size:clamp(26px,3.6vw,40px); line-height:1.05; color:var(--t); word-break:break-word}
+.enseigne-live .lg-sl{margin-top:4px; font-size:16px; color:var(--t); opacity:.9}
+.el-spots{position:absolute; z-index:2; top:4px; left:14%; right:14%; display:flex; justify-content:space-between; pointer-events:none}
+.el-spots i{position:relative; display:block; width:28px; height:34px}
+.el-spots i::before{content:""; position:absolute; left:12px; top:0; width:4px; height:22px; border-radius:2px; background:linear-gradient(90deg,#6b5320,#d9b45a,#6b5320)}
+.el-spots i::after{content:""; position:absolute; left:2px; top:20px; width:24px; height:12px; border-radius:3px 3px 8px 8px; background:linear-gradient(180deg,#e6c66e,#8a6a22); box-shadow:0 2px 3px rgba(0,0,0,.4)}
+.el-spots b{position:absolute; left:50%; top:30px; width:200px; height:120px; margin-left:-100px; background:linear-gradient(180deg,rgba(255,246,214,.6),rgba(255,246,214,0)); clip-path:polygon(45% 0,55% 0,100% 100%,0 100%); opacity:0}
+.enseigne-live.allumee .el-spots b{opacity:1}
+.el-rampe{position:absolute; z-index:2; top:30px; left:12%; right:12%; height:7px; border-radius:4px; background:linear-gradient(180deg,#eef1f5,#8f97a3); box-shadow:0 3px 6px rgba(0,0,0,.4); pointer-events:none}
+.el-rampe b{position:absolute; left:-4%; right:-4%; top:7px; height:70px; background:radial-gradient(58% 100% at 50% 0%, rgba(255,250,230,.6), rgba(255,250,230,.18) 55%, rgba(255,250,230,0) 80%); opacity:0}
+.enseigne-live.allumee .el-rampe b{opacity:1}
+.ens-neon .el-panneau{--neon:color-mix(in srgb, var(--b) 78%, #fff); background:#15151c; filter:none}
+.ens-neon .lg-name,.ens-neon .lg-sl{color:#a9aab6}
+.ens-neon.allumee .lg-name{color:#fff7fb; text-shadow:0 0 3px #fff, 0 0 9px var(--neon), 0 0 20px var(--neon), 0 0 38px var(--neon)}
+.ens-neon.allumee .lg-sl{color:#fff; text-shadow:0 0 6px var(--neon)}
+.ens-neon.allumee .el-panneau{box-shadow:inset 0 2px 0 rgba(255,255,255,.12), 0 0 0 5px rgba(20,16,30,.55), 0 0 46px color-mix(in srgb, var(--neon) 40%, transparent), 0 16px 26px rgba(0,0,0,.5)}
+.ens-neon.allumee .el-logo{box-shadow:0 0 0 3px var(--neon), 0 0 16px var(--neon)}
+.ens-fun .el-panneau{border-radius:22px}
+.enseigne-live.allumee[data-anim] .el-panneau{animation:m1-allumage .9s linear both}
+.ens-neon.allumee[data-anim] .el-panneau{animation:none}
+.ens-neon.allumee[data-anim] .lg-name{animation:m1-neon .9s linear both}
+@keyframes m1-allumage{0%,18%,32%{filter:brightness(.6) saturate(.7)} 10%,25%,45%,100%{filter:none}}
+@keyframes m1-neon{0%,18%,32%{opacity:.35} 10%,25%,45%,100%{opacity:1}}
+
+/* ─── Étape 4 : le logo imprimé sur de vrais objets ─── */
+.maquettes{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:0 0 26px; padding:22px 14px 12px; border-radius:16px;
+  background:radial-gradient(130% 100% at 50% 0%, #ffffff 0%, #ebe8f2 62%, #d8d3e2 100%); box-shadow:inset 0 -14px 30px rgba(0,0,0,.07), 0 14px 30px rgba(0,0,0,.3)}
+.mq{margin:0; text-align:center}
+.mq svg{display:block; width:100%; max-width:190px; height:auto; margin:0 auto; filter:drop-shadow(0 12px 10px rgba(40,30,70,.28))}
+.mq figcaption{margin-top:6px; color:#4a4e68; font-size:15px; font-weight:600}
+.sw{box-shadow:inset 0 -7px 12px rgba(0,0,0,.28), inset 0 5px 8px rgba(255,255,255,.35), 0 6px 12px rgba(0,0,0,.35)}
+.sw::after{content:""; position:absolute; top:9px; left:13px; width:20px; height:11px; border-radius:50%; background:radial-gradient(closest-side, rgba(255,255,255,.75), rgba(255,255,255,0)); transform:rotate(-25deg); pointer-events:none}
+.sw.small::after{top:6px; left:9px; width:15px; height:8px}
+.sw.on{box-shadow:0 0 0 4px var(--bg-deep) inset, 0 0 0 3px rgba(255,255,255,.35), 0 0 24px rgba(255,255,255,.4)}
+.sym{border:0; border-radius:50%; background:#fffdf7; box-shadow:0 4px 0 #d6cfbf, 0 10px 16px rgba(0,0,0,.35)}
+.sym:hover{transform:translateY(-3px) rotate(-4deg)}
+.sym.on{background:#fff; box-shadow:0 0 0 4px #fbbf24, 0 4px 0 #d6cfbf, 0 12px 22px rgba(251,191,36,.35)}
+.choice.stylebtn{border:0; border-radius:10px; background:var(--brand); color:var(--on-brand); box-shadow:inset 0 2px 0 rgba(255,255,255,.25), inset 0 -4px 0 rgba(0,0,0,.2), 0 10px 22px rgba(0,0,0,.35)}
+.choice.stylebtn small{color:var(--on-brand); opacity:.85}
+.choice.stylebtn:hover{background:var(--brand)}
+.choice.stylebtn.on{background:var(--brand); box-shadow:0 0 0 4px #fff, 0 0 0 7px rgba(0,0,0,.3), 0 14px 30px rgba(0,0,0,.4)}
+
+/* ─── Étape 5 : la boutique (échantillons de matériaux, bascule jour / nuit) ─── */
+.vg-scene{display:block}
+.vg-scene[data-anim]{animation:m1-fondu .6s ease both}
+@keyframes m1-fondu{from{opacity:.3}}
+.vue-bascule{position:absolute; top:12px; right:12px; z-index:2; display:inline-flex; gap:2px; padding:4px; border-radius:999px; border:1px solid rgba(255,255,255,.3);
+  background:rgba(12,10,28,.74); color:#fff; cursor:pointer; box-shadow:0 6px 16px rgba(0,0,0,.4)}
+.vue-bascule span{padding:6px 12px; border-radius:999px; font-size:15px; font-weight:600; color:rgba(255,255,255,.8)}
+.vue-bascule[aria-pressed="false"] .vb-jour,.vue-bascule[aria-pressed="true"] .vb-nuit{background:#fff; color:#1a1033}
+.opt .ech{width:30px; height:30px; flex:none; border-radius:7px; box-shadow:inset 0 0 0 1px rgba(0,0,0,.3), 0 2px 5px rgba(0,0,0,.35)}
+.ech-brique{background:#a4513a var(--brique) 0 0/32px 16px}
+.ech-bois{background:repeating-linear-gradient(180deg,#9a6535 0 6px,#5e3b1d 6px 7px)}
+.ech-pierre{background:linear-gradient(90deg,transparent 14px,#a99d88 14px 15px,transparent 15px) 0 0/30px 15px, linear-gradient(180deg,#ddd3c2 0 14px,#a99d88 14px 15px) 0 0/100% 15px}
+.ech-moderne{background:linear-gradient(90deg,#3f444d 0 14px,#24272d 14px 15px,#393e46 15px)}
+.ech-raye{background:repeating-linear-gradient(90deg,var(--brand) 0 6px,#f6f1e6 6px 12px)}
+.ech-uni{background:var(--brand)}
+.ech-sans{background:linear-gradient(135deg,transparent 44%,#e5484d 44% 56%,transparent 56%),#e9e4d6}
+.opt .dot{width:22px; height:22px; border:0; box-shadow:0 0 0 2px rgba(255,255,255,.55), 0 0 12px rgba(255,236,190,.7)}
+.chip.ardoise{padding:8px 16px; border:3px solid #8a5a2b; border-radius:6px; background:#26342e; color:#f6f2e6; font:700 21px/1.1 var(--main)}
+.chip.ardoise:hover{background:#2c3d36}
+.chip.ardoise.on{background:#26342e; border-color:#fbbf24; box-shadow:0 0 0 3px rgba(251,191,36,.35)}
+
+/* ─── Étape 6 : plaques de rue émaillées, carte de la région, défi dans un dossier ─── */
+.adresse-scene{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:18px; margin-bottom:18px}
+.as-mur{position:relative; min-height:210px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; padding:24px 18px; border-radius:18px; overflow:hidden;
+  background-color:#9b4a35; background-image:linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,0) 40%, rgba(0,0,0,.35)), var(--brique); background-size:auto, 64px 32px;
+  box-shadow:inset 0 0 50px rgba(0,0,0,.4), 0 16px 34px rgba(0,0,0,.35)}
+.plaque-rue,.plaque-num{position:relative; color:#fff; text-align:center; background:radial-gradient(130% 160% at 28% 0%, #4a7fe0 0%, #1f4f9e 46%, #173d7d 100%);
+  box-shadow:inset 0 0 0 3px #173d7d, inset 0 0 0 6px #f4f6fb, inset 0 0 0 7px rgba(0,0,0,.25), 0 4px 0 #0e2552, 0 14px 22px rgba(0,0,0,.45)}
+.plaque-rue{min-width:min(340px,100%); max-width:100%; padding:12px 34px 14px; border-radius:12px}
+.plaque-rue small{display:block; font:700 13px var(--doc); letter-spacing:.24em; text-transform:uppercase; opacity:.88}
+.plaque-rue b{display:block; font:800 clamp(22px,2.6vw,30px)/1.15 var(--doc)}
+.plaque-rue::before,.plaque-rue::after{content:""; position:absolute; top:50%; width:9px; height:9px; margin-top:-4.5px; border-radius:50%; background:radial-gradient(circle at 35% 35%, #fff, #a3abb9 55%, #5b6474)}
+.plaque-rue::before{left:12px} .plaque-rue::after{right:12px}
+.plaque-rue.vide b,.plaque-num.vide .pn-txt{opacity:.6; font-style:italic}
+.plaque-num{min-width:88px; padding:8px 20px; border-radius:10px; font:800 34px/1.2 var(--doc)}
+.carte-region{border-radius:18px; overflow:hidden; background:#f1e9d6; box-shadow:0 16px 34px rgba(0,0,0,.35)}
+.carte-region svg{display:block; width:100%; height:auto}
+.pin-chute{animation:m1-pin .75s cubic-bezier(.3,1.45,.5,1) both}
+@keyframes m1-pin{from{transform:translateY(-60px); opacity:0} 50%{opacity:1} to{transform:none; opacity:1}}
+.bonus{position:relative; margin-top:40px; padding:22px 22px 20px; border:0; border-radius:4px 16px 16px 16px; color:#3b2a18;
+  background-color:#dcb97f; background-image:var(--grain), linear-gradient(180deg,#e4c48e,#d2ab6c); box-shadow:0 2px 3px rgba(0,0,0,.2), 0 16px 30px rgba(0,0,0,.35)}
+.bonus::before{content:"Défi bonus"; position:absolute; left:0; top:-28px; padding:5px 18px 7px; border-radius:10px 10px 0 0; background:#e4c48e; color:#5a3d12; font:800 13px var(--doc); letter-spacing:.14em; text-transform:uppercase}
+.bonus h4{color:#7a3b00}
+.bonus p{color:#4d3920}
+.bonus.won{border:0; background-image:var(--grain), linear-gradient(180deg,#e4c48e,#d2ab6c)}
+.bonus.won h4{color:#1f6b3a}
+.bonus .inp{background:#fffdf7; color:#2a1c0e; border:2px solid #b38a52}
+.bonus .inp::placeholder{color:#8f7a5c}
+.bonus .inp:disabled{opacity:.85}
+.bonus-tampon{position:absolute; right:18px; top:12px; font-size:18px; --tampon:#11502b}
+
+/* ─── Étape 7 : deux vrais documents et des billets de jeu ─── */
+.docs-direction{gap:22px; align-items:start}
+.choice.doc-officiel{overflow:hidden; padding:0 22px 22px; border:0; border-radius:3px; -webkit-backdrop-filter:none; backdrop-filter:none; color:#2a2d40;
+  background-color:#fffdf8; background-image:var(--grain); box-shadow:var(--ombre-doc)}
+.choice.doc-officiel::before{display:none}
+.choice.doc-officiel.on::after{display:none}
+.choice.doc-officiel:hover{background-color:#fff; transform:translateY(-4px)}
+.choice.doc-officiel.on{background-color:#fff; box-shadow:0 0 0 4px #34d399, 0 22px 40px rgba(0,0,0,.45)}
+.do-entete{display:flex; align-items:center; gap:12px; margin:0 -22px 16px; padding:14px 22px 12px; border-bottom:3px double #1f2433; color:#1f2433; font:800 15px/1.2 var(--doc); letter-spacing:.06em; text-transform:uppercase}
+.doc-indep .do-entete{background:#f3efe2}
+.doc-notaire .do-entete{background:#eaeef6}
+.do-entete small{display:block; margin-top:2px; font-weight:500; font-size:13px; letter-spacing:0; text-transform:none; color:#5b5f73}
+.do-logo{font-size:26px}
+.do-sceau{width:44px; height:44px; flex:none; border-radius:50%; display:grid; place-items:center; font-size:20px; background:radial-gradient(circle at 35% 30%, #e86a63, #b3261e 55%, #761511); box-shadow:0 0 0 3px #9b1f19, 0 3px 6px rgba(0,0,0,.4)}
+.doc-officiel .ico{background:#f1ede2; border:1px solid #ddd6c4; box-shadow:none}
+.doc-officiel h4{color:#1f2433}
+.doc-officiel p{color:#4a5068}
+.doc-officiel .cost{background:#fde8ea; color:#9b1c2c}
+.doc-officiel .pro{color:#1f6b3a}
+.doc-officiel .con{color:#9b1c2c}
+.do-associes{display:block; margin-top:14px; font-weight:600; color:#1f2433}
+.do-associes i{font-style:normal; font-size:24px; margin-left:2px}
+.do-tampon{position:absolute; right:16px; top:76px; font-size:20px}
+.money.glass{flex-wrap:wrap; gap:18px 30px; align-items:center}
+.billets{display:grid; grid-template-columns:auto auto; gap:10px 24px; align-items:center}
+.bl-legende{grid-column:1/-1; font:700 13px var(--doc); letter-spacing:.16em; text-transform:uppercase; color:#bfe8c4}
+.bl-pile{display:grid; grid-template-columns:repeat(5,70px); gap:14px 8px; padding:4px 0 8px}
+.liasse{position:relative; display:block; width:70px; height:34px; border-radius:2px; background:linear-gradient(135deg,#dcf2d4,#acd8a2 55%,#c8e9bf);
+  box-shadow:0 1px 0 #93c088, 0 2px 0 #cbe7c1, 0 3px 0 #8db582, 0 4px 0 #c4e1ba, 0 5px 0 #86ad7b, 0 9px 10px rgba(0,0,0,.45)}
+.liasse::before{content:"BILLET DE JEU"; position:absolute; left:3px; top:3px; font:700 6px/1 var(--doc); letter-spacing:.05em; color:rgba(25,70,35,.6)}
+.liasse::after{content:"100"; position:absolute; right:4px; bottom:3px; font:800 9px/1 var(--doc); color:rgba(25,70,35,.6)}
+.liasse .bande{position:absolute; left:50%; top:-1px; bottom:-1px; width:30px; margin-left:-15px; display:grid; place-items:center; background:#f7f0de; color:#2b3a2e; font:800 8px/1 var(--doc); box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+.liasse.partie{opacity:.22; transform:translate(12px,10px) rotate(9deg); filter:grayscale(.7)}
+.billets[data-anim] .liasse.partie{animation:m1-partir 1s cubic-bezier(.5,0,.3,1) both; animation-delay:calc(.35s + (var(--i) - 7) * .16s)}
+@keyframes m1-partir{from{opacity:1; transform:none; filter:none}}
+.liasse .pris{position:absolute; z-index:1; top:-13px; right:-12px; padding:2px 6px; border-radius:4px; background:#e5484d; color:#fff; font:800 11px var(--doc); white-space:nowrap; transform:rotate(8deg); box-shadow:0 2px 4px rgba(0,0,0,.35)}
+.liasse .vole{position:absolute; inset:2px 18px; border-radius:2px; background:linear-gradient(135deg,#dcf2d4,#acd8a2); box-shadow:0 2px 4px rgba(0,0,0,.3); opacity:0}
+.billets[data-anim] .liasse .vole{animation:m1-vole 1.1s ease-in .5s both}
+@keyframes m1-vole{0%{opacity:1; transform:none} 100%{opacity:0; transform:translate(70px,-40px) rotate(40deg)}}
+.bl-calc{display:grid; gap:6px; min-width:220px; font-size:16px}
+.bl-calc div{display:flex; justify-content:space-between; gap:16px; padding:4px 0; border-bottom:1px dashed rgba(255,255,255,.2)}
+.bl-calc b{font-family:var(--mono)}
+.bl-calc .moins b{color:#ffb4c8}
+.bl-calc .egal{border-bottom:0; border-top:2px solid rgba(255,255,255,.55); padding-top:8px}
+.bl-calc .egal b{color:var(--emerald); font-size:20px}
+.mo-txt{display:flex; gap:14px; align-items:center; flex:1 1 260px}
+
+/* ─── Étape 8 : l'enveloppe officielle et le certificat d'enregistrement ─── */
+.reveal-bureau{padding:34px 24px 30px}
+.reveal-scene{max-width:760px; margin:0 auto}
+.env{position:absolute; left:50%; top:132px; width:min(440px,88%); aspect-ratio:1.6; transform:translateX(-50%); opacity:0; visibility:hidden; pointer-events:none}
+.env-dos{z-index:1; border-radius:6px; background:linear-gradient(180deg,#d9c7a3,#cdb994); box-shadow:0 14px 30px rgba(0,0,0,.45)}
+.env-rabat{z-index:1; aspect-ratio:2.76; transform-origin:50% 0; clip-path:polygon(0 0,100% 0,50% 100%); background:linear-gradient(180deg,#e6d8bb,#d3bf98)}
+.env-face{z-index:3; border-radius:6px; clip-path:polygon(0 0,50% 54%,100% 0,100% 100%,0 100%); background:linear-gradient(180deg,#efe6d1,#e2d4b6)}
+.env-officiel{position:absolute; left:9%; top:62%; padding:2px 8px; border:2px solid #c62828; border-radius:4px; color:#c62828; font:800 12px var(--doc); letter-spacing:.2em; text-transform:uppercase; transform:rotate(-6deg)}
+.env-timbre{position:absolute; right:7%; top:24%; width:13%; aspect-ratio:.82; display:grid; place-items:center; background:#fff; padding:3px;
+  -webkit-mask:radial-gradient(circle 3px at 3px 3px, transparent 98%, #000) -3px -3px/7px 7px; mask:radial-gradient(circle 3px at 3px 3px, transparent 98%, #000) -3px -3px/7px 7px}
+.env-timbre span{display:grid; place-items:center; width:100%; height:100%; background:linear-gradient(160deg,#7cc4ff,#2f6fd6); color:#fff; font-size:18px}
+.env-adresse{position:absolute; left:34%; bottom:12%; width:56%; padding:8px 12px; border-radius:4px; background:rgba(255,255,255,.7); box-shadow:inset 0 0 0 1px rgba(0,0,0,.12); color:#1f2433; font:600 13px/1.3 var(--doc); text-align:left}
+.env-adresse b{display:block; font-size:14px}
+.reveal-scene .env-dos{animation:m1-env 2.3s ease both}
+.reveal-scene .env-face{animation:m1-env-face 2.3s ease both}
+.reveal-scene .env-rabat{animation:m1-rabat 2.3s ease both}
+.reveal-scene .certificat{transform-origin:50% 0; animation:m1-cert 2.3s cubic-bezier(.3,.7,.3,1) both}
+.reveal-scene .certificat.secoue{animation:kit-secoue .35s ease-out}
+.reveal-scene .num{animation:m1-num .5s ease-out both}
+.reveal-scene .num.n1{animation-delay:2.35s} .reveal-scene .num.n2{animation-delay:2.65s} .reveal-scene .num.n3{animation-delay:2.95s}
+.reveal-scene .cert-tampon{animation:kit-tampon .5s cubic-bezier(.3,1.5,.5,1) 3.3s both}
+@keyframes m1-env{0%{opacity:0; visibility:visible; transform:translate(-50%,-26px) scale(.96)} 12%{opacity:1; transform:translate(-50%,0)} 66%{opacity:1; transform:translate(-50%,0)} 100%{opacity:0; visibility:hidden; transform:translate(-50%,80px)}}
+@keyframes m1-env-face{0%{opacity:0; visibility:visible; z-index:3; transform:translate(-50%,-26px) scale(.96)} 12%{opacity:1; transform:translate(-50%,0)} 66%{opacity:1; z-index:3; transform:translate(-50%,0)} 67%{z-index:0} 100%{opacity:0; visibility:hidden; z-index:0; transform:translate(-50%,80px)}}
+@keyframes m1-rabat{0%{opacity:0; visibility:visible; z-index:4; transform:translate(-50%,-26px) scaleY(1)} 12%{opacity:1; z-index:4; transform:translate(-50%,0) scaleY(1)} 22%{z-index:4; transform:translate(-50%,0) scaleY(1)} 31%{z-index:1} 40%{transform:translate(-50%,0) scaleY(-1)} 66%{opacity:1; transform:translate(-50%,0) scaleY(-1)} 100%{opacity:0; visibility:hidden; z-index:1; transform:translate(-50%,80px) scaleY(-1)}}
+@keyframes m1-cert{0%,36%{opacity:0; transform:translateY(152px) scale(.46)} 40%{opacity:1; transform:translateY(152px) scale(.46)} 66%{opacity:1; transform:translateY(-16px) scale(.46)} 100%{opacity:1; transform:none}}
+@keyframes m1-cert-m{0%,36%{opacity:0; transform:translateY(160px) scale(.2)} 40%{opacity:1; transform:translateY(160px) scale(.2)} 66%{opacity:1; transform:translateY(50px) scale(.2)} 100%{opacity:1; transform:none}}
+@keyframes m1-num{from{opacity:0; filter:blur(6px); transform:scale(1.5)} to{opacity:1; filter:none; transform:none}}
+.idcard.certificat{position:relative; z-index:2; max-width:740px; margin:0 auto; overflow:hidden; padding:26px 34px 24px; border-radius:4px; color:#1f2433;
+  background-color:#fffdf6; background-image:var(--grain), radial-gradient(120% 80% at 50% 0%, #fffef9, #fbf3e1); box-shadow:var(--ombre-papier)}
+.idcard.certificat::before{content:""; position:absolute; inset:10px; width:auto; z-index:-1; border:2px solid #c9ad6a; border-radius:2px; background:none; box-shadow:inset 0 0 0 4px #fffdf6, inset 0 0 0 5px #dcc690; pointer-events:none}
+.cert-filigrane{position:absolute; inset:0; z-index:-1; display:grid; place-items:center; font-size:250px; line-height:1; opacity:.07; filter:grayscale(1); transform:rotate(-14deg); pointer-events:none}
+.cert-bandeau{margin:0 0 14px; padding:10px 8px 12px; text-align:center; border-bottom:2px solid #dcc690; background:repeating-linear-gradient(45deg, rgba(201,173,106,.13) 0 2px, transparent 2px 7px)}
+.cert-bandeau span{display:block; font:800 clamp(17px,2.2vw,22px) var(--doc); letter-spacing:.2em; text-transform:uppercase; color:#7a5b16}
+.cert-bandeau small{display:block; margin-top:2px; font:500 14px var(--doc); color:#6b6f88}
+.certificat .hd{border-bottom-color:#e6dcc4}
+.certificat .idgrid .k{color:#6b5a34}
+.certificat .num{border:1px dashed #d4b24a}
+.cert-pied{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-top:18px}
+.cert-sceau{width:84px; height:84px; flex:none; border-radius:50%; display:grid; place-items:center; text-align:center; color:#6b4a0c; font:800 11px/1.15 var(--doc); letter-spacing:.08em; text-transform:uppercase;
+  background:radial-gradient(circle at 36% 30%, #fff3c4 0%, #e3b649 42%, #a8761a 100%); box-shadow:0 0 0 4px #ecd07a, 0 0 0 6px #b98a26, 0 8px 14px rgba(0,0,0,.3), inset 0 0 0 6px rgba(255,255,255,.18)}
+.cert-sceau b{display:block; font-size:22px; line-height:1}
+.cert-lieu{text-align:right; font-size:15px; color:#4a5068}
+.cert-sig .signed{margin:2px 10px 0 0}
+.cert-sig small{display:block; font-size:13px; color:#6b6f88}
+.cert-tampon{position:absolute; z-index:1; left:31%; bottom:40px; font-size:24px}
+.patri{position:relative; overflow:visible; border-radius:4px; background-color:#fffdf8; background-image:var(--grain); box-shadow:var(--ombre-papier)}
+.patri h4{border-radius:4px 4px 0 0; font-family:var(--doc); font-weight:800; letter-spacing:.01em}
+.patri .pl{border-bottom:1px solid #ebe5d6}
+.patri .ptot2{border-top:3px double #1f2433}
+.patri .ptot{border-radius:0 0 4px 4px; background:#eaf6ee; color:#1f6b3a}
+
+/* ─── Étape 9 : la déclaration comme un formulaire officiel rempli à la main ─── */
+.decl-bureau{max-width:840px}
+.decl.formulaire{max-width:none; padding:26px 34px 30px; border-radius:3px}
+.df-entete{display:flex; align-items:center; gap:12px; margin:0 0 18px; padding:0 0 12px; border-bottom:3px double #1f2433}
+.df-logo{width:42px; height:42px; flex:none; border-radius:50%; display:grid; place-items:center; color:#fff; font:700 16px var(--serif); background:#1f2433}
+.df-titre{font:800 15px/1.2 var(--doc); letter-spacing:.08em; text-transform:uppercase; color:#1f2433}
+.df-titre small{display:block; margin-top:2px; font:500 13px var(--doc); letter-spacing:0; text-transform:none; color:#5b5f73}
+.df-ref{margin-left:auto; padding:4px 8px; border:1px solid #c9c3b4; border-radius:4px; font:700 13px var(--mono); color:#4a4e68}
+.decl.formulaire h3{font-family:var(--doc); font-weight:800; font-size:24px; letter-spacing:.03em; text-transform:uppercase}
+.decl.formulaire li{align-items:baseline; border-bottom:1px dotted #b8b2a2}
+.decl.formulaire li b{font-size:14px; text-transform:uppercase; letter-spacing:.05em; color:#5b5f73}
+.decl.formulaire li span{font:700 23px/1.15 var(--main); color:var(--encre-bleue)}
+.decl.formulaire li span b{font:inherit; color:inherit; min-width:0; text-transform:none; letter-spacing:0}
+.engage{background:#fff7d6; border:2px dashed #d9b04a; border-radius:8px; color:#2a2d40}
+.engage input{-webkit-appearance:none; appearance:none; width:28px; height:28px; flex:none; margin:0; border:2px solid #1f2433; border-radius:4px; background:#fff; cursor:pointer}
+.engage input:checked{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 13c3 2 5 5 6 7 3-8 7-13 13-17' fill='none' stroke='%231d3b8f' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/88% no-repeat}
+.engage input:focus-visible{outline:3px solid #1d3b8f; outline-offset:3px}
+.chk li{font-size:15px}
+
+/* ─── Lancement : coupe du ruban devant la vitrine ─── */
+.ceremonie{position:fixed; inset:0; z-index:45; display:grid; grid-template-columns:minmax(0,760px); justify-content:center; align-content:center; padding:20px; cursor:pointer;
+  background:radial-gradient(90% 70% at 50% 42%, rgba(26,18,62,.94), rgba(5,3,14,.98)); animation:m1-cer-in .3s ease both, m1-cer-out .5s ease 2.8s forwards}
+@keyframes m1-cer-in{from{opacity:0}}
+@keyframes m1-cer-out{to{opacity:0; visibility:hidden}}
+.cer-scene{width:100%}
+.cer-vitrine{position:relative; border-radius:20px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.cer-vitrine svg{display:block; width:100%; height:auto}
+.cer-on{position:absolute; inset:0; opacity:0; animation:m1-cer-allume .6s linear 1s forwards}
+@keyframes m1-cer-allume{0%{opacity:0} 20%{opacity:.8} 30%{opacity:.2} 55%{opacity:1} 65%{opacity:.6} 100%{opacity:1}}
+.cer-ruban{position:absolute; left:0; right:0; top:62%; height:4.5%}
+.cer-ruban span{position:absolute; top:0; bottom:0; width:50%; background:linear-gradient(180deg,#ff7a7a,#e02424 40%,#a51616 62%,#e53e3e); box-shadow:0 3px 6px rgba(0,0,0,.4)}
+.cr-g{left:0; transform-origin:0 50%; animation:m1-cer-g 1.1s cubic-bezier(.45,0,.75,.2) .92s both}
+.cr-d{right:0; transform-origin:100% 50%; animation:m1-cer-d 1.1s cubic-bezier(.45,0,.75,.2) .92s both}
+@keyframes m1-cer-g{to{transform:rotate(78deg) scaleX(.9)}}
+@keyframes m1-cer-d{to{transform:rotate(-78deg) scaleX(.9)}}
+.cer-noeud{position:absolute; left:50%; top:64.25%; width:19%; transform:translate(-50%,-50%); animation:m1-cer-noeud 1s cubic-bezier(.5,0,.8,.3) .92s both}
+.cer-noeud svg,.cer-ciseaux svg{display:block; width:100%; height:auto; overflow:visible}
+@keyframes m1-cer-noeud{to{transform:translate(-50%,180%) rotate(35deg); opacity:0}}
+.cer-ciseaux{position:absolute; left:50%; top:64.25%; width:32%; transform:translate(-88%,-50%); filter:drop-shadow(0 8px 10px rgba(0,0,0,.45)); animation:m1-cer-cis-in .6s cubic-bezier(.2,.9,.3,1) .1s both, m1-cer-cis-out .4s ease 1.25s forwards}
+@keyframes m1-cer-cis-in{from{transform:translate(-230%,-40%) rotate(-12deg); opacity:0}}
+@keyframes m1-cer-cis-out{to{opacity:0; transform:translate(-60%,-80%) rotate(18deg)}}
+.cer-ciseaux .lame-h,.cer-ciseaux .lame-b{transform-box:view-box; transform-origin:52px 30px}
+.cer-ciseaux .lame-h{animation:m1-lame-h .22s ease-in .74s both}
+.cer-ciseaux .lame-b{animation:m1-lame-b .22s ease-in .74s both}
+@keyframes m1-lame-h{from{transform:rotate(-16deg)} to{transform:rotate(0)}}
+@keyframes m1-lame-b{from{transform:rotate(16deg)} to{transform:rotate(0)}}
+.cer-titre{margin:18px 0 0; text-align:center; color:#fff; font:600 clamp(26px,4.2vw,42px)/1.1 var(--serif); animation:m1-cer-titre .6s cubic-bezier(.3,1.5,.5,1) 1.1s both}
+.cer-titre span{color:#fbbf24}
+@keyframes m1-cer-titre{from{opacity:0; transform:scale(.6)}}
+
+/* ─── Fin : vitrine ouverte, carte de visite épaisse, badges en pin's, carnet ─── */
+.vitrine-fin{box-shadow:0 30px 70px rgba(0,0,0,.55)}
+.biz-zone{perspective:1100px}
+.biz{position:relative; border-radius:10px; background-color:#fffdf8; background-image:var(--grain); transform:rotateX(4deg) rotateY(-6deg); transition:transform .6s cubic-bezier(.22,1,.36,1);
+  box-shadow:0 1px 0 #ece7db, 0 2px 0 #ddd7c9, 0 3px 0 #d2cbbb, 0 4px 0 #c6bfae, 0 22px 36px rgba(0,0,0,.5)}
+.biz:hover{transform:rotateX(10deg) rotateY(-16deg) translateY(-6px)}
+.biz .l{background-image:linear-gradient(135deg, rgba(255,255,255,.18), rgba(0,0,0,.14)), repeating-linear-gradient(45deg, rgba(255,255,255,.05) 0 2px, transparent 2px 4px)}
+.biz .r{min-width:0}
+.biz .r > div{overflow-wrap:anywhere}
+.biz-qr{display:block; width:46px; height:46px; padding:3px; border-radius:4px; background:#fff; box-shadow:0 2px 4px rgba(0,0,0,.25)}
+.biz-qr svg{display:block; width:100%; height:100%}
+.badges{grid-template-columns:repeat(auto-fill,minmax(112px,1fr)); gap:20px 12px}
+.badge.pin{padding:4px 2px; border:0; background:none; text-align:center}
+.badge.pin .i{position:relative; width:76px; height:76px; margin:0 auto; border-radius:50%; display:grid; place-items:center; font-size:34px; line-height:1;
+  background:radial-gradient(circle at 50% 42%, #fff 0%, var(--email-c,#ffe7a3) 32%, var(--email,#f2b632) 70%, var(--email-f,#c4860f) 100%);
+  box-shadow:0 0 0 3px #f4f6fa, 0 0 0 5px #9aa3b2, 0 0 0 6px #6b7383, 0 9px 14px rgba(0,0,0,.45), inset 0 -6px 10px rgba(0,0,0,.22)}
+.badge.pin .i::after{content:""; position:absolute; top:7px; left:16px; right:16px; height:24px; border-radius:50% 50% 45% 45%; background:linear-gradient(180deg, rgba(255,255,255,.8), rgba(255,255,255,0)); pointer-events:none}
+.badge.pin:nth-child(5n+2) .i{--email-c:#ffc1c1; --email:#e5484d; --email-f:#9b1c22}
+.badge.pin:nth-child(5n+3) .i{--email-c:#c4d4ff; --email:#3e63dd; --email-f:#1e2f7a}
+.badge.pin:nth-child(5n+4) .i{--email-c:#c8f2d8; --email:#30a46c; --email-f:#17603c}
+.badge.pin:nth-child(5n+5) .i{--email-c:#e6d2ff; --email:#8e4ec6; --email-f:#4f2378}
+.badge.pin b{display:block; margin-top:10px; color:#fff; font-size:15px}
+.badge.pin.lockd{opacity:1}
+.badge.pin.lockd .i{background:radial-gradient(circle at 50% 42%, #8a8f9c, #4a4e5a 70%, #2f323b); filter:grayscale(1); opacity:.5}
+.badge.pin.lockd b{color:var(--dim)}
+.badges[data-anim] .badge.pin{animation:m1-pin-pose .5s cubic-bezier(.3,1.6,.5,1) both; animation-delay:calc(.25s + var(--i) * .08s)}
+@keyframes m1-pin-pose{from{opacity:0; transform:scale(.4) rotate(-20deg)} to{opacity:1; transform:none}}
+.words.carnet{position:relative; gap:0; padding:16px 18px 16px 66px; border-radius:6px; background-color:#fffdf5; background-image:linear-gradient(90deg,transparent 48px,#f3a5a5 48px,#f3a5a5 50px,transparent 50px);
+  box-shadow:0 2px 3px rgba(0,0,0,.2), 0 14px 30px rgba(0,0,0,.35)}
+.words.carnet::before{content:""; position:absolute; left:14px; top:12px; bottom:12px; width:18px; background:radial-gradient(circle at 9px 9px, #2a2440 0 4px, #c9ccd6 4.5px 6px, transparent 6.5px) 0 0/18px 28px repeat-y}
+.words.carnet .word{padding:10px 4px; border:0; border-bottom:1px solid #cfe0f3; border-radius:0; background:none}
+.words.carnet .word:last-child{border-bottom:0}
+.words.carnet .word b{color:#1d3b8f; font-family:var(--doc)}
+.words.carnet .word span{color:#3a3f55}
+.next.glass{border:0; -webkit-backdrop-filter:none; backdrop-filter:none; color:#2a1c0e; background-color:#dcb97f; background-image:var(--grain), linear-gradient(180deg,#e6c792,#d2ab6c);
+  box-shadow:0 2px 3px rgba(0,0,0,.2), 0 16px 30px rgba(0,0,0,.35)}
+.next .hint{color:#4d3920}
+
+/* ─── Colonne de droite : la vitrine et la fiche « Mon entreprise » ─── */
+.side-boutique.glass{background:#191230; -webkit-backdrop-filter:none; backdrop-filter:none; border-color:rgba(255,255,255,.12); box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.fiche-side{position:relative; color:#2a2d40; background-color:#fffdf7; background-image:var(--grain), repeating-linear-gradient(180deg, transparent 0 36px, #e3ebf5 36px 37px)}
+.fiche-side h3{color:#1f2433; font-family:var(--doc); font-weight:800; font-size:16px}
+.fiche-side .srow{border-top-color:#e5dfcf}
+.fiche-side .srow .k{color:#6b6f88}
+.fiche-side .srow .v{color:#1f2433}
+.fiche-side .srow .v.todo{color:#8f897a}
+.fiche-side .pbar{height:10px; background:#ebe5d4}
+.fiche-side .pbar i{background:repeating-linear-gradient(45deg,#fbbf24 0 8px,#2a2440 8px 16px)}
+.fiche-side .help{color:#5b5f73}
+
+/* ─── Écrans plus étroits ─── */
+@media (max-width:1000px){
+  .accueil-rue{grid-template-columns:1fr; max-width:640px}
+  .adresse-scene{grid-template-columns:1fr}
+  .boutique-grid .front-wrap{order:-1; top:126px; z-index:3; width:min(100%,440px); justify-self:center}   /* la vitrine reste visible pendant les choix */
+}
+@media (max-width:760px){
+  .grid.g3{grid-template-columns:1fr}
+  .etiquettes{gap:34px}
+  .billets{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .top-in{gap:10px; padding:10px 14px}                 /* en-tête : le bouton son du kit doit tenir sur un téléphone */
+  .top h1{min-width:0; font-size:17px}
+  .top h1 small{font-size:12px}
+  .right{gap:8px}
+  .lvl{display:none}
+  .xp-pill{padding:6px 10px; font-size:14px}
+  .kit-son{padding:6px 9px}
+  .liege{padding:26px 14px 18px}
+  .postit{right:8px; bottom:8px; max-width:46%; padding:8px 10px 10px; font-size:16px}
+  .maquettes{gap:6px; padding:16px 8px 10px}
+  .mq figcaption{font-size:14px}
+  .logo-prev.enseigne-live{padding:50px 14px 18px}
+  .el-panneau{gap:12px; padding:12px 14px}
+  .el-logo{width:48px; height:48px; font-size:24px}
+  .bl-pile{grid-template-columns:repeat(5,minmax(0,1fr)); gap:12px 6px}
+  .liasse{width:auto}
+  .reveal-bureau{padding:20px 10px}
+  .reveal-scene .certificat{animation-name:m1-cert-m}
+  .idcard.certificat{padding:22px 18px}
+  .cert-filigrane{font-size:160px}
+  .decl.formulaire{padding:20px 16px}
+  .df-ref{display:none}
+  .badge.pin .i{width:64px; height:64px; font-size:28px}
+  .coach p{font-size:16px}
+  .tampon.frappe{animation-name:m1-tampon-doux}   /* tampon moins grand au départ : rien ne dépasse de l'écran */
+}
+@keyframes m1-tampon-doux{0%{opacity:0; transform:rotate(-9deg) scale(1.5)} 60%{opacity:.95; transform:rotate(-9deg) scale(.95)} 100%{opacity:.86; transform:rotate(-9deg) scale(1)}}
+@media (prefers-reduced-motion:reduce){
+  .ceremonie{display:none}
+  .biz,.biz:hover,.choice.fiche-act,.goal.glass{transform:none}
+}
+@media print{
+  #print-area *{animation:none !important; transition:none !important; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+  #print-area .certificat{box-shadow:none; margin:0 0 8mm}
+  #print-area .patri{box-shadow:none}
+  #print-area .trombone::before{display:none}
+  #print-area .biz{transform:none !important; box-shadow:none; border:1px solid #cfcfcf}
+}
 </style>
 </head>
 <body>
@@ -465,14 +1182,207 @@ aside{position:sticky; top:128px}
 <div id="modal" class="modal" hidden></div>
 <div id="print-area"></div>
 <script>
+// ═══ KIT RÉALISTE COMMUN v1 — début (identique dans les missions 1, 2 et 3 : ne pas modifier ici, modifier le kit) ═══
+// Sons de synthèse (aucun fichier), décor de ville, avatar du coach, objets réalistes (carte bancaire, camion, colis,
+// code-barres, QR code), animations qui ne se rejouent pas à chaque clic. Tous les noms et numéros sont fictifs.
+const KIT = (() => {
+  const kesc = (t) => String(t ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const hashK = (s) => { let h = 2166136261; for (const c of String(s)) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; };
+  const rnd = (seed) => () => { seed = (Math.imul(seed ^ (seed >>> 15), 2246822507) + 0x9e3779b9) >>> 0; return (seed % 100000) / 100000; };
+  const calme = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // ─── Coach Max : avatar dessiné (pas d'identifiants SVG : on peut l'afficher plusieurs fois) ───
+  const avatarMax = `<svg viewBox="0 0 64 64" aria-hidden="true">
+    <path d="M7 64c2.5-12.5 12-18.5 25-18.5S54.5 51.5 57 64z" fill="#22305f"/>
+    <path d="M24.5 46.2 32 55l7.5-8.8c-2.3-.6-4.8-.9-7.5-.9s-5.2.3-7.5.9z" fill="#fff"/>
+    <path d="M30.6 49.5h2.8l.9 2.2-1.2 8.8h-2.2l-1.2-8.8z" fill="#ff5a4e"/>
+    <path d="M18 64l6.5-17.8 4.2 5.3L24 64zM46 64l-6.5-17.8-4.2 5.3L40 64z" fill="#2c3d78"/>
+    <rect x="27" y="37.5" width="10" height="10" rx="4.5" fill="#e3aa7f"/>
+    <ellipse cx="20.3" cy="29.5" rx="2.6" ry="3.6" fill="#e9b488"/><ellipse cx="43.7" cy="29.5" rx="2.6" ry="3.6" fill="#e9b488"/>
+    <ellipse cx="32" cy="28.5" rx="12" ry="13.6" fill="#f3c59b"/>
+    <path d="M20.2 27.2c-1.6-9.6 4.6-15.4 12.1-15.4 8.6 0 13.6 5.4 11.6 14.6-1.1-3.4-3.3-5.9-6.4-7.2-4.4 2.4-10.7 2.9-14.8 1.7-1.3 1.7-2.1 3.8-2.5 6.3z" fill="#3a2719"/>
+    <path d="M24.8 24.6q2.6-1.7 5.2-.1M34 24.5q2.6-1.6 5.2.1" stroke="#3a2719" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <ellipse cx="27.6" cy="28.8" rx="1.6" ry="1.8" fill="#2a1b12"/><ellipse cx="36.4" cy="28.8" rx="1.6" ry="1.8" fill="#2a1b12"/>
+    <circle cx="28.1" cy="28.2" r=".55" fill="#fff"/><circle cx="36.9" cy="28.2" r=".55" fill="#fff"/>
+    <path d="M30.9 30.6q1.1 1.9 2.2 0" stroke="#d99a72" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+    <path d="M26.6 34.3q5.4 4.6 10.8 0" stroke="#9b4637" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+    <path d="M20.6 31.4c.9 8.2 6 11.5 11.4 11.5s10.5-3.3 11.4-11.5c-1.4 4.2-4.6 6.6-11.4 6.6s-10-2.4-11.4-6.6z" fill="#3a2719" opacity=".2"/>
+  </svg>`;
+
+  // ─── Sons de synthèse ───
+  const SON = (() => {
+    let ctx = null, master = null, actif = true;
+    try { actif = localStorage.getItem("mini-entreprise-son") !== "non"; } catch(e) {}
+    const ac = () => {
+      if (!ctx){ const C = window.AudioContext || window.webkitAudioContext; if (!C) return null; ctx = new C(); master = ctx.createGain(); master.gain.value = .55; master.connect(ctx.destination); }
+      if (ctx.state === "suspended") ctx.resume().catch(() => {});
+      return ctx;
+    };
+    function note(freq, debut, duree, type, vol, glisse){
+      const c = ac(); if (!c) return;
+      const t = c.currentTime + debut, o = c.createOscillator(), g = c.createGain();
+      o.type = type || "sine"; o.frequency.setValueAtTime(freq, t); if (glisse) o.frequency.exponentialRampToValueAtTime(glisse, t + duree);
+      g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(vol || .12, t + .008); g.gain.exponentialRampToValueAtTime(.0001, t + duree);
+      o.connect(g); g.connect(master); o.start(t); o.stop(t + duree + .05);
+    }
+    function bruit(debut, duree, filtre, freq, vol, freqFin){
+      const c = ac(); if (!c) return;
+      const t = c.currentTime + debut, n = Math.max(1, Math.floor(c.sampleRate * duree)), buf = c.createBuffer(1, n, c.sampleRate), d = buf.getChannelData(0);
+      for (let i = 0; i < n; i++) d[i] = Math.random() * 2 - 1;
+      const s = c.createBufferSource(), f = c.createBiquadFilter(), g = c.createGain();
+      s.buffer = buf; f.type = filtre; f.frequency.setValueAtTime(freq, t); if (freqFin) f.frequency.exponentialRampToValueAtTime(freqFin, t + duree);
+      g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(vol || .15, t + .01); g.gain.exponentialRampToValueAtTime(.0001, t + duree);
+      s.connect(f); f.connect(g); g.connect(master); s.start(t); s.stop(t + duree + .02);
+    }
+    const SONS = {
+      clic:    () => note(1500, 0, .035, "sine", .05),
+      succes:  () => { note(1047, 0, .13, "triangle", .11); note(1319, .1, .2, "triangle", .11); },
+      xp:      () => [1047, 1319, 1568, 2093].forEach((f, i) => note(f, i * .055, .11, "triangle", .07)),
+      tampon:  () => { bruit(0, .11, "lowpass", 320, .45); note(92, 0, .17, "sine", .32); },
+      caisse:  () => { bruit(0, .045, "highpass", 2800, .1); note(2637, .05, .55, "sine", .09); note(3520, .05, .45, "sine", .06); note(1760, .06, .3, "triangle", .04); },
+      notif:   () => { note(1568, 0, .14, "sine", .11); note(2093, .12, .24, "sine", .11); },
+      envoi:   () => bruit(0, .38, "bandpass", 500, .14, 2600),
+      camion:  () => { note(392, 0, .15, "square", .035); note(392, .21, .22, "square", .035); },
+      papier:  () => { bruit(0, .09, "highpass", 2200, .08); bruit(.1, .12, "highpass", 1700, .07); },
+      erreur:  () => { note(233, 0, .16, "sine", .13); note(174, .12, .24, "sine", .12); },
+      fanfare: () => [523, 659, 784, 1047, 1319].forEach((f, i) => note(f, i * .1, i === 4 ? .6 : .14, "triangle", .1)),
+      bip:     () => note(1046, 0, .11, "square", .035),
+      porte:   () => { note(1319, 0, .5, "sine", .09); note(1047, .32, .7, "sine", .09); },
+      touche:  () => note(1180, 0, .05, "square", .025)
+    };
+    let bouton = null;
+    const majBouton = () => { if (!bouton) return; bouton.textContent = actif ? "🔊" : "🔇"; bouton.setAttribute("aria-pressed", String(actif)); bouton.title = actif ? "Couper le son" : "Activer le son"; };
+    return {
+      get actif(){ return actif; },
+      jouer(nom){ if (!actif) return; try { (SONS[nom] || SONS.clic)(); } catch(e) {} },
+      basculer(){ actif = !actif; try { localStorage.setItem("mini-entreprise-son", actif ? "oui" : "non"); } catch(e) {} majBouton(); if (actif) SONS.succes(); },
+      installerBouton(){
+        const zone = document.querySelector("header .right"); if (!zone || document.getElementById("kitSon")) return;
+        bouton = document.createElement("button"); bouton.id = "kitSon"; bouton.type = "button"; bouton.className = "kit-son";
+        bouton.addEventListener("click", (e) => { e.stopPropagation(); SON.basculer(); });
+        zone.appendChild(bouton); majBouton();
+      }
+    };
+  })();
+
+  // ─── Décor : silhouette de la ville le soir, fenêtres allumées ───
+  function decor(){
+    const mesh = document.querySelector(".mesh"); if (!mesh || mesh.querySelector(".kit-skyline")) return;
+    const r = rnd(20261026), W = 1600, H = 320; let x = 0, imm = "", fen = "";
+    while (x < W){
+      const w = 50 + Math.floor(r() * 90), h = 70 + Math.floor(r() * 190), y = H - h, teinte = ["#0f0c26","#120e2d","#0c0a20","#151132"][Math.floor(r() * 4)];
+      imm += `<rect x="${x}" y="${y}" width="${w - 3}" height="${h}" fill="${teinte}"/>`;
+      if (r() < .25) imm += `<rect x="${x + w / 2 - 2}" y="${y - 18}" width="3" height="18" fill="${teinte}"/>`;
+      for (let fy = y + 12; fy < H - 14; fy += 15) for (let fx = x + 8; fx < x + w - 14; fx += 13)
+        if (r() < .16) fen += `<rect x="${fx}" y="${fy}" width="6" height="8" fill="${r() < .75 ? "#ffd58a" : "#9fd8ff"}" opacity="${(.25 + r() * .5).toFixed(2)}"/>`;
+      x += w;
+    }
+    mesh.insertAdjacentHTML("beforeend", `<svg class="kit-skyline" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMax slice" aria-hidden="true">${imm}${fen}</svg>`);
+  }
+
+  // ─── Les animations d'arrivée ne se rejouent pas quand l'écran est redessiné (clic sur une option…) ───
+  const dejaVus = new Set();
+  function surveiller(){
+    const marquer = (el) => { const id = el.getAttribute("data-anim"); if (!id) return; if (dejaVus.has(id)) el.classList.add("kit-deja-vu"); else dejaVus.add(id); };
+    new MutationObserver((liste) => liste.forEach(m => m.addedNodes.forEach(n => {
+      if (n.nodeType !== 1) return;
+      if (n.matches && n.matches("[data-anim]")) marquer(n);
+      n.querySelectorAll && n.querySelectorAll("[data-anim]").forEach(marquer);
+    }))).observe(document.body, { childList:true, subtree:true });
+  }
+
+  // ─── Code-barres et QR code (décoratifs, générés à partir d'un texte) ───
+  function codeBarres(texte, h){
+    h = h || 40; const r = rnd(hashK(texte)); let x = 0, barres = "";
+    barres += `<rect x="0" y="0" width="2" height="${h}"/><rect x="3" y="0" width="1" height="${h}"/>`; x = 6;
+    while (x < 150){ const w = 1 + Math.floor(r() * 3); if (r() < .55) barres += `<rect x="${x}" y="0" width="${w}" height="${h}"/>`; x += w + (r() < .5 ? 1 : 2); }
+    barres += `<rect x="${x + 1}" y="0" width="1" height="${h}"/><rect x="${x + 3}" y="0" width="2" height="${h}"/>`;
+    return `<svg viewBox="0 0 ${x + 6} ${h}" preserveAspectRatio="none" fill="#111" aria-hidden="true">${barres}</svg>`;
+  }
+  function qr(texte){
+    const n = 25, r = rnd(hashK("qr" + texte)), m = [];
+    for (let y = 0; y < n; y++){ m.push([]); for (let x = 0; x < n; x++) m[y].push(r() < .48); }
+    const repere = (ox, oy) => { for (let y = -1; y < 8; y++) for (let x = -1; x < 8; x++){ const yy = oy + y, xx = ox + x; if (yy < 0 || xx < 0 || yy >= n || xx >= n) continue;
+      const bord = x === 0 || x === 6 || y === 0 || y === 6, coeur = x >= 2 && x <= 4 && y >= 2 && y <= 4; m[yy][xx] = (x >= 0 && x <= 6 && y >= 0 && y <= 6) && (bord || coeur); } };
+    repere(0, 0); repere(n - 7, 0); repere(0, n - 7);
+    for (let i = 8; i < n - 8; i++){ m[6][i] = i % 2 === 0; m[i][6] = i % 2 === 0; }
+    let d = ""; for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) if (m[y][x]) d += `M${x} ${y}h1v1h-1z`;
+    return `<svg viewBox="-2 -2 ${n + 4} ${n + 4}" shape-rendering="crispEdges" aria-hidden="true"><rect x="-2" y="-2" width="${n + 4}" height="${n + 4}" fill="#fff"/><path d="${d}" fill="#111"/></svg>`;
+  }
+
+  // ─── Camion de livraison au nom du fournisseur ───
+  function camion(o){
+    o = o || {}; const nom = String(o.nom || "Livraison"), coul = o.couleur || "#1E2A5A", fs = Math.max(11, Math.min(24, 178 / (0.62 * Math.max(nom.length, 6))));
+    return `<svg class="kit-camion" viewBox="0 0 300 140" role="img" aria-label="Camion de ${kesc(nom)}">
+      <ellipse cx="150" cy="130" rx="140" ry="7" fill="rgba(0,0,0,.35)"/>
+      <circle class="fumee" cx="6" cy="112" r="6" fill="rgba(220,220,230,.6)"/>
+      <rect x="10" y="16" width="192" height="92" rx="9" fill="${coul}"/>
+      <rect x="10" y="16" width="192" height="14" rx="9" fill="rgba(255,255,255,.18)"/>
+      <rect x="10" y="94" width="192" height="14" fill="rgba(0,0,0,.18)"/>
+      <text x="106" y="${62 + fs * .3}" text-anchor="middle" font-size="${fs.toFixed(1)}" fill="#fff" style="font-family:Inter,Arial,sans-serif;font-weight:800">${kesc(nom)}</text>
+      <text x="106" y="84" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.8)" style="font-family:Inter,Arial,sans-serif;font-weight:600;letter-spacing:.12em">${kesc(o.sousTitre || "LIVRAISON")}</text>
+      <rect x="11" y="78" width="6" height="14" rx="2" fill="#ff4b4b"/>
+      <path d="M204 40h50q10 0 16 9l15 23q5 7 5 15v18q0 9-9 9h-77z" fill="#eef0f5"/>
+      <path d="M214 48h37q6 0 9.5 5.5l10 16.5h-56.5z" fill="#7fa8d6"/><path d="M216 50h14l-8 18h-6z" fill="rgba(255,255,255,.35)"/>
+      <rect x="236" y="80" width="12" height="3" rx="1.5" fill="#9aa1b1"/>
+      <rect x="282" y="86" width="9" height="8" rx="2" fill="#ffd34d"/>
+      <rect x="200" y="104" width="94" height="8" rx="3" fill="#565c6b"/>
+      <g class="roue"><circle cx="62" cy="111" r="17" fill="#1a1b20"/><circle cx="62" cy="111" r="8" fill="#c9cdd6"/><path d="M62 103v16M54 111h16" stroke="#7b8190" stroke-width="2"/></g>
+      <g class="roue"><circle cx="246" cy="111" r="17" fill="#1a1b20"/><circle cx="246" cy="111" r="8" fill="#c9cdd6"/><path d="M246 103v16M238 111h16" stroke="#7b8190" stroke-width="2"/></g>
+    </svg>`;
+  }
+  /** La rue : le camion arrive devant le magasin. */
+  const route = (o) => `<div class="kit-route" aria-hidden="true">${camion(o)}<div class="kit-boutique">${kesc((o && o.boutique) || "🏪")}</div></div>`;
+
+  // ─── Colis avec étiquette d'expédition ───
+  function colis(o){
+    o = o || {};
+    return `<div class="colis ${o.ouvert ? "ouvert" : ""}" ${o.id ? `id="${kesc(o.id)}"` : ""}>
+      <span class="rabat g"></span><span class="rabat d"></span>
+      <span class="fragile">Fragile</span><span class="fleches">↑↑</span>${o.nb ? `<span class="nb">Colis ${kesc(o.nb)}</span>` : ""}
+      <div class="etiquette"><span>De : ${kesc(o.de || "")}</span><b>À : ${kesc(o.pour || "")}</b><span>${kesc(o.adresse || "")}</span>${codeBarres(o.ref || o.pour || "colis", 22)}<span style="font-family:'Space Mono',monospace">${kesc(o.ref || "")}</span></div>
+      <span class="contenu">${kesc(o.contenu || "📦")}</span></div>`;
+  }
+
+  // ─── Carte bancaire de l'entreprise (banque fictive) : clic = elle se retourne ───
+  function carteBancaire(o){
+    o = o || {}; const chiffres = String(o.iban || "").replace(/\D/g, ""), fin = (chiffres.slice(-4) || "0000").padStart(4, "0");
+    const debut = "4" + String(hashK(o.iban || o.titulaire || "x") % 1000).padStart(3, "0");
+    return `<button type="button" class="carte-bq" style="--c1:${kesc(o.couleur1 || "#3E63DD")};--c2:${kesc(o.couleur2 || "#1E2A5A")}" aria-label="Carte bancaire de l'entreprise : clique pour la retourner">
+      <span class="cb-in">
+        <span class="cb-face cb-recto"><span class="cb-banque">Banque des Terrils<small>Carte entreprise</small></span><span class="cb-marque">débit</span>
+          <span class="cb-puce"></span><span class="cb-sc"></span><span class="cb-num">${debut} •••• •••• ${fin}</span>
+          <span class="cb-bas"><span class="nm"><small>Titulaire</small>${kesc(o.titulaire || "")}</span><span><small>Expire fin</small>${kesc(o.expire || "10/31")}</span></span></span>
+        <span class="cb-face cb-verso"><span class="cb-piste"></span><span class="cb-sig">${kesc(o.signature || "")}</span>
+          <span class="cb-iban"><small>Compte de l'entreprise (IBAN)</small>${kesc(o.iban || "")}</span>
+          <span class="cb-mention">Carte fictive – projet scolaire, Institut Saint-Luc de Frameries</span></span>
+      </span></button>`;
+  }
+
+  /** Fait « appuyer » les touches d'un terminal (.terminal .keys span), une par une. */
+  async function taperTouches(terminal, touches, pause){
+    if (!terminal) return; const spans = [...terminal.querySelectorAll(".keys span")];
+    for (const t of touches){ const s = spans.find(x => x.textContent.trim() === t); if (s){ s.classList.add("appuie"); SON.jouer("touche"); await new Promise(r => setTimeout(r, calme() ? 30 : (pause || 220))); s.classList.remove("appuie"); } }
+  }
+
+  function demarrer(){ decor(); surveiller(); SON.installerBouton(); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", demarrer); else demarrer();
+  document.addEventListener("click", (e) => { const c = e.target.closest(".carte-bq"); if (c){ c.classList.toggle("retournee"); SON.jouer("papier"); } });
+
+  return { avatarMax, SON, decor, codeBarres, qr, camion, route, colis, carteBancaire, taperTouches, hash:hashK };
+})();
+const SON = KIT.SON;
+// ═══ KIT RÉALISTE COMMUN v1 — fin ═══
 // ======================================================================
 //  CONFIGURATION
 // ======================================================================
 const CONFIG = {
-  ENDPOINT_URL: "https://script.google.com/macros/s/AKfycbwkApoh4ASdA7c9OOUMZTRjPFXZ-7jWGQ_VUsdJaVwIzYxLxoQw5dJjyjCcmHX_6KATGA/exec",
+  SUPABASE_URL: "https://ecewwrefhgxqvmmykhio.supabase.co",           // base de données de l'école (Supabase)
+  SUPABASE_CLE: "sb_publishable_f5Gc6ezEciyzfSYz9wGzgw_IxZqpB_W",     // clé publique : faite pour être dans la page
+  HORS_LIGNE: false,                                                  // true en mode test : rien ne part vers la base
   APP_ID: "mini-entreprise-3p",
   MISSION: "1",
-  VERSION: "3.0",
+  VERSION: "4.0",       // 4.0 : base Supabase
   DOMAINE: "istlm.org",
   CLASSE_DEFAUT: "3P Vente",
   STORAGE_PREFIX: "mini-entreprise-3p-m1v3-"
@@ -694,30 +1604,37 @@ function genIBAN(){
 }
 
 // ======================================================================
-//  COMMUNICATION AVEC LE GOOGLE SHEET
+//  COMMUNICATION AVEC LA BASE DE DONNÉES (Supabase)
+//  Mêmes questions et mêmes réponses qu'avec l'ancien Google Sheet.
 // ======================================================================
-function jsonp(params, timeout = 40000){
-  return new Promise((resolve, reject) => {
-    const cb = "cbJ" + Date.now() + Math.floor(Math.random()*1e6);
-    const s = document.createElement("script");
-    let fini = false;
-    // Une réponse qui arrive en retard ne provoque plus d'erreur : la fonction reste définie (vide) un moment.
-    const fin = () => { fini = true; clearTimeout(t); s.remove(); window[cb] = function(){}; setTimeout(() => { try { delete window[cb]; } catch(e) {} }, 120000); };
-    const t = setTimeout(() => { if (!fini){ fin(); reject(new Error("timeout")); } }, timeout);
-    window[cb] = (d) => { if (fini) return; fin(); resolve(d); };
-    s.onerror = () => { if (!fini){ fin(); reject(new Error("reseau")); } };
-    s.src = CONFIG.ENDPOINT_URL + "?" + new URLSearchParams(Object.assign({}, params, {callback:cb, _:Date.now()})).toString();
-    document.body.appendChild(s);
-  });
+/** Appelle une fonction de la base. Erreurs possibles : « reseau », « timeout », « serveur ». */
+async function rpc(fonction, args, timeout = 15000, keepalive = false){
+  if (CONFIG.HORS_LIGNE) throw new Error("reseau");
+  const ctrl = new AbortController(), t = setTimeout(() => ctrl.abort(), timeout);
+  try {
+    const r = await fetch(CONFIG.SUPABASE_URL + "/rest/v1/rpc/" + fonction, { method:"POST", keepalive, signal:ctrl.signal,
+      headers:{ "apikey":CONFIG.SUPABASE_CLE, "Content-Type":"application/json" }, body:JSON.stringify(args) });
+    if (!r.ok) throw new Error("serveur");
+    return await r.json();
+  } catch(e) {
+    throw new Error(e.name === "AbortError" ? "timeout" : e.message === "serveur" ? "serveur" : "reseau");
+  } finally { clearTimeout(t); }
 }
+/** Lectures : « ping » (l'accès est-il ouvert ?) et « connexion » (tout ce qu'il faut au démarrage). */
+function appelServeur(params, timeout = 15000){
+  const mission = String(params.mission || CONFIG.MISSION);
+  return params.action === "ping" ? rpc("me_ping", { p_mission:mission }, timeout)
+    : rpc("me_connexion", { p_email:params.email, p_mission:mission }, timeout);
+}
+/** Enregistre le travail. Réponse : { ok, statut } ou { ok:false, erreur } ; null si le réseau a échoué. */
 function envoyer(statut){
   const data = payload(statut);
   S.lastPayload = data;
-  return fetch(CONFIG.ENDPOINT_URL, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body:JSON.stringify(data) }).catch(() => null);
+  return rpc("me_enregistrer", { p_paquet:data }, 20000).catch(() => null);
 }
-const connexion = () => jsonp({action:"connexion", email:SESSION.email, mission:CONFIG.MISSION});
+const connexion = () => appelServeur({action:"connexion", email:SESSION.email, mission:CONFIG.MISSION});
 
-/** Paquet détaillé envoyé au Google Sheet. */
+/** Paquet détaillé envoyé à la base de données. */
 function payload(statut){
   const t = type(), c = commune(), st = strat();
   const p = {
@@ -764,12 +1681,12 @@ function restaurer(etat){
 
 
 // ======================================================================
-//  SAUVEGARDES ESPACÉES : une classe entière ne doit pas saturer Google
-//  (au plus un envoi « en_cours » toutes les 30 s par élève, sauf étape importante ;
+//  SAUVEGARDES ESPACÉES
+//  (au plus un envoi « en_cours » toutes les 10 s par élève, sauf étape importante ;
 //   l'état le plus récent part toujours, avec un petit décalage aléatoire)
 // ======================================================================
 let DERNIERE_SAUVEGARDE = 0, SAUVEGARDE_PREVUE = null, DERNIER_PING = 0;
-const PAUSE_SAUVEGARDE = 30000, PAUSE_PING = 60000;
+const PAUSE_SAUVEGARDE = 10000, PAUSE_PING = 30000;
 function sauvegarder(force){
   const ecoule = Date.now() - DERNIERE_SAUVEGARDE;
   if (force || ecoule >= PAUSE_SAUVEGARDE){
@@ -778,14 +1695,14 @@ function sauvegarder(force){
   if (!SAUVEGARDE_PREVUE) SAUVEGARDE_PREVUE = setTimeout(() => {
     SAUVEGARDE_PREVUE = null;
     if (MODE === "mission"){ DERNIERE_SAUVEGARDE = Date.now(); envoyer("en_cours"); }
-  }, PAUSE_SAUVEGARDE - ecoule + Math.random() * 8000);
+  }, PAUSE_SAUVEGARDE - ecoule + Math.random() * 3000);
 }
 function annulerSauvegardePrevue(){ clearTimeout(SAUVEGARDE_PREVUE); SAUVEGARDE_PREVUE = null; }
 const pingAutorise = () => { if (Date.now() - DERNIER_PING < PAUSE_PING) return false; DERNIER_PING = Date.now(); return true; };
-// Si l'élève ferme la page avec une sauvegarde en attente, on l'envoie quand même.
+// Si l'élève ferme la page avec une sauvegarde en attente, on l'envoie quand même (requête « keepalive »).
 window.addEventListener("pagehide", () => {
-  if (SAUVEGARDE_PREVUE && MODE === "mission" && navigator.sendBeacon){
-    try { navigator.sendBeacon(CONFIG.ENDPOINT_URL, new Blob([JSON.stringify(payload("en_cours"))], {type:"text/plain;charset=utf-8"})); } catch(e) {}
+  if (SAUVEGARDE_PREVUE && MODE === "mission"){
+    try { rpc("me_enregistrer", { p_paquet:payload("en_cours") }, 10000, true).catch(() => {}); } catch(e) {}
   }
 });
 
@@ -796,6 +1713,7 @@ function toast(html, cls=""){
   const box = $("#toasts"), t = document.createElement("div"); t.className = "toast " + cls; t.innerHTML = html;
   box.appendChild(t); while (box.children.length > 3) box.firstChild.remove();
   setTimeout(() => t.remove(), 3500);
+  decorerToast(t, html, cls);   // décor : icône et son selon le message (XP gagnés, mot de pro, information)
 }
 function award(key, pts, badge){
   if (S.done[key]) return;
@@ -845,64 +1763,501 @@ const MANQUE = {
 // ======================================================================
 //  ÉLÉMENTS VISUELS : vitrine, logo, carte de visite, carte d'identité, patrimoine
 // ======================================================================
+// ═══ VITRINE RÉALISTE (fonction autonome, recopiée telle quelle dans les autres pages) ═══
+/**
+ * Façade réaliste d'un magasin, en SVG (viewBox 0 0 400 300). Fonction PURE : elle ne dépend que de cfg et de uid.
+ * cfg = { nom, couleur, couleur2, style:"moderne"|"elegant"|"fun"|"street", symbole (emoji),
+ *         facade:"brique"|"bois"|"pierre"|"moderne"|"", auvent:"raye"|"uni"|"sans"|"",
+ *         ambiance:"chaleureuse"|"lumineuse"|"nature"|"prestige"|"", accueil (phrase de l'ardoise), numero,
+ *         produits:[emojis], equipement:[emojis] (facultatif : objets visibles à l'intérieur),
+ *         panneau:"OUVERT" (pancarte de la porte ; "" = aucune), allumee:true|false (enseigne et intérieur allumés),
+ *         aLouer:true|false (facultatif : boutique vide avec l'affiche « À LOUER »),
+ *         nuit:true|false (facultatif : la rue le soir, réverbère allumé) }
+ * uid : suffixe de tous les identifiants SVG (motifs, dégradés, filtres) : un uid différent par vitrine affichée.
+ * Champs manquants ou vides : valeurs par défaut (enseigne « Ton enseigne », violet, façade enduite, sans auvent…).
+ */
+function vitrineSVG(cfg, uid){
+  cfg = cfg || {};
+  const u = String(uid == null ? "v" : uid).replace(/[^\w-]/g, "") || "v";
+  const X = (t) => String(t == null ? "" : t).replace(/[&<>"']/g, (c) => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
+  const hexOk = (c, d) => /^#[0-9a-f]{6}$/i.test(String(c || "")) ? String(c) : d;
+  const rgb = (h) => { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; };
+  const lum = (h) => { const c = rgb(h); return (0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2]) / 255; };
+  const mix = (a, b, t) => { const A = rgb(a), B = rgb(b); return "#" + A.map((v, i) => Math.round(v + (B[i] - v) * t).toString(16).padStart(2, "0")).join(""); };
+  const r1 = (n) => Math.round(n * 10) / 10;
+  // Polices de l'enseigne : [famille, graisse, italique, largeur moyenne d'une lettre, espacement]
+  const POL = {
+    moderne:["Outfit, Arial, sans-serif", 800, "normal", .6, 0],
+    elegant:["'Playfair Display', Georgia, serif", 700, "italic", .56, 0],
+    fun:["Fredoka, 'Comic Sans MS', sans-serif", 600, "normal", .6, 0],
+    street:["'Bebas Neue', Impact, sans-serif", 400, "normal", .43, 1.2]
+  };
+  // Lumière intérieure : [mur haut, mur bas, sol, étagères, couleur de la lumière]
+  const AMB = {
+    chaleureuse:["#ffe6b8", "#f0a65c", "#8a5530", "#7a4823", "#ffc86e"],
+    lumineuse:["#ffffff", "#d3e3ff", "#c3ccd9", "#f2f5fa", "#eaf2ff"],
+    nature:["#eef9e8", "#a7dba9", "#b48f5e", "#9a7343", "#dcf5c9"],
+    prestige:["#4b3a5a", "#1f1727", "#151019", "#c9a34e", "#f3cf7a"],
+    vide:["#7a73a0", "#3d3562", "#2b2546", "#5a5280", "#c4bcf0"]
+  };
+  // Façade : [couleur du mur, corniche et bandeaux, encadrements des fenêtres, devanture traditionnelle ?]
+  const FAC = {
+    brique:["#a5523b", "#e9e0d0", "#f1ebdf", true],
+    bois:["#8f5d2e", "#5e3b1d", "#f3ede2", true],
+    pierre:["#d5cab8", "#ebe3d4", "#ece5d7", true],
+    moderne:["#3c414a", "#2a2e35", "#1d2026", false],
+    vide:["#cfc7ba", "#e4ddd1", "#eee8dd", true]
+  };
+
+  // ─── Paramètres (valeurs par défaut si un choix manque) ───
+  const cle = (table, k, defaut) => Object.prototype.hasOwnProperty.call(table, k) ? k : defaut;
+  const aLouer = !!cfg.aLouer, nuit = !!cfg.nuit, lit = cfg.allumee == null ? true : !!cfg.allumee;
+  const style = cle(POL, cfg.style, "moderne"), P = POL[style], neon = style === "fun" || style === "street";
+  const facade = cle(FAC, cfg.facade, "vide"), F = FAC[facade], trad = F[3];
+  const auvent = !aLouer && (cfg.auvent === "raye" || cfg.auvent === "uni") ? cfg.auvent : "";
+  const A = AMB[cle(AMB, cfg.ambiance, "vide")], prestige = cfg.ambiance === "prestige";
+  const brand = hexOk(cfg.couleur, "#8E4EC6"), c2 = hexOk(cfg.couleur2, "#FFFFFF");
+  const nom = String(cfg.nom == null ? "" : cfg.nom).trim() || "Ton enseigne";
+  const symbole = [...String(cfg.symbole == null ? "" : cfg.symbole).trim()].slice(0, 4).join("") || "★";
+  const prod = (Array.isArray(cfg.produits) && cfg.produits.length ? cfg.produits : ["✨", "✨", "✨", "✨"]).slice(0, 4);
+  const equip = Array.isArray(cfg.equipement) ? cfg.equipement.filter(Boolean).slice(0, 5) : [];
+  const numero = String(cfg.numero == null ? "" : cfg.numero).trim().slice(0, 4);
+  const panneau = aLouer ? "" : String(cfg.panneau == null ? "OUVERT" : cfg.panneau).trim().toUpperCase().slice(0, 12);
+  const accueil = aLouer ? "" : String(cfg.accueil == null ? "" : cfg.accueil).trim().slice(0, 60);
+  const NUIT = "#0a0f2e", nC = (c, t) => nuit ? mix(c, NUIT, t == null ? .5 : t) : c;   // objet non éclairé, la nuit
+  const cadre = !trad ? "#25282f" : aLouer ? "#4c5652" : mix(brand, "#16161c", .52);     // devanture peinte ou aluminium
+  const texte = Math.abs(lum(c2) - lum(brand)) > .35 ? c2 : (lum(brand) > .62 ? "#1D1F33" : "#FFFFFF");
+  const neonC = mix(brand, "#ffffff", lum(brand) < .45 ? .28 : .08);
+  const D = [], O = [];
+  const T = (x, y, fs, txt, extra) => `<text x="${r1(x)}" y="${r1(y)}" font-size="${r1(fs)}" text-anchor="middle"${extra || ""}>${txt}</text>`;
+
+  // ─── Dégradés et motifs communs ───
+  D.push(`<linearGradient id="ciel-${u}" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="300">${nuit
+      ? `<stop offset="0" stop-color="#0a1238"/><stop offset=".6" stop-color="#2b3170"/><stop offset="1" stop-color="#5a4a7e"/>`
+      : `<stop offset="0" stop-color="#5f9fe4"/><stop offset="1" stop-color="#d4e9fb"/>`}</linearGradient>`,
+    `<linearGradient id="lum-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset=".4" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient>`,
+    `<linearGradient id="omb-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".38"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient>`,
+    `<linearGradient id="int-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${aLouer ? "#ddd7cb" : A[0]}"/><stop offset="1" stop-color="${aLouer ? "#b9b2a5" : A[1]}"/></linearGradient>`,
+    `<linearGradient id="refl-${u}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".34"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>`,
+    `<linearGradient id="verre-${u}" x1="0" y1="0" x2=".4" y2="1">${nuit
+      ? `<stop offset="0" stop-color="#26305a"/><stop offset="1" stop-color="#121733"/>`
+      : `<stop offset="0" stop-color="#d9ebfa"/><stop offset=".55" stop-color="#8fb3d6"/><stop offset="1" stop-color="#5f83a8"/>`}</linearGradient>`,
+    `<linearGradient id="fenL-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe7a8"/><stop offset="1" stop-color="#f0a854"/></linearGradient>`,
+    `<radialGradient id="halo-${u}"><stop offset="0" stop-color="${A[4]}" stop-opacity=".9"/><stop offset="1" stop-color="${A[4]}" stop-opacity="0"/></radialGradient>`,
+    `<radialGradient id="lant-${u}"><stop offset="0" stop-color="#ffe2a0" stop-opacity=".95"/><stop offset=".3" stop-color="#ffc760" stop-opacity=".42"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>`,
+    `<linearGradient id="cone-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff6dc" stop-opacity=".85"/><stop offset="1" stop-color="#fff6dc" stop-opacity="0"/></linearGradient>`,
+    `<linearGradient id="flot-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${aLouer ? "#fff3d6" : A[4]}" stop-opacity=".42"/><stop offset="1" stop-color="${aLouer ? "#fff3d6" : A[4]}" stop-opacity="0"/></linearGradient>`,
+    `<linearGradient id="laiton-${u}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8a6a22"/><stop offset=".45" stop-color="#f3d77e"/><stop offset="1" stop-color="#9c7a2c"/></linearGradient>`,
+    `<clipPath id="cv-${u}"><rect x="38" y="134" width="212" height="110"/></clipPath>`,
+    `<pattern id="pav-${u}" width="40" height="14" patternUnits="userSpaceOnUse"><rect width="40" height="14" fill="#bdbab2"/><path d="M0 .5H40M0 7.5H40M.5 0V7M20.5 7V14" stroke="#9f9b93" stroke-width=".9"/><path d="M2 3h6M24 10h5" stroke="#fff" stroke-opacity=".25" stroke-width=".7"/></pattern>`);
+
+  // ─── Texture de la façade ───
+  if (facade === "brique"){
+    const pal = ["#a8543c", "#98462f", "#b25f44", "#8e412c", "#ac5a40", "#9d4b34", "#b8684c", "#934530", "#a24f37"];
+    let b = `<rect width="64" height="32" fill="#cdbca7"/>`, hi = "", lo = "";
+    for (let r = 0; r < 4; r++) for (let c = 0; c < 5; c++){
+      const x = (r % 2 ? -8 : 0) + c * 16 + .5, y = r * 8 + .5;
+      b += `<rect x="${x}" y="${y}" width="15" height="7" fill="${pal[(r * 7 + c * 4) % pal.length]}"/>`;
+      hi += `M${x} ${y + .6}h15`; lo += `M${x} ${y + 6.5}h15`;
+    }
+    D.push(`<pattern id="fac-${u}" width="64" height="32" patternUnits="userSpaceOnUse">${b}<path d="${hi}" stroke="#fff" stroke-opacity=".16" stroke-width="1"/><path d="${lo}" stroke="#000" stroke-opacity=".2" stroke-width="1"/></pattern>`);
+  } else if (facade === "bois"){
+    D.push(`<pattern id="fac-${u}" width="96" height="24" patternUnits="userSpaceOnUse"><rect width="96" height="12" fill="#966233"/><rect y="12" width="96" height="12" fill="#87552a"/>
+      <path d="M0 4.2Q24 3.2 48 4.6T96 4.2M0 8Q30 7 60 8.6T96 8M0 16.5Q20 15.6 44 16.8T96 16.4M0 20Q36 19 70 20.6T96 20" stroke="#5a3617" stroke-opacity=".28" stroke-width=".6" fill="none"/>
+      <path d="M0 .6H96M0 12.6H96" stroke="#fff" stroke-opacity=".14"/><path d="M0 11.3H96M0 23.3H96" stroke="#4a2c12" stroke-opacity=".75" stroke-width="1.4"/>
+      <path d="M60.5 0V11M20.5 12V23" stroke="#4a2c12" stroke-opacity=".6"/><ellipse cx="34" cy="6.5" rx="2.4" ry="1.3" fill="#62391a" opacity=".7"/><ellipse cx="78" cy="18" rx="1.8" ry="1" fill="#62391a" opacity=".6"/></pattern>`);
+  } else if (facade === "pierre"){
+    D.push(`<pattern id="fac-${u}" width="64" height="32" patternUnits="userSpaceOnUse"><rect width="64" height="32" fill="#b3a893"/>
+      <rect x=".5" y=".5" width="31" height="15" fill="#d6cbb9"/><rect x="32.5" y=".5" width="31" height="15" fill="#cdc1ad"/>
+      <rect x="-15.5" y="16.5" width="31" height="15" fill="#d2c6b3"/><rect x="16.5" y="16.5" width="31" height="15" fill="#dad0bf"/><rect x="48.5" y="16.5" width="31" height="15" fill="#d2c6b3"/>
+      <path d="M.5 1.2h31M32.5 1.2h31M0 17.2h15.5M16.5 17.2h31M48.5 17.2h15.5" stroke="#fff" stroke-opacity=".45"/>
+      <path d="M.5 15h31M32.5 15h31M0 31h15.5M16.5 31h31M48.5 31h15.5M31.5 1v14M63.5 1v14M15.5 17v14M47.5 17v14" stroke="#7e7462" stroke-opacity=".35"/>
+      <circle cx="9" cy="7" r=".6" fill="#9b907c"/><circle cx="44" cy="10" r=".5" fill="#9b907c"/><circle cx="27" cy="24" r=".6" fill="#9b907c"/><circle cx="56" cy="21" r=".5" fill="#9b907c"/></pattern>`);
+  } else if (facade === "moderne"){
+    D.push(`<pattern id="fac-${u}" width="120" height="40" patternUnits="userSpaceOnUse"><rect width="120" height="40" fill="#22252b"/>
+      <rect x=".75" y=".75" width="58.5" height="38.5" fill="#3f444d"/><rect x="60.75" y=".75" width="58.5" height="38.5" fill="#393e46"/>
+      <path d="M1 1.4h58M61 1.4h58" stroke="#fff" stroke-opacity=".1"/></pattern>`);
+  }
+  const mur = facade === "vide" ? F[0] : `url(#fac-${u})`;
+
+  // ─── 1. Ciel, voisins, cheminée ───
+  O.push(`<rect width="400" height="300" fill="url(#ciel-${u})"/>`);
+  if (nuit) O.push(`<g fill="#fff">${[[34, 5, .7], [70, 2.5, .5], [122, 6, .6], [178, 3, .45], [236, 5.5, .7], [292, 2.5, .5], [350, 6, .6], [9, 16, .6], [16, 7, .45], [394, 2.5, .5]].map(s => `<circle cx="${s[0]}" cy="${s[1]}" r="${s[2]}"/>`).join("")}</g>
+    <circle cx="390" cy="9" r="5" fill="#f4edd0"/><circle cx="392.4" cy="7.4" r="4.3" fill="url(#ciel-${u})"/>`);
+  O.push(`<rect x="0" y="30" width="26" height="234" fill="#8f9ba8"/><rect x="0" y="26" width="28" height="5" fill="#bcc5ce"/>
+    <rect x="4" y="44" width="15" height="40" fill="url(#verre-${u})" stroke="#e9edf1" stroke-width="2"/><rect x="0" y="132" width="20" height="118" fill="#1d2a37"/><rect x="0" y="250" width="20" height="12" fill="#4e5862"/>
+    <rect x="374" y="18" width="26" height="246" fill="#6f3b2e"/><rect x="372" y="14" width="28" height="5" fill="#50291f"/>
+    <rect x="382" y="34" width="15" height="44" fill="url(#verre-${u})" stroke="#dcd3c6" stroke-width="2"/><rect x="384" y="132" width="16" height="118" fill="#1b2633"/>
+    <rect x="316" y="0" width="16" height="13" fill="#7a3e2e"/><rect x="314" y="0" width="20" height="3" fill="#57291f"/>`);
+
+  // ─── 2. Façade de l'immeuble ───
+  O.push(`<rect x="22" y="14" width="356" height="250" fill="${mur}"/><rect x="22" y="14" width="356" height="250" fill="url(#lum-${u})"/>
+    <rect x="22" y="14" width="2.5" height="250" fill="#000" opacity=".22"/><rect x="375.5" y="14" width="2.5" height="250" fill="#000" opacity=".22"/>`);
+  // Corniche du toit
+  const co = F[1];
+  if (trad){
+    let dents = ""; for (let x = 24; x < 376; x += 8) dents += `M${x} 21h4v3h-4z`;
+    O.push(`<rect x="16" y="7" width="368" height="5" fill="${mix(co, "#ffffff", .3)}"/><rect x="18" y="12" width="364" height="7" fill="${co}"/>
+      <rect x="18" y="19" width="364" height="2" fill="${mix(co, "#000000", .28)}"/><path d="${dents}" fill="${mix(co, "#000000", .08)}"/>
+      <rect x="22" y="24" width="356" height="7" fill="url(#omb-${u})" opacity=".55"/>`);
+  } else {
+    O.push(`<rect x="18" y="9" width="364" height="5" fill="#8b929c"/><rect x="18" y="13" width="364" height="1.5" fill="#5a6069"/><rect x="22" y="14.5" width="356" height="5" fill="url(#omb-${u})" opacity=".5"/>`);
+  }
+
+  // ─── 3. Étage : fenêtres ───
+  const fenetres = [];
+  if (trad){
+    [86, 200, 314].forEach((cx, i) => {
+      const x = cx - 23, y = 31, enc = F[2];
+      let s = "";
+      if (facade === "bois"){   // volets en bois
+        const vo = nC("#5f7f63", 0);
+        s += `<rect x="${x - 12}" y="${y}" width="11" height="50" fill="${vo}"/><rect x="${x + 47}" y="${y}" width="11" height="50" fill="${vo}"/>`
+          + `<path d="${[0, 1, 2, 3, 4, 5, 6, 7, 8].map(k => `M${x - 11} ${y + 4 + k * 5.2}h9M${x + 48} ${y + 4 + k * 5.2}h9`).join("")}" stroke="#000" stroke-opacity=".22"/>`;
+      }
+      if (facade === "brique") s += `<rect x="${x - 4}" y="${y - 6}" width="54" height="6" fill="${enc}"/><path d="M${x - 4} ${y - .5}h54" stroke="#000" stroke-opacity=".15"/>`;
+      if (facade === "pierre") s += `<rect x="${x - 5}" y="${y - 5}" width="56" height="59" fill="none" stroke="${mix(enc, "#000000", .1)}" stroke-width="3"/><path d="M${cx - 5} ${y - 7}h10l-2 6h-6z" fill="${mix(enc, "#000000", .06)}"/>`;
+      s += `<rect x="${x}" y="${y}" width="46" height="50" fill="${enc}"/><rect x="${x + 3}" y="${y + 3}" width="40" height="44" fill="url(#verre-${u})"/>`;
+      if (!nuit) s += `<path d="M${x + 3} ${y + 3}h9q-3 20 1 44h-10z M${x + 43} ${y + 3}h-9q3 20 -1 44h10z" fill="#fff" opacity=".55"/>`;
+      s += `<path d="M${cx} ${y + 3}v44M${x + 3} ${y + 17}h40" stroke="${enc}" stroke-width="2.4"/>`
+        + `<rect x="${x - 5}" y="${y + 50}" width="56" height="4" fill="${mix(enc, "#000000", .05)}"/><rect x="${x - 4}" y="${y + 54}" width="54" height="3" fill="#000" opacity=".18"/>`;
+      if (i === 1){   // jardinière fleurie
+        s += `<rect x="${x + 1}" y="${y + 44}" width="44" height="7" rx="1" fill="#a9532f"/><path d="M${x + 1} ${y + 45}h44" stroke="#fff" stroke-opacity=".2"/>`
+          + [6, 13, 20, 27, 34, 40].map((d, k) => `<circle cx="${x + d}" cy="${y + 42 - (k % 2) * 2}" r="3.2" fill="#3f8a45"/><circle cx="${x + d + 1}" cy="${y + 40 - (k % 2) * 2}" r="2.1" fill="${k % 3 ? "#e63946" : "#ff7aa8"}"/>`).join("");
+      }
+      fenetres.push({ x: x + 3, y: y + 3, w: 40, h: 44, cx, enc });
+      O.push(s);
+    });
+  } else {
+    let s = `<rect x="38" y="32" width="324" height="48" fill="#16181d"/>`;
+    for (let k = 0; k < 5; k++){ const x = 41 + k * 64; s += `<rect x="${x}" y="35" width="62" height="42" fill="url(#verre-${u})"/>`; fenetres.push({ x, y: 35, w: 62, h: 42, cx: x + 31, enc: "#16181d", moderne: true }); }
+    if (!nuit) s += `<polygon points="60,35 92,35 70,77 38,77" fill="#fff" opacity=".18"/><polygon points="250,35 270,35 248,77 228,77" fill="#fff" opacity=".14"/>`;
+    O.push(s + `<rect x="36" y="80" width="328" height="3" fill="#6b727c"/>`);
+  }
+  // Bandeau entre l'étage et le magasin
+  O.push(trad ? `<rect x="22" y="86" width="356" height="5" fill="${co}"/><path d="M22 86.5h356" stroke="#fff" stroke-opacity=".3"/><rect x="22" y="91" width="356" height="3" fill="#000" opacity=".18"/>`
+    : `<rect x="22" y="87" width="356" height="3" fill="#5a6069"/>`);
+  // Descente d'eau de pluie
+  O.push(`<rect x="369.5" y="20" width="4" height="242" fill="${trad ? "#8d949c" : "#2b2f36"}"/><rect x="369.5" y="20" width="1.2" height="242" fill="#fff" opacity=".22"/>
+    ${[40, 100, 160, 220].map(y => `<rect x="368" y="${y}" width="7" height="2" fill="#5f656d"/>`).join("")}<path d="M369.5 258h4v4h-7v-2.4h3z" fill="#6f757d"/>`);
+
+  // ─── 4. Rez-de-chaussée : la devanture ───
+  if (trad){
+    O.push(`<rect x="26" y="92" width="312" height="170" fill="${cadre}"/>
+      <rect x="24" y="92" width="316" height="4" fill="${mix(cadre, "#ffffff", .18)}"/><rect x="26" y="96" width="312" height="1.5" fill="#000" opacity=".25"/>
+      <path d="M29.5 128V259M252.5 132V259M266.5 132V259M335 128V259" stroke="${mix(cadre, "#ffffff", .16)}" stroke-width="1.2"/>
+      <path d="M31 128V259M254 132V259M268 132V259M336.5 128V259" stroke="#000" stroke-opacity=".22"/>`);
+  } else {
+    O.push(`<rect x="30" y="128" width="226" height="134" fill="#1b1d22"/><rect x="272" y="130" width="58" height="132" fill="#1b1d22"/>`);
+  }
+  // Soubassement sous la vitrine
+  O.push(trad ? `<rect x="38" y="246" width="212" height="16" fill="${mix(cadre, "#000000", .12)}"/><rect x="42" y="249" width="204" height="10" fill="none" stroke="${mix(cadre, "#ffffff", .14)}" stroke-width="1"/><rect x="42.8" y="249.8" width="204" height="10" fill="none" stroke="#000" stroke-opacity=".25" stroke-width=".8"/>`
+    : `<rect x="34" y="246" width="218" height="15" fill="#121317"/><path d="M34 246.5h218" stroke="#fff" stroke-opacity=".12"/>`);
+  // Porte : dormant, vantail, panneau du bas, seuil
+  const porte = trad ? mix(cadre, "#ffffff", .06) : "#202329";
+  O.push(`<rect x="276" y="132" width="50" height="130" fill="${mix(cadre, "#000000", .2)}"/>
+    <rect x="278" y="150" width="46" height="110" fill="${porte}"/><rect x="278" y="150" width="46" height="110" fill="none" stroke="#000" stroke-opacity=".3"/>
+    ${trad ? `<rect x="284" y="221" width="34" height="31" fill="none" stroke="${mix(porte, "#ffffff", .15)}" stroke-width="1.2"/><rect x="285" y="222" width="34" height="31" fill="none" stroke="#000" stroke-opacity=".28" stroke-width=".8"/>` : ""}
+    <rect x="272" y="260" width="58" height="4" fill="#8f949a"/><path d="M272 260.5h58" stroke="#fff" stroke-opacity=".4"/>`);
+
+  // ─── 5. Trottoir ───
+  O.push(`<rect x="0" y="262" width="400" height="29" fill="url(#pav-${u})"/><rect x="0" y="262" width="400" height="29" fill="url(#omb-${u})" opacity=".35"/>
+    <rect x="0" y="262" width="400" height="2.5" fill="#000" opacity=".3"/><rect x="0" y="290" width="400" height="5" fill="#a8a59e"/><rect x="0" y="290" width="400" height="1" fill="#dedbd4"/><rect x="0" y="295" width="400" height="5" fill="#38383d"/>`);
+
+  // ─── 6. La nuit tombe : tout ce qui n'est pas éclairé s'assombrit ───
+  if (nuit) O.push(`<rect width="400" height="300" fill="${NUIT}" opacity=".56"/>`);
+
+  // ─── 7. Fenêtres éclairées à l'étage (la nuit) ───
+  if (nuit) fenetres.forEach((f, i) => {
+    if (!(f.moderne ? (i === 1 || i === 3) : i === 0)) return;
+    O.push(`<rect x="${f.x}" y="${f.y}" width="${f.w}" height="${f.h}" fill="url(#fenL-${u})"/>`
+      + (f.moderne ? "" : `<path d="M${f.x} ${f.y}h9q-3 20 1 ${f.h}h-10zM${f.x + f.w} ${f.y}h-9q3 20 -1 ${f.h}h10z" fill="#c4672a" opacity=".55"/><path d="M${f.cx} ${f.y}v${f.h}M${f.x} ${f.y + 14}h${f.w}" stroke="${nC(f.enc, .55)}" stroke-width="2.4"/>`));
+  });
+
+  // ─── 8. L'intérieur du magasin, vu à travers la vitrine ───
+  let int = `<rect x="38" y="134" width="212" height="110" fill="url(#int-${u})"/><rect x="38" y="134" width="212" height="9" fill="#000" opacity=".16"/>`;
+  if (aLouer){
+    int += `<rect x="38" y="230" width="212" height="14" fill="#9a958b"/><path d="M38 230.5h212" stroke="#000" stroke-opacity=".15"/>
+      <path d="M196 232l14-62 14 62M201 210h18M204 196h12M207 183h7" stroke="#9c7a4d" stroke-width="2.2" fill="none"/>
+      <rect x="60" y="214" width="26" height="18" fill="#c39a69"/><rect x="66" y="200" width="20" height="14" fill="#b88d5c"/><path d="M60 220h26M66 205h20" stroke="#e8d3a8" stroke-width="2"/>
+      <path d="M104 222h14v10h-14z" fill="#e8ecef"/><path d="M104 222q7 4 14 0" stroke="#7aa6d9" stroke-width="2" fill="none"/>
+      <path d="M150 134v18" stroke="#333" stroke-width="1"/><circle cx="150" cy="155" r="3.2" fill="${lit ? "#fff4cf" : "#d8d3c6"}"/>`;
+    if (lit) int += `<circle cx="150" cy="156" r="26" fill="url(#halo-${u})" opacity=".6"/>`;
+  } else {
+    // décor du mur du fond (lattes de bois, carrelage, rayures dorées), sol et étagère
+    const lignes = (n, f) => Array.from({ length:n }, (_, k) => f(k)).join("");
+    int += ({
+      chaleureuse:`<path d="${lignes(17, k => `M${44 + k * 12.5} 143V232`)}" stroke="#7a3f12" stroke-opacity=".12" stroke-width="1.2"/>`,
+      nature:`<path d="${lignes(17, k => `M${44 + k * 12.5} 143V232`)}" stroke="#4d7a3c" stroke-opacity=".1" stroke-width="1"/>`,
+      lumineuse:`<path d="${lignes(8, k => `M38 ${146 + k * 11}H250`)}${lignes(12, k => `M${48 + k * 18} 143V232`)}" stroke="#7d93b8" stroke-opacity=".14" stroke-width=".7"/>`,
+      prestige:`<path d="${lignes(14, k => `M${46 + k * 15} 143V232`)}" stroke="#d8b45a" stroke-opacity=".14" stroke-width=".8"/>`
+    })[cle(AMB, cfg.ambiance, "vide")] || "";
+    int += `<rect x="38" y="232" width="212" height="12" fill="${A[2]}"/><rect x="38" y="232" width="212" height="12" fill="url(#omb-${u})" opacity=".5"/>
+      <rect x="46" y="183" width="196" height="3.2" fill="${A[3]}"/><path d="M60 186.2v5M228 186.2v5" stroke="${A[3]}" stroke-width="2"/><rect x="46" y="186.2" width="196" height="3" fill="#000" opacity=".12"/>`;
+    [0, 1, 2, 3, 0, 1].forEach((k, i) => { int += T(62 + i * 32.8, 181.5, 12, X(prod[k % prod.length])); });
+    // lampes au plafond (selon l'ambiance)
+    if (cfg.ambiance === "lumineuse") int += `<rect x="62" y="134" width="44" height="3" fill="#fff"/><rect x="122" y="134" width="44" height="3" fill="#fff"/><rect x="182" y="134" width="44" height="3" fill="#fff"/>`;
+    else [84, 144, 204].forEach((x) => {
+      int += `<path d="M${x} 134v12" stroke="#2a2a2a" stroke-width=".8"/>` + (prestige
+        ? `<path d="M${x - 5} 146h10l-2 4h-6z" fill="#c9a34e"/>`
+        : `<path d="M${x - 7} 152q7 -9 14 0z" fill="${cfg.ambiance === "nature" ? "#d9c7a0" : "#2d2d33"}"/>`);
+      if (lit) int += `<circle cx="${x}" cy="153" r="${prestige ? 16 : 22}" fill="url(#halo-${u})" opacity="${nuit ? .85 : .6}"/>`;
+    });
+    if (prestige && lit) int += [84, 144, 204].map(x => `<polygon points="${x - 3},150 ${x + 3},150 ${x + 18},232 ${x - 18},232" fill="url(#cone-${u})" opacity=".22"/>`).join("");
+    if (cfg.ambiance === "nature") int += `<path d="M44 244c2-18 6-30 14-40M52 244c0-14-4-26-10-34M48 244c4-10 10-16 18-20" stroke="#3f7d3a" stroke-width="2" fill="none"/>
+      <ellipse cx="58" cy="205" rx="7" ry="3" fill="#4f9a48" transform="rotate(-40 58 205)"/><ellipse cx="42" cy="211" rx="6" ry="2.6" fill="#3f8a3c" transform="rotate(35 42 211)"/><ellipse cx="66" cy="224" rx="7" ry="2.8" fill="#5aa652" transform="rotate(-20 66 224)"/>
+      <ellipse cx="236" cy="208" rx="8" ry="3" fill="#4f9a48" transform="rotate(30 236 208)"/><ellipse cx="244" cy="220" rx="7" ry="2.6" fill="#3f8a3c" transform="rotate(-35 244 220)"/><path d="M238 244c0-14 2-24 0-36" stroke="#3f7d3a" stroke-width="2" fill="none"/>`;
+    // matériel visible à l'intérieur (facultatif)
+    equip.forEach((e, i) => { int += T(144 + (i - (equip.length - 1) / 2) * 36, 211, 16, X(e)); });
+    // présentoir avec les produits et leurs étiquettes de prix
+    const pres = prestige ? "#1b1420" : mix(A[3], "#000000", .05);
+    int += `<rect x="58" y="231" width="172" height="13" fill="${pres}"/><rect x="58" y="231" width="172" height="2.5" fill="${prestige ? "#d8b45a" : mix(A[3], "#ffffff", .3)}"/><rect x="58" y="233.5" width="172" height="3" fill="#000" opacity=".15"/>`;
+    prod.forEach((p, i) => {
+      const x = 80 + i * 43;
+      int += `<ellipse cx="${x}" cy="231.5" rx="10" ry="1.6" fill="#000" opacity=".18"/>` + T(x, 230.5, 21, X(p))
+        + `<path d="M${x + 9} 219l3 4" stroke="#777" stroke-width=".5"/><rect x="${x + 10}" y="222.5" width="8" height="5" rx=".8" fill="#fff" transform="rotate(14 ${x + 14} 225)"/>`;
+    });
+  }
+  if (!lit) int += `<rect x="38" y="134" width="212" height="110" fill="#05060f" opacity="${nuit ? .62 : .42}"/>`;
+  if (aLouer){   // vitre passée au blanc : grands coups de chiffon circulaires qui se chevauchent
+    const tours = [[70, 168, 30, 20, -20], [122, 206, 34, 22, 15], [168, 160, 30, 18, -10], [216, 204, 34, 20, 25], [58, 226, 28, 16, 10], [232, 150, 22, 16, -30], [150, 236, 30, 14, -5], [104, 150, 24, 12, 8]];
+    int += `<g opacity="${nuit && !lit ? .55 : 1}"><rect x="38" y="134" width="212" height="110" fill="#fff" opacity=".3"/>${tours.map(t => `<ellipse cx="${t[0]}" cy="${t[1]}" rx="${t[2]}" ry="${t[3]}" fill="none" stroke="#fff" stroke-width="13" opacity=".17" transform="rotate(${t[4]} ${t[0]} ${t[1]})"/>`).join("")}</g>`;
+  }
+  O.push(`<g clip-path="url(#cv-${u})">${int}</g>`);
+  // Vitre de la porte et imposte
+  const vitreP = (x, y, w, h) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="url(#int-${u})"/>` + (lit ? "" : `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#05060f" opacity="${nuit ? .62 : .42}"/>`);
+  O.push(vitreP(280, 135, 42, 12) + `<path d="M301 135v12" stroke="${porte}" stroke-width="1.5"/>`
+    + (trad ? vitreP(284, 157, 34, 57) : vitreP(283, 155, 36, 98)));
+  // Ombre de l'auvent (ou de l'enseigne) sur la vitre
+  O.push(auvent ? `<rect x="38" y="158" width="212" height="38" fill="url(#omb-${u})" opacity="${nuit ? .35 : .85}"/>` : `<rect x="38" y="134" width="212" height="10" fill="url(#omb-${u})" opacity=".6"/>`);
+  // Reflets sur le verre
+  O.push(`<g opacity="${nuit ? .3 : .85}"><g clip-path="url(#cv-${u})"><polygon points="72,134 108,134 66,244 30,244" fill="url(#refl-${u})"/><polygon points="122,134 132,134 90,244 80,244" fill="url(#refl-${u})" opacity=".7"/><polygon points="206,134 240,134 198,244 164,244" fill="url(#refl-${u})" opacity=".55"/></g>
+    <polygon points="${trad ? "290,157 300,157 292,214 284,214" : "292,155 302,155 290,253 283,253"}" fill="url(#refl-${u})"/></g>
+    <rect x="38" y="134" width="212" height="110" fill="none" stroke="${mix(cadre, "#000000", .35)}" stroke-width="1.6"/>
+    ${trad ? `<rect x="284" y="157" width="34" height="57" fill="none" stroke="${mix(porte, "#000000", .35)}" stroke-width="1.2"/>` : `<path d="M147 134v110" stroke="#1b1d22" stroke-width="2.5"/>`}`);
+
+  // Affiche « À LOUER » collée sur la vitrine
+  if (aLouer){
+    const enc = nuit && !lit ? .25 : 0;
+    O.push(`<g transform="rotate(-3 144 190)"><rect x="92" y="163" width="104" height="54" fill="${nC("#ffffff", enc)}" stroke="${nC("#d62828", enc)}" stroke-width="3"/>
+      ${T(144, 191, 18, "À LOUER", ` fill="${nC("#d62828", enc)}" style="font-family:Outfit,Arial,sans-serif;font-weight:800;letter-spacing:.5px"`)}
+      ${T(144, 206, 7.4, "Bientôt ton entreprise ici ?", ` fill="${nC("#2b2b33", enc)}" style="font-family:Outfit,Arial,sans-serif;font-weight:600"`)}
+      <rect x="86" y="159" width="14" height="6" fill="#f3efe1" opacity=".75" transform="rotate(-30 93 162)"/><rect x="188" y="213" width="14" height="6" fill="#f3efe1" opacity=".75" transform="rotate(-30 195 216)"/></g>`);
+  }
+
+  // ─── 9. L'enseigne ───
+  const allumeEns = lit && !aLouer, sombre = nuit && !allumeEns;
+  const fond = aLouer ? nC("#59625d", .35) : neon ? nC("#17171e", .2) : (sombre ? nC(brand, .45) : brand);
+  O.push(`<rect x="32" y="97" width="300" height="29" rx="${style === "fun" ? 9 : 2}" fill="${fond}"/>`
+    + `<rect x="32" y="97" width="300" height="29" rx="${style === "fun" ? 9 : 2}" fill="none" stroke="${mix(fond, "#000000", .38)}" stroke-width="1.6"/>`
+    + `<path d="M${style === "fun" ? 40 : 34} 98.6H${style === "fun" ? 324 : 330}" stroke="#fff" stroke-opacity=".28"/>`);
+  if (aLouer){
+    O.push(`<rect x="70" y="103" width="226" height="17" rx="2" fill="${nC("#69726c", .35)}"/><path d="M90 108h4M118 112h3M150 107h4M182 113h3M214 108h4M246 112h3" stroke="#000" stroke-opacity=".3" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M40 101q20 6 8 22M300 122q10-10 24-6" stroke="#000" stroke-opacity=".12" stroke-width="3" fill="none"/>`);
+  } else {
+    const len = [...nom].length, place = 258;
+    let fs = Math.min(20, (place - Math.max(0, len - 1) * P[4]) / (len * P[3]));
+    fs = Math.max(9, fs);
+    const trop = len * P[3] * fs + Math.max(0, len - 1) * P[4] > place;
+    const police = ` style="font-family:${P[0]};font-weight:${P[1]};font-style:${P[2]};letter-spacing:${P[4]}px"${trop ? ` textLength="${place}" lengthAdjust="spacingAndGlyphs"` : ""}`;
+    const yT = 111.5 + fs * .36, nomX = X(nom);
+    if (neon){
+      if (allumeEns){
+        D.push(`<filter id="neon-${u}" x="-10%" y="-60%" width="120%" height="220%"><feGaussianBlur stdDeviation="2.3"/></filter>`,
+          `<radialGradient id="nh-${u}"><stop offset="0" stop-color="${neonC}" stop-opacity=".55"/><stop offset="1" stop-color="${neonC}" stop-opacity="0"/></radialGradient>`);
+        if (nuit) O.push(`<ellipse cx="182" cy="111" rx="190" ry="40" fill="url(#nh-${u})" opacity=".55"/>`);
+        O.push(`<circle cx="48" cy="111.5" r="11.5" fill="none" stroke="${neonC}" stroke-width="3" filter="url(#neon-${u})"/>`
+          + T(195, yT, fs, nomX, ` fill="${neonC}" stroke="${neonC}" stroke-width="2.4" filter="url(#neon-${u})"${police}`)
+          + T(195, yT, fs, nomX, ` fill="${mix(neonC, "#ffffff", .62)}" stroke="${neonC}" stroke-width=".5"${police}`));
+      } else {
+        O.push(T(195, yT, fs, nomX, ` fill="${nC("#c9cad3", .3)}" stroke="${nC("#7c7e8b", .3)}" stroke-width=".5"${police}`));
+      }
+      O.push(`<circle cx="48" cy="111.5" r="10.5" fill="${nC(c2, sombre ? .4 : 0)}" stroke="${allumeEns ? mix(neonC, "#ffffff", .5) : nC("#8b8d99", .3)}" stroke-width="1.4"/>` + T(48, 116.2, 12.5, X(symbole)));
+      if (style === "street") O.push(`<g fill="${nC("#9aa0aa", .3)}"><circle cx="36" cy="101" r="1"/><circle cx="328" cy="101" r="1"/><circle cx="36" cy="122" r="1"/><circle cx="328" cy="122" r="1"/></g>`);
+    } else {
+      O.push(`<circle cx="48" cy="111.5" r="11.5" fill="${nC(c2, sombre ? .4 : 0)}" stroke="#000" stroke-opacity=".25"/>` + T(48, 116.2, 13, X(symbole))
+        + T(195, yT, fs, nomX, ` fill="${sombre ? nC(texte, .45) : texte}"${police}`));
+      if (style === "elegant"){   // spots en col de cygne, en laiton
+        [110, 195, 280].forEach((x) => {
+          if (allumeEns) O.push(`<polygon points="${x - 3},89 ${x + 3},89 ${x + 40},126 ${x - 40},126" fill="url(#cone-${u})" opacity="${nuit ? .5 : .22}"/><ellipse cx="${x}" cy="103" rx="30" ry="6" fill="#fff8e1" opacity="${nuit ? .28 : .12}"/>`);
+          O.push(`<path d="M${x} 93V86q0 -3 3 -3" stroke="${nC("#9c7a2c", .3)}" stroke-width="1.6" fill="none"/><path d="M${x - 4} 85h8l-1.2 4h-5.6z" fill="${nC("#c49a3c", .3)}"/>`);
+        });
+      } else {                    // rampe de leds au-dessus de l'enseigne
+        if (allumeEns) O.push(`<rect x="32" y="97" width="300" height="14" fill="url(#cone-${u})" opacity="${nuit ? .5 : .2}"/>`);
+        O.push(`<rect x="44" y="91.4" width="276" height="3" rx="1.5" fill="${nC("#a3aab4", .3)}"/>${allumeEns ? `<rect x="46" y="94" width="272" height="1.2" fill="#fffbe8" opacity=".9"/>` : ""}
+          <path d="M60 94.4v2.4M182 94.4v2.4M304 94.4v2.4" stroke="${nC("#7d848e", .3)}" stroke-width="1.6"/>`);
+      }
+    }
+  }
+
+  // ─── 10. L'auvent en tissu ───
+  if (auvent){
+    const n = 12, yT = 129, yB = 150, yV = 158, rr = (256 - 32) / n / 2;
+    const c1 = nC(brand, .45), cr = nC("#f6f1e6", .5);
+    let s = "", plis = "";
+    for (let i = 0; i < n; i++){
+      const a = 40 + 208 * i / n, b = 40 + 208 * (i + 1) / n, d = 32 + 224 * i / n, c = 32 + 224 * (i + 1) / n, col = auvent === "raye" && i % 2 ? cr : c1;
+      s += `<polygon points="${r1(a)},${yT} ${r1(b) + .3},${yT} ${r1(c) + .3},${yB} ${r1(d)},${yB}" fill="${col}"/><rect x="${r1(d)}" y="${yB}" width="${r1(c - d + .4)}" height="${yV - yB}" fill="${col}"/>`
+        + `<path d="M${r1(d)} ${yV}a${r1(rr)} ${r1(rr)} 0 0 0 ${r1(2 * rr)} 0z" fill="${col}" stroke="#000" stroke-opacity=".16" stroke-width=".7"/>`;
+      plis += `M${r1(a)} ${yT}L${r1(d)} ${yB}`;
+    }
+    D.push(`<linearGradient id="aw-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".32"/><stop offset=".55" stop-color="#000" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity=".14"/></linearGradient>`,
+      `<linearGradient id="val-${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#000" stop-opacity=".2"/></linearGradient>`);
+    O.push(`<g>${s}<polygon points="40,${yT} 248,${yT} 256,${yB} 32,${yB}" fill="url(#aw-${u})"/><path d="${plis}" stroke="#000" stroke-opacity=".1" stroke-width=".8"/>
+      <rect x="32" y="${yB}" width="224" height="${yV - yB}" fill="url(#val-${u})"/><path d="M32 ${yB}H256" stroke="#000" stroke-opacity=".28"/><path d="M40 ${yT + .6}H248" stroke="#000" stroke-opacity=".35" stroke-width="1.4"/>
+      <path d="M36 135l-3.5 15M252 135l3.5 15" stroke="${nC("#2a2b30", .2)}" stroke-width="1.6"/></g>`);
+  }
+
+  // ─── 11. Porte : pancarte, poignée, boîte aux lettres ───
+  const pc = /^OUVERT/.test(panneau) ? "#1f8a4c" : /^FERM/.test(panneau) ? "#c62828" : "#1d3b8f";
+  if (panneau){
+    const pl = [...panneau].length;
+    O.push(`<path d="M301 160.5l-11 9M301 160.5l11 9" stroke="${nC("#d9d4c8", .3)}" stroke-width=".7"/><circle cx="301" cy="160" r="1.1" fill="${nC("#c9a54a", .3)}"/>
+      <rect x="287" y="169" width="28" height="12" rx="1.6" fill="${nC("#fdfbf4", nuit && !lit ? .4 : 0)}" stroke="#bdb6a6" stroke-width=".6"/>
+      ${T(301, 177.6, pl > 7 ? 5.4 : 6.6, X(panneau), ` fill="${pc}" style="font-family:Outfit,Arial,sans-serif;font-weight:800"${pl > 8 ? ` textLength="24" lengthAdjust="spacingAndGlyphs"` : ""}`)}`);
+  }
+  O.push(trad ? `<rect x="315.5" y="190" width="3" height="26" rx="1.5" fill="url(#laiton-${u})"/><rect x="291" y="232" width="20" height="3" rx="1" fill="url(#laiton-${u})"/>`
+    : `<rect x="314.5" y="176" width="2.6" height="56" rx="1.3" fill="#cfd4dc"/>`);
+
+  // ─── 12. Plaque émaillée du numéro et applique murale ───
+  if (nuit && lit) O.push(`<circle cx="356" cy="140" r="22" fill="url(#lant-${u})" opacity=".8"/>`);
+  O.push(`<rect x="352" y="133" width="8" height="5" rx="1" fill="${nC("#2c2c31", .2)}"/><path d="M352.6 138h6.8l-1.2 3h-4.4z" fill="${nuit && lit ? "#ffe9b0" : nC("#d7d2c4", .3)}"/>`);
+  if (numero){
+    const pe = nuit ? (lit ? .12 : .4) : 0;
+    O.push(`<rect x="344" y="149" width="24" height="17" rx="2.5" fill="${nC("#1f4f9e", pe)}"/><rect x="345.6" y="150.6" width="20.8" height="13.8" rx="1.6" fill="none" stroke="${nC("#f3f5fa", pe)}" stroke-width="1"/>
+      <path d="M346 151h20" stroke="#fff" stroke-opacity=".35" stroke-width=".8"/>${T(356, numero.length > 2 ? 160.6 : 161.2, numero.length > 2 ? 7.6 : 9.4, X(numero), ` fill="${nC("#ffffff", pe)}" style="font-family:Outfit,Arial,sans-serif;font-weight:700"`)}`);
+  }
+
+  // ─── 13. Lumière qui s'échappe sur le trottoir, réverbère ───
+  if (nuit && lit) O.push(`<polygon points="38,262 250,262 290,291 0,291" fill="url(#flot-${u})"/><polygon points="279,262 323,262 338,291 266,291" fill="url(#flot-${u})" opacity=".7"/>`);
+  if (nuit) O.push(`<ellipse cx="18" cy="286" rx="52" ry="8" fill="url(#lant-${u})"/>`);
+
+  // ─── 14. Sur le trottoir : ardoise, plante, réverbère ───
+  if (accueil){
+    const mots = accueil.split(/\s+/), nbL = accueil.length <= 13 ? 1 : accueil.length <= 30 ? 2 : 3, lignes = [];
+    let reste = mots.slice();
+    for (let l = nbL; l > 0; l--){
+      const cible = reste.join(" ").length / l; let ligne = "";
+      while (reste.length && (!ligne || (ligne + " " + reste[0]).length <= cible + 3)) ligne = ligne ? ligne + " " + reste.shift() : reste.shift();
+      if (l === 1 && reste.length) ligne += " " + reste.splice(0).join(" ");
+      lignes.push(ligne);
+    }
+    const lmax = Math.max(...lignes.map(l => [...l].length)), fsA = Math.max(7, Math.min(12.5, 54 / (lmax * .42), 30 / lignes.length));
+    const craie = nC("#f6f2e6", .2), y0 = 258 - (lignes.length - 1) * fsA * .5 + fsA * .32;
+    O.push(`<ellipse cx="173" cy="288.5" rx="31" ry="2.6" fill="#000" opacity=".3"/><path d="M147 288l7-48M199 288l-7-48" stroke="${nC("#6e4320", .4)}" stroke-width="3" stroke-linecap="round"/>
+      <rect x="141" y="238" width="64" height="40" rx="2" fill="${nC("#8a5a2b", .4)}"/><rect x="144" y="241" width="58" height="34" fill="${nC("#26342e", .25)}"/><ellipse cx="166" cy="262" rx="20" ry="9" fill="#fff" opacity=".05"/>
+      ${lignes.map((l, i) => T(173, y0 + i * fsA * 1.02, fsA, X(l), ` fill="${craie}" style="font-family:Caveat,'Segoe Print','Comic Sans MS',cursive;font-weight:700"${[...l].length * .42 * fsA > 55 ? ` textLength="54" lengthAdjust="spacingAndGlyphs"` : ""}`)).join("")}`);
+  }
+  if (!aLouer){
+    const pot = trad ? "#b5653b" : "#3a3e45";
+    O.push(`<ellipse cx="353" cy="288" rx="15" ry="2.6" fill="#000" opacity=".3"/><rect x="352" y="258" width="2.2" height="12" fill="${nC("#5b3a20", .4)}"/>
+      <circle cx="353" cy="252" r="12.5" fill="${nC("#3e7a37", .45)}"/><circle cx="346" cy="247" r="7" fill="${nC("#4b8d43", .45)}"/><circle cx="360" cy="246" r="7.5" fill="${nC("#3a7034", .45)}"/><circle cx="353" cy="241" r="6.5" fill="${nC("#58a04f", .45)}"/>
+      <circle cx="349" cy="244" r="2.2" fill="#fff" opacity="${nuit ? .05 : .14}"/><circle cx="357" cy="250" r="1.8" fill="#000" opacity=".12"/>
+      <path d="M342 271h22l-3 17h-16z" fill="${nC(pot, .45)}"/><rect x="340.5" y="268" width="25" height="4" rx="1" fill="${nC(mix(pot, "#ffffff", .15), .45)}"/><path d="M345 274l1.5 12" stroke="#fff" stroke-opacity=".15" stroke-width="1.5"/>`);
+  }
+  // Réverbère
+  if (nuit) O.push(`<circle cx="11" cy="58" r="44" fill="url(#lant-${u})"/>`);
+  const fer = nC("#24262c", .2);
+  O.push(`<path d="M7 290l1.6-12h4.8l1.6 12z" fill="${fer}"/><rect x="9.7" y="66" width="2.6" height="214" fill="${fer}"/><rect x="8.4" y="120" width="5.2" height="3" rx="1" fill="${fer}"/><rect x="8.4" y="270" width="5.2" height="3" rx="1" fill="${fer}"/>
+    <path d="M4.5 52L11 45.5L17.5 52z" fill="${fer}"/><circle cx="11" cy="44.5" r="1.4" fill="${fer}"/>
+    <polygon points="5.5,52 16.5,52 14.6,66 7.4,66" fill="${nuit ? "#ffe6a6" : "#dfe5ea"}" stroke="${fer}" stroke-width="1"/><path d="M11 52v14" stroke="${fer}" stroke-width=".8"/><rect x="7" y="66" width="8" height="2.6" fill="${fer}"/>`);
+
+  const label = aLouer ? "Boutique vide, à louer" : `Vitrine de ${nom}`;
+  return `<svg class="front" viewBox="0 0 400 300" role="img" aria-label="${X(label)}"><defs>${D.join("")}</defs>${O.join("")}</svg>`;
+}
+// ═══ fin de la vitrine réaliste ═══
+
+let VUE_NUIT = true, VUE_COMPTE = 0;   // vitrine montrée de nuit (éclairée) ou de jour : affichage seulement, rien n'est enregistré
+/** Adaptateur : construit la configuration de la vitrine à partir des choix de l'élève (mêmes valeurs par défaut qu'avant). */
 function vitrine(uid){
-  const t = type(), brand = S.couleur || "#8E4EC6", c2 = S.couleur2 || "#FFFFFF";
-  const nom = S.nom.trim() || "Ton enseigne", fontFam = POLICES[S.style || "moderne"];
-  const fs = Math.max(13, Math.min(30, 250 / (0.56 * Math.max(nom.length, 6))));
-  const amb = AMBIANCES.find(a => a[0] === S.ambiance) || ["", "", "#4A3F73", "#2E2654"];
-  const facadeFill = { brique:`url(#pb-${uid})`, bois:`url(#pw-${uid})`, pierre:`url(#ps-${uid})`, moderne:`url(#pm-${uid})` }[S.facade] || "#3a3160";
-  const porte = S.facade === "moderne" ? "#1d2230" : "#3b2a20";
-  const produits = (t ? t.vitrine : ["✨","✨","✨","✨"]).map((e,i) => `<text x="${78 + i*46}" y="206" font-size="26" text-anchor="middle">${e}</text>`).join("");
-  const scallops = Array.from({length:10}, (_,i) => `<circle cx="${40 + i*21 + 10}" cy="118" r="10.5" fill="${S.auvent === "raye" ? `url(#pst-${uid})` : brand}"/>`).join("");
-  const auvent = S.auvent === "sans" || !S.auvent ? "" :
-    `<polygon points="36,94 254,94 262,118 28,118" fill="${S.auvent === "raye" ? `url(#pst-${uid})` : brand}" stroke="rgba(0,0,0,.25)"/>${scallops}`;
-  const accueil = S.accueil || "";
-  return `<svg class="front" viewBox="0 0 400 300" role="img" aria-label="Vitrine de ton entreprise">
-    <defs>
-      <pattern id="pb-${uid}" width="24" height="12" patternUnits="userSpaceOnUse"><rect width="24" height="12" fill="#A0503A"/><path d="M0 .5H24M0 6.5H24M12 0V6M.5 6V12M23.5 6V12" stroke="#7B3726" stroke-width="1"/></pattern>
-      <pattern id="pw-${uid}" width="16" height="40" patternUnits="userSpaceOnUse"><rect width="16" height="40" fill="#8B5A2B"/><path d="M15.5 0V40" stroke="#5E3B1A"/><path d="M4 8q3 6 0 12" stroke="#7a4d24" fill="none"/></pattern>
-      <pattern id="ps-${uid}" width="40" height="24" patternUnits="userSpaceOnUse"><rect width="40" height="24" fill="#A8A29E"/><path d="M0 .5H40M0 12.5H40M20 0V12M.5 12V24M39.5 12V24" stroke="#86807B"/></pattern>
-      <pattern id="pm-${uid}" width="50" height="60" patternUnits="userSpaceOnUse"><rect width="50" height="60" fill="#2F3440"/><path d="M49.5 0V60M0 59.5H50" stroke="#3E4452"/></pattern>
-      <pattern id="pst-${uid}" width="28" height="30" patternUnits="userSpaceOnUse"><rect width="14" height="30" fill="${brand}"/><rect x="14" width="14" height="30" fill="#FFFFFF"/></pattern>
-      <linearGradient id="amb-${uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${amb[2]}"/><stop offset="1" stop-color="${amb[3]}"/></linearGradient>
-    </defs>
-    <rect x="14" y="6" width="372" height="10" rx="3" fill="#2B2340"/>
-    <rect x="20" y="14" width="360" height="250" fill="${facadeFill}"/>
-    <rect x="40" y="26" width="320" height="56" rx="9" fill="${brand}" stroke="rgba(0,0,0,.25)"/>
-    <circle cx="72" cy="54" r="19" fill="${c2}"/>
-    <text x="72" y="61" font-size="20" text-anchor="middle">${S.symbole || (t ? t.emoji : "★")}</text>
-    <text x="218" y="${54 + fs*0.35}" font-size="${fs.toFixed(1)}" text-anchor="middle" fill="${texteSurMarque()}" style="font-family:${fontFam}; font-weight:${S.style === "street" ? 400 : 700}; ${S.style === "elegant" ? "font-style:italic;" : ""}">${esc(nom)}</text>
-    <rect x="44" y="116" width="202" height="124" fill="url(#amb-${uid})" stroke="#1b1b1b" stroke-width="${S.facade === "moderne" ? 2 : 5}"/>
-    <path d="M56 208H236" stroke="rgba(0,0,0,.25)" stroke-width="3"/>
-    ${produits}
-    <polygon points="60,122 96,122 70,234 44,234" fill="rgba(255,255,255,.18)"/>
-    ${auvent}
-    <rect x="276" y="108" width="80" height="156" fill="${porte}" stroke="#141414" stroke-width="3"/>
-    <rect x="286" y="120" width="60" height="84" fill="url(#amb-${uid})" opacity=".85"/>
-    <rect x="294" y="130" width="44" height="15" rx="3" fill="#fff"/><text x="316" y="141" font-size="9" text-anchor="middle" fill="#1D1F33" style="font-family:Outfit,Arial;font-weight:700">OUVERT</text>
-    <circle cx="344" cy="190" r="4" fill="#E8C66A"/>
-    ${S.numero ? `<rect x="362" y="118" width="26" height="20" rx="4" fill="#1E2A5A"/><text x="375" y="132" font-size="11" text-anchor="middle" fill="#fff" style="font-family:Outfit,Arial;font-weight:700">${esc(S.numero)}</text>` : ""}
-    <rect x="0" y="262" width="400" height="38" fill="#3b3552"/><rect x="0" y="262" width="400" height="3" fill="#57507a"/>
-    ${accueil ? `<rect x="84" y="244" width="172" height="34" rx="5" fill="#1f2a24" stroke="#8b6b3a" stroke-width="3"/><text x="170" y="266" font-size="11" text-anchor="middle" fill="#fff" style="font-family:Fredoka,'Comic Sans MS',sans-serif">${esc(accueil)}</text>` : ""}
-    <text x="30" y="258" font-size="22">🌿</text>
-  </svg>`;
+  const t = type();
+  return vitrineSVG({
+    nom: S.nom.trim() || "Ton enseigne", couleur: S.couleur || "#8E4EC6", couleur2: S.couleur2 || "#FFFFFF",
+    style: S.style || "moderne", symbole: S.symbole || (t ? t.emoji : "★"),
+    facade: S.facade || "", auvent: S.auvent || "", ambiance: S.ambiance || "", accueil: S.accueil || "", numero: S.numero || "",
+    produits: t ? t.vitrine : ["✨","✨","✨","✨"], panneau: "OUVERT", allumee: true,
+    nuit: uid === "print" ? false : VUE_NUIT
+  }, uid);
 }
 function logoMark(size){
   const c2 = S.couleur2 || "#FFFFFF";
   return `<div class="lg-mark" style="background:${S.couleur || "#8E4EC6"}; box-shadow:0 0 0 4px ${c2}, 0 8px 20px rgba(0,0,0,.25); ${size ? `width:${size}px;height:${size}px;font-size:${size/2}px` : ""}">${S.symbole || (type() ? type().emoji : "★")}</div>`;
 }
 const couleurNomSurBlanc = () => S.couleur && lum(S.couleur) <= .62 ? S.couleur : "#1D1F33";
+/** L'enseigne sur le mur : éteinte tant qu'il n'y a pas de nom, allumée ensuite (spots, rampe de leds ou néon selon le style). */
 function logoBlock(){
-  return `<div class="logo-prev">${logoMark()}<div><div class="lg-name f-${S.style || "moderne"}" style="color:${couleurNomSurBlanc()}">${esc(S.nom.trim() || "Ton nom")}</div><div class="lg-sl">${esc(S.slogan)}</div></div></div>`;
+  const nomOk = S.nom.trim().length >= 2, st = S.style || "moderne", neon = st === "fun" || st === "street";
+  const lampes = neon ? "" : st === "elegant" ? `<div class="el-spots" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i></div>` : `<div class="el-rampe" aria-hidden="true"><b></b></div>`;
+  return `<div class="logo-prev enseigne-live ens-${st}${neon ? " ens-neon" : ""}${nomOk ? " allumee" : ""}" style="--b:${S.couleur || "#8E4EC6"};--t:${texteSurMarque()}" role="img" aria-label="Ton enseigne : ${esc(S.nom.trim() || "pas encore de nom")}"${nomOk ? ' data-anim="enseigne-allumee"' : ""}>
+    ${lampes}<div class="el-panneau"><span class="el-logo" style="background:${S.couleur2 || "#FFFFFF"}">${S.symbole || (type() ? type().emoji : "★")}</span>
+    <div class="el-textes"><div class="lg-name f-${st}">${esc(S.nom.trim() || "Ton nom")}</div>${S.slogan.trim() ? `<div class="lg-sl">${esc(S.slogan)}</div>` : ""}</div></div></div>`;
+}
+/** Le logo imprimé sur trois objets : un sac en papier kraft, un gobelet et un T-shirt (couleur d'accompagnement). */
+function maquettes(){
+  const b = S.couleur || "#8E4EC6", c2 = S.couleur2 || "#FFFFFF", t = type(), sym = S.symbole || (t ? t.emoji : "★");
+  const nom = S.nom.trim() || "Ton nom", st = S.style || "moderne", n = Math.max([...nom].length, 4);
+  const pol = `font-family:${POLICES[st]};font-weight:${st === "street" ? 400 : 700};font-style:${st === "elegant" ? "italic" : "normal"}`;
+  const fit = (max, place) => Math.max(6, Math.min(max, place / (n * (st === "street" ? .45 : .6)))).toFixed(1);
+  const lisible = (fond, voulu) => Math.abs(lum(voulu) - lum(fond)) > .3 ? voulu : (lum(fond) > .6 ? "#1D1F33" : "#FFFFFF");
+  const nomTxt = (x, y, max, place, coul) => `<text x="${x}" y="${y}" font-size="${fit(max, place)}" text-anchor="middle" fill="${coul}" style="${pol}"${n * .6 * max > place * 1.6 ? ` textLength="${place}" lengthAdjust="spacingAndGlyphs"` : ""}>${esc(nom)}</text>`;
+  const sac = `<svg viewBox="0 0 160 180" aria-hidden="true"><path d="M58 54C58 20 102 20 102 54" fill="none" stroke="#8d6638" stroke-width="5" stroke-linecap="round"/>
+    <path d="M30 50h100l8 122H22z" fill="#cfa66d"/><path d="M30 50l-8 122h12z" fill="#b48a52"/><path d="M130 50l8 122h-12z" fill="#b48a52"/><path d="M30 50h100v8H30z" fill="#c09659"/><path d="M30 58h100" stroke="#a37a45"/>
+    <path d="M40 60l-4 106M120 60l4 106" stroke="#fff" stroke-opacity=".12" stroke-width="3"/>
+    <circle cx="80" cy="102" r="25" fill="${b}"/><circle cx="80" cy="102" r="25" fill="none" stroke="${c2}" stroke-width="3"/><text x="80" y="111" font-size="24" text-anchor="middle">${sym}</text>
+    ${nomTxt(80, 150, 16, 100, lum(b) <= .62 ? b : "#3b2a18")}</svg>`;
+  const gobelet = `<svg viewBox="0 0 160 180" aria-hidden="true"><path d="M70 20q-5-7 0-14M82 20q-5-7 0-14M94 20q-5-7 0-14" stroke="#c4c8d4" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <path d="M46 26h68q5 0 6 6l1 8H39l1-8q1-6 6-6z" fill="#fbfbfd" stroke="#d6d8df"/><path d="M38 40h84l-2 10H40z" fill="#eceef3"/>
+    <path d="M43 50h74l-10 120H53z" fill="#fff"/><path d="M43 50h12l8 120H53z" fill="#000" opacity=".05"/><path d="M105 50h12l-10 120h-8z" fill="#000" opacity=".09"/>
+    <path d="M46.5 84h67l-4.3 52H50.8z" fill="${b}"/><path d="M46.5 84h67" stroke="#000" stroke-opacity=".15"/>
+    <circle cx="80" cy="102" r="13" fill="${c2}"/><text x="80" y="107.5" font-size="14" text-anchor="middle">${sym}</text>
+    ${nomTxt(80, 128, 10, 54, lisible(b, c2))}</svg>`;
+  const tee = c2, encre = lisible(tee, b);
+  const tshirt = `<svg viewBox="0 0 160 180" aria-hidden="true"><path d="M56 18L30 28L8 60l22 14 10-12v108h80V62l10 12 22-14-22-32-26-10q-24 18-48 0z" fill="${tee}" stroke="#000" stroke-opacity=".18"/>
+    <path d="M56 18q24 18 48 0" fill="none" stroke="#000" stroke-opacity=".22" stroke-width="3"/><path d="M48 92q5 34 0 70M112 92q-5 34 0 70" fill="none" stroke="#000" stroke-opacity=".06" stroke-width="7"/>
+    <circle cx="80" cy="84" r="20" fill="${b}"/><circle cx="80" cy="84" r="20" fill="none" stroke="${lisible(b, tee)}" stroke-width="2.5"/><text x="80" y="91" font-size="19" text-anchor="middle">${sym}</text>
+    ${nomTxt(80, 128, 14, 72, encre)}</svg>`;
+  return [["Sac en papier", sac], ["Gobelet", gobelet], ["T-shirt", tshirt]].map(m => `<figure class="mq">${m[1]}<figcaption>${m[0]}</figcaption></figure>`).join("");
+}
+/** Carte de la région (8 communes, terrils, canal) avec une épingle sur la commune choisie. */
+function carteRegion(){
+  const P = { "Saint-Ghislain":[106,52,"h"], "Jemappes":[198,46,"h"], "Mons":[292,44,"b"], "Quaregnon":[168,74,"b"], "Boussu":[72,86,"b"], "Colfontaine":[148,134,"b"], "Frameries":[212,142,"d"], "Dour":[50,166,"d"] };
+  const villes = COMMUNES.map(c => { const p = P[c[0]] || [170,100,"b"], on = S.commune === c[0], cote = on && p[2] === "h" ? "b" : p[2];   // l'épingle prend la place du nom au-dessus
+    const lx = cote === "d" ? p[0] + 10 : p[0], ly = cote === "h" ? p[1] - 9 : cote === "d" ? p[1] + 4 : p[1] + 17;
+    return `<circle cx="${p[0]}" cy="${p[1]}" r="${c[0] === "Mons" ? 6 : 4.2}" fill="${on ? "#c62828" : "#2b2d3a"}" stroke="#fff" stroke-width="1.5"/>
+      <text x="${lx}" y="${ly}" font-size="${on ? 12.5 : 11}" text-anchor="${cote === "d" ? "start" : "middle"}" fill="${on ? "#9b1c1c" : "#2b2d3a"}" stroke="#f1e9d6" stroke-width="3" paint-order="stroke" style="font-family:Inter,Arial,sans-serif;font-weight:${on ? 800 : 600}">${esc(c[0])}</text>`; }).join("");
+  const p = S.commune && P[S.commune];
+  const epingle = p ? `<g transform="translate(${p[0]} ${p[1]})"><ellipse rx="7" ry="2.4" fill="#000" opacity=".25"/><g class="pin-chute" data-anim="pin-${slug(S.commune)}">
+      <path d="M0 0C-7-9-10-13-10-19a10 10 0 0 1 20 0c0 6-3 10-10 19z" fill="#e5484d" stroke="#8f1d22" stroke-width="1.2"/><circle cy="-19" r="4" fill="#fff"/></g></g>` : "";
+  const terril = (x, y) => `<path d="M${x - 9} ${y}L${x} ${y - 11}L${x + 9} ${y}z" fill="#5d5650"/><path d="M${x} ${y - 11}L${x + 9} ${y}h-5z" fill="#3f3a35"/>`;
+  return `<svg viewBox="0 0 340 200" role="img" aria-label="Carte de la région. ${S.commune ? "Ta commune : " + esc(S.commune) + "." : "Choisis ta commune."}">
+    <rect width="340" height="200" fill="#f1e9d6"/><path d="M0 40H340M0 80H340M0 120H340M0 160H340M68 0V200M136 0V200M204 0V200M272 0V200" stroke="#e2d6bd" stroke-width=".8"/>
+    <path d="M128 200c6-16 30-24 52-22s40 8 56 4 30-4 40 18z" fill="#cfe1b2"/><path d="M40 0c10 14 40 20 70 14s46-4 60-14z" fill="#d6e6bb"/>
+    <path d="M0 28C60 24 110 32 160 26S260 18 340 24" stroke="#8fbbe3" stroke-width="5" fill="none"/>
+    <path d="M0 64C70 68 120 60 180 62S280 58 340 56" stroke="#fff" stroke-width="5" fill="none"/><path d="M0 64C70 68 120 60 180 62S280 58 340 56" stroke="#d9a441" stroke-width="2.2" fill="none"/>
+    <path d="M292 44L212 142L148 134L50 166M198 46L168 74L72 86L50 166M106 52L72 86M212 142L230 200M168 74L148 134" stroke="#c9bba0" stroke-width="2" fill="none"/>
+    ${terril(234, 128)}${terril(186, 96)}${terril(92, 104)}${terril(70, 150)}${terril(128, 120)}
+    ${villes}${epingle}
+    <g transform="translate(316 26)"><circle r="12" fill="#fff" opacity=".7"/><path d="M0-10l4 10h-8z" fill="#c62828"/><path d="M0 10l4-10h-8z" fill="#2b2d3a"/><text y="-13" font-size="9" text-anchor="middle" fill="#2b2d3a" style="font-family:Inter,Arial,sans-serif;font-weight:800">N</text></g>
+    <rect x="232" y="176" width="100" height="18" rx="3" fill="#fffaf0" stroke="#d8cbb0"/><text x="282" y="189" font-size="10" text-anchor="middle" fill="#4a4e68" style="font-family:Inter,Arial,sans-serif;font-weight:700">Région de Mons</text></svg>`;
+}
+/** Billets de jeu : 10 liasses de 1 000 €, moins les frais de création. */
+function billets(){
+  const partis = S.direction === "plusieurs" ? 3 : 0, entamee = S.direction === "seul";
+  return `<div class="billets" role="img" aria-label="Billets de jeu : ${euro(APPORT)} au départ, moins ${euro(frais())} de frais de création : il reste ${euro(enBanque())}" data-anim="billets-${S.direction}">
+    <div class="bl-legende" aria-hidden="true">Billets de jeu</div>
+    <div class="bl-pile" aria-hidden="true">${Array.from({length:10}, (_, i) => `<span class="liasse${i >= 10 - partis ? " partie" : ""}" style="--i:${i}"><span class="bande">1 000 €</span>${entamee && i === 9 ? `<span class="vole"></span><span class="pris">− ${euro(frais())}</span>` : ""}</span>`).join("")}</div>
+    <div class="bl-calc" aria-hidden="true"><div><span>Argent de départ</span><b>${euro(APPORT)}</b></div><div class="moins"><span>Frais de création</span><b>− ${euro(frais())}</b></div><div class="egal"><span>Il reste</span><b>${euro(enBanque())}</b></div></div></div>`;
 }
 function carteVisite(){
-  return `<div class="biz"><div class="l">${logoMark(60)}</div>
+  return `<div class="biz"><div class="l">${logoMark(60)}<span class="biz-qr" aria-hidden="true">${KIT.qr(emailPro() || deno())}</span></div>
     <div class="r"><div class="bn f-${S.style || "moderne"}" style="color:${couleurNomSurBlanc()}">${esc(deno())}</div><div class="bs">${esc(S.slogan)}</div>
       <div class="who2">${esc(S.eleve.prenom)} ${esc(S.eleve.nom)}</div><div>${esc(fonction())}</div>
       <div>${esc(adresse1())}, ${esc(adresse2())}</div><div>${esc(emailPro())}</div></div></div>`;
 }
 function idcard(){ const t = type(), bce = S.ids.bce, st = strat();
-  return `<div class="idcard">
+  return `<div class="idcard certificat">
+      <div class="cert-filigrane" aria-hidden="true">${S.symbole || t.emoji}</div>
+      <div class="cert-bandeau"><span>Certificat d'enregistrement</span><small>Document officiel de ton entreprise · projet scolaire</small></div>
       <div class="hd"><div class="emb">${S.symbole || t.emoji}</div><div><h3 class="f-${S.style}">${esc(deno())}</h3><p>${esc(S.slogan)}</p></div></div>
       <div class="idgrid">
         <div class="k">Activité</div><div>${esc(t.nom)}</div>
@@ -910,15 +2265,17 @@ function idcard(){ const t = type(), bce = S.ids.bce, st = strat();
         <div class="k">Forme</div><div>${esc(forme())}</div>
         <div class="k">Adresse officielle</div><div>${esc(adresse1())}, ${esc(adresse2())}</div>
         <div class="k">Dirigée par</div><div>${esc(S.eleve.prenom)} ${esc(S.eleve.nom)}${S.direction === "plusieurs" && S.nbAssocies > 1 ? ` et ${S.nbAssocies - 1} associé${S.nbAssocies > 2 ? "s" : ""}` : ""}</div>
-        <div class="k">Numéro mystère n° 1</div><div><span class="num">${bce}</span></div>
-        <div class="k">Numéro mystère n° 2</div><div><span class="num">BE ${bce}</span></div>
-        <div class="k">Numéro mystère n° 3</div><div><span class="num">${S.ids.iban}</span></div>
+        <div class="k">Numéro mystère n° 1</div><div><span class="num n1">${bce}</span></div>
+        <div class="k">Numéro mystère n° 2</div><div><span class="num n2">BE ${bce}</span></div>
+        <div class="k">Numéro mystère n° 3</div><div><span class="num n3">${S.ids.iban}</span></div>
         <div class="k">E-mail</div><div>${esc(emailPro())}</div>
       </div>
+      <div class="cert-pied"><div class="cert-sceau" aria-hidden="true"><span><b>★</b>Sceau<br>officiel</span></div>
+        <div class="cert-lieu">Fait à ${esc(S.commune)}, le ${esc(S.dateCreation)}<div class="cert-sig"><span class="signed">Max</span><small>Coach Max, pour le bureau des entreprises (fictif)</small></div></div></div>
       <div class="fict">Entreprise et numéros fictifs – projet scolaire, Institut Saint-Luc de Frameries.</div>
-      <div class="stamp show">ENREGISTRÉE</div></div>`; }
+      <div class="tampon cert-tampon">Enregistrée</div></div>`; }
 function patrimoine(){
-  return `<div class="patri"><h4>Le patrimoine de ${esc(deno())} au départ</h4>
+  return `<div class="patri trombone"><h4>Le patrimoine de ${esc(deno())} au départ</h4>
     <div class="pcols">
       <div class="pcol"><h5>Ce que ton entreprise possède</h5>
         <div class="psub">Le matériel (il reste dans l'entreprise)</div><div class="pl vide"><span>Pas encore de matériel</span><span>0 €</span></div>
@@ -940,30 +2297,39 @@ let LOGIN = { email:"", busy:false, err:"" };
 const ROAD = [["Crée ton entreprise","Aujourd'hui"],["Équipe ton entreprise","Le matériel pour démarrer"],["Compare les prix","Demandes et offres de prix"],["Passe commande","Choisis ton fournisseur"],["Reçois la livraison","Vérifie ce qui arrive"],["Facture et paiement","Payer, c'est aussi gérer"]];
 const road = () => `<ol class="road">${ROAD.map((r,i) => `<li class="glass ${i === 0 ? "now" : ""}"><span class="n">${i+1}</span><span class="t">${r[0]}<small>${r[1]}</small></span>${i ? "🔒" : ""}</li>`).join("")}</ol>`;
 
-R.login = () => `<div class="hero">${CONFETTI_LAYER}
+// La rue et la fiche d'accueil arrivent en douceur au premier affichage seulement (pas quand l'écran se redessine :
+// connexion en cours, message d'erreur). Ce premier affichage a lieu avant que le kit surveille la page, d'où ce drapeau.
+// (Pas de data-anim sur la fiche : elle contient la roue « Connexion… », qui doit continuer à tourner.)
+let ACCUEIL_ANIME = true;
+R.login = () => { const anim = ACCUEIL_ANIME; ACCUEIL_ANIME = false; return `<div class="hero">${CONFETTI_LAYER}
     <div class="badge-school glass"><div class="logo">SL</div><span>Institut Saint-Luc de Frameries</span></div>
     <h2>Aujourd'hui, tu crées<br><span class="grad">ta propre entreprise</span></h2>
     <p class="sub">Ton activité, ta stratégie, ton nom, ton logo, ta boutique… Chaque décision compte : ton entreprise te suivra toute l'année !</p>
     <div class="hero-meta"><span class="meta-chip glass">🏪 8 entreprises au choix</span><span class="meta-chip glass">🎨 Une boutique à ton image</span><span class="meta-chip glass">📅 Toute l'année avec toi</span></div>
-    <div class="login glass card">
+    <div class="accueil-rue">
+      <figure class="rue-local ${anim ? "kit-anim" : ""}" data-anim="login-rue">${vitrineSVG({ aLouer:true, allumee:false, nuit:true, numero:"18" }, "login")}
+        <figcaption class="postit">Ce local attend son patron… et si c'était toi ?</figcaption></figure>
+      <div class="login fiche-accueil ${anim ? "kit-anim d2" : ""}"><div class="fa-papier">
+      <div class="fa-tete"><span class="fa-logo" aria-hidden="true">SL</span><div><b>Fiche d'accueil</b><small>Nouveau chef d'entreprise · 3P Vente</small></div></div>
       <label class="f" for="em">Ton adresse e-mail de l'école</label>
       <input class="inp" id="em" type="text" inputmode="email" autocapitalize="off" value="${esc(LOGIN.email)}" placeholder="prenom.nom@istlm.org" autocomplete="email" spellcheck="false">
-      ${LOGIN.lent ? `<div class="help" style="color:#ffd97a">⏳ Google met un peu de temps à répondre… La première connexion peut prendre jusqu'à 30 secondes. Ne ferme pas la page.</div>` : LOGIN.err ? `<div class="err">${LOGIN.err}</div>` : `<div class="help">Écris-la en entier, en minuscules, sans accents.</div>`}
-      <div class="nav" style="margin-top:20px"><span></span>
+      ${LOGIN.lent ? `<div class="help" style="color:#ffd97a">⏳ Le serveur met un peu de temps à répondre… Patiente quelques secondes, ne ferme pas la page.</div>` : LOGIN.err ? `<div class="err">${LOGIN.err}</div>` : `<div class="help">Écris-la en entier, en minuscules, sans accents.</div>`}
+      <div class="nav" style="margin-top:20px"><span class="tampon bleu fa-tampon" aria-hidden="true">Bienvenue</span>
         <button class="btn btn-main ${LOGIN.busy ? "busy" : ""}" data-act="login" ${emailOk(LOGIN.email.trim().toLowerCase()) && !LOGIN.busy ? "" : "disabled"}>${LOGIN.busy ? `<span class="spin"></span>Connexion…` : "J'entre"}</button>
-      </div></div>
-    <h3 class="sub" style="margin-top:44px">L'année de ton entreprise</h3>${road()}</div>`;
+      </div></div></div>
+    </div>
+    <h3 class="sub" style="margin-top:44px">L'année de ton entreprise</h3>${road()}</div>`; };
 
 R.briefing = () => `<div class="brief">
     <div class="chip-label"><span class="led"></span>Avant de commencer</div>
     <h2 class="title">${esc(S.eleve.prenom)}, voici <span class="grad">ta mission</span></h2>
     <p class="lead">Aujourd'hui, tu deviens chef d'entreprise. Pas pour de faux : pendant toute l'année, tu vas faire vivre l'entreprise que tu crées maintenant.</p>
-    <div class="goals">
-      <div class="goal glass"><div class="gi">🏗️</div><b>Créer ta propre entreprise</b><p>Choisir ton activité, ton nom, ton adresse et décider entre entreprise individuelle et société.</p></div>
-      <div class="goal glass"><div class="gi">🎯</div><b>Choisir ta stratégie</b><p>Petits prix ou haut de gamme ? Ce choix guidera toutes tes décisions de l'année.</p></div>
-      <div class="goal glass"><div class="gi">🎨</div><b>Lui donner une personnalité</b><p>Logo, couleurs, boutique : c'est ce que tes clients verront en premier. Fais-les rêver !</p></div>
-      <div class="goal glass"><div class="gi">🤝</div><b>Prendre de bonnes décisions</b><p>Plus tard, tu choisiras un fournisseur plutôt qu'un autre… toujours pour de bonnes raisons.</p></div>
-    </div>
+    <div class="bureau brief-bureau kit-anim" data-anim="brief-bureau"><div class="goals">
+      <div class="goal glass" style="--r:-1.1deg"><div class="gi">🏗️</div><b>Créer ta propre entreprise</b><p>Choisir ton activité, ton nom, ton adresse et décider entre entreprise individuelle et société.</p></div>
+      <div class="goal glass" style="--r:.8deg"><div class="gi">🎯</div><b>Choisir ta stratégie</b><p>Petits prix ou haut de gamme ? Ce choix guidera toutes tes décisions de l'année.</p></div>
+      <div class="goal glass" style="--r:.6deg"><div class="gi">🎨</div><b>Lui donner une personnalité</b><p>Logo, couleurs, boutique : c'est ce que tes clients verront en premier. Fais-les rêver !</p></div>
+      <div class="goal glass" style="--r:-.9deg"><div class="gi">🤝</div><b>Prendre de bonnes décisions</b><p>Plus tard, tu choisiras un fournisseur plutôt qu'un autre… toujours pour de bonnes raisons.</p></div>
+    </div></div>
     <div class="warn"><div class="wi">⚠️</div><div><b>Tes choix te suivront toute l'année.</b> Ils seront utilisés dans toutes les prochaines missions : acheter ton matériel, commander tes marchandises, recevoir tes livraisons, payer tes factures… Prends cette première étape très au sérieux !</div></div>
     <h3 class="sub">Aujourd'hui, tu vas décider :</h3>
     <div class="today">${STEPS.slice(1,10).map((s,i) => `<span class="meta-chip glass">${s.badge[0]} ${i+1}. ${esc(s.label)}</span>`).join("")}</div>
@@ -977,13 +2343,13 @@ R.ferme = () => `<div class="hero">
     <div class="nav" style="justify-content:center"><button class="btn btn-main" data-act="retry">Réessayer</button></div>
     <div class="card glass" style="max-width:720px;margin:28px auto 0;text-align:left;font-size:15px">
       <b style="color:var(--yellow)">🔧 Pour le professeur</b><br>
-      ${SESSION.diag ? `${esc(SESSION.diag.raison)}<br><span class="help">Script Google version ${esc(SESSION.diag.versionScript)} · mission ${esc(SESSION.diag.mission)} · VERROU_ACTIF = ${esc(SESSION.diag.verrouActif)} · MISSIONS_OUVERTES lues : ${esc((SESSION.diag.missionsOuvertesLues || []).join(", ") || "aucune")}</span>`
-        : `Le script Google ne renvoie pas de diagnostic : c'est probablement une ancienne version. Dans Apps Script : Déployer > Gérer les déploiements > Modifier > Nouvelle version.`}</div></div>`;
+      ${SESSION.diag ? `${esc(SESSION.diag.raison)}<br><span class="help">Base Supabase · version ${esc(SESSION.diag.versionScript)} · mission ${esc(SESSION.diag.mission)} · accès ouvert : ${esc(SESSION.diag.verrouActif)} · missions ouvertes : ${esc((SESSION.diag.missionsOuvertesLues || []).join(", ") || "aucune")}</span>`
+        : `La base de données n'a pas renvoyé de diagnostic. Vérifie la connexion internet, puis ouvre l'accès dans la console professeur (⚙️ Pilotage).`}</div></div>`;
 
 // ======================================================================
 //  ÉCRANS DE LA MISSION
 // ======================================================================
-const coach = (key, html) => `<div class="coach glass"><div class="av" aria-hidden="true">💼</div><p><b>Coach Max :</b> ${html || COACH[key]}</p></div>`;
+const coach = (key, html) => `<div class="coach glass"><div class="av" aria-hidden="true">${KIT.avatarMax}</div><p><b>Coach Max :</b> ${html || COACH[key]}</p></div>`;
 function nav(key, opts={}){
   const ok = VALID[key]();
   return `<div class="nav">${S.step > 1 ? `<button class="btn btn-ghost" data-act="back">Retour</button>` : "<span></span>"}
@@ -993,32 +2359,35 @@ function nav(key, opts={}){
 const head = (n, titre, lead) => `<div class="chip-label"><span class="led"></span>Étape ${n} sur 9</div><h2 class="title">${titre}</h2>${lead ? `<p class="lead">${lead}</p>` : ""}`;
 
 R.type = () => {
-  const card = (t) => { const full = complet(t.id) && S.typeId !== t.id, on = S.typeId === t.id;
-    return `<button class="choice sec-${t.secteur} ${on ? "on" : ""} ${full ? "full" : ""}" data-pick="type" data-id="${t.id}" aria-pressed="${on}" ${full ? 'aria-disabled="true"' : ""}>
-      <div class="ico" aria-hidden="true">${t.emoji}</div><h4>${esc(t.nom)}</h4><p>${esc(t.desc)}</p>
-      <div class="meta"><div><b>Tu achèteras :</b> ${esc(t.achete)}</div><div><b>Tu vendras :</b> ${esc(t.vend)}</div></div>
-      ${full ? `<span class="tag full">Complet : ${SESSION.max} élèves l'ont déjà choisie</span>` : ""}</button>`; };
+  const card = (t) => { const full = complet(t.id) && S.typeId !== t.id, on = S.typeId === t.id, k = TYPES.indexOf(t);
+    return `<button class="choice fiche-act sec-${t.secteur} ${on ? "on" : ""} ${full ? "full" : ""}" data-pick="type" data-id="${t.id}" aria-pressed="${on}" ${full ? 'aria-disabled="true"' : ""} style="--rot:${[-.8, .6, -.5, .7, -.6, .5, -.7, .4][k] || 0}deg">
+      <span class="fa-photo" aria-hidden="true"><span class="ico">${t.emoji}</span>${full ? `<span class="bande-complet">Complet</span>` : ""}</span><h4>${esc(t.nom)}</h4><p>${esc(t.desc)}</p>
+      <div class="meta"><div><span class="mi" aria-hidden="true">🛒</span><b>Tu achèteras :</b> ${esc(t.achete)}</div><div><span class="mi" aria-hidden="true">🏷️</span><b>Tu vendras :</b> ${esc(t.vend)}</div></div>
+      ${full ? `<span class="tag full">Complet : ${SESSION.max} élèves l'ont déjà choisie</span>` : ""}${on ? `<span class="tampon vert frappe fa-tampon" data-anim="choisi-${t.id}" aria-hidden="true">Choisi</span>` : ""}</button>`; };
   return (SESSION.reouvert ? `<div class="status wait" style="margin:0 0 20px">🔄 Ton professeur a rouvert ta mission. Tes choix précédents sont déjà remplis : modifie seulement ce qui doit l'être.</div>` : "")
     + head(1, "Quelle entreprise veux-tu <span class='grad'>créer</span> ?", "Huit activités t'attendent, rangées en trois groupes. Choisis celle qui te plaît le plus.") + coach("type")
     + ["primaire","secondaire","tertiaire"].map(s => `<div class="sector-h"><span class="chip-label" style="margin:0"><span class="led"></span>${SECTEURS[s]}</span><div class="rule"></div></div>
-       <div class="grid g2">${TYPES.filter(t => t.secteur === s).map(card).join("")}</div>`).join("") + nav("type");
+       <div class="grid g2 liege">${TYPES.filter(t => t.secteur === s).map(card).join("")}</div>`).join("") + nav("type");
 };
 
 R.strategie = () => { const t = type();
   const jauge = (n, lab, g) => `<div class="gauge">${[1,2,3].map(i => `<i class="${i <= n ? "on" : ""}"></i>`).join("")}</div><div class="glab"><span>${lab}</span><span>${["","faible","moyen","élevé"][n]}</span></div>`;
   return head(2, "Quelle sera ta <span class='grad'>stratégie</span> ?", `Comment veux-tu attirer tes clients ? Choisis une seule stratégie pour ${esc(t.nom.toLowerCase())}.`) + coach("strategie")
-    + `<div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">${STRATEGIES.map((s,i) => `<button class="choice strat ${s.cls} ${S.strategie === s.id ? "on" : ""}" data-set="strategie" data-val="${s.id}">
+    + `<div class="tringle" aria-hidden="true"></div><div class="grid g3 etiquettes">${STRATEGIES.map((s,i) => { const on = S.strategie === s.id;
+      return `<button class="choice strat etiq-prix ${s.cls} ${on ? "on" : ""}" data-set="strategie" data-val="${s.id}"${on ? ` data-anim="balance-${s.id}"` : ""}>
+        <span class="ep-ficelle" aria-hidden="true"></span><span class="ep-carton"><span class="ep-trou" aria-hidden="true"></span><span class="ep-prix" aria-hidden="true">${"€".repeat(i + 1)}</span>
         <div class="big">${s.icone}</div><h4>${esc(s.nom)}</h4><p>${esc(s.texte)}</p>
         <div class="ex"><b>Chez toi :</b> ${esc(t.strat[i])}</div>
-        ${jauge(s.jauge.prix, "Prix")}${jauge(s.jauge.qualite, "Qualité")}${jauge(s.jauge.clients, "Nombre de clients")}</button>`).join("")}</div>
-    ${S.strategie ? `<div class="card glass" style="margin-top:18px"><label class="f">Pourquoi ce choix ? Choisis une ou deux raisons :</label>
+        ${jauge(s.jauge.prix, "Prix")}${jauge(s.jauge.qualite, "Qualité")}${jauge(s.jauge.clients, "Nombre de clients")}
+        ${on ? `<span class="tampon frappe ep-tampon" aria-hidden="true">Mon choix</span>` : ""}</span></button>`; }).join("")}</div>
+    ${S.strategie ? `<div class="card glass carnet-raisons" style="margin-top:18px"><label class="f">Pourquoi ce choix ? Choisis une ou deux raisons :</label>
       <div class="chips">${RAISONS.map(r => `<button class="chip ${S.raisons.includes(r) ? "on" : ""}" data-raison="${esc(r)}">${esc(r)}</button>`).join("")}</div></div>` : ""}`
     + nav("strategie");
 };
 
 R.nom = () => { const t = type();
   return head(3, "Comment s'appelle <span class='grad'>ton entreprise</span> ?", "C'est le nom que tes clients verront sur ta vitrine, tes sacs, tes documents… pendant toute l'année.") + coach("nom")
-    + `<div class="card glass">
+    + `<div class="card glass">${logoBlock()}
       <label class="f" for="nm">Le nom de ton entreprise</label>
       <input class="inp" id="nm" data-bind="nom" maxlength="30" value="${esc(S.nom)}" placeholder="Invente un nom…" autocomplete="off">
       <div class="help">Pas d'inspiration ? Clique sur une idée :</div>
@@ -1031,6 +2400,7 @@ R.nom = () => { const t = type();
 R.logo = () => { const t = type();
   return head(4, "Crée ton <span class='grad'>logo</span>", "Tes couleurs, ton symbole et ton style d'écriture : c'est la personnalité de ton entreprise.") + coach("logo")
   + `<div class="card glass">${logoBlock()}
+     <div class="maquettes kit-anim" data-anim="maquettes" role="img" aria-label="Ton logo imprimé sur un sac en papier, un gobelet et un T-shirt">${maquettes()}</div>
      <h3 class="sub" style="margin-top:0">Ta couleur principale</h3>
      <div class="swatches">${COULEURS.map(c => `<button class="sw ${S.couleur === c[1] ? "on" : ""}" style="background:${c[1]}" data-set="couleur" data-val="${c[1]}" aria-label="${c[0]}"><span>${c[0]}</span></button>`).join("")}</div>
      <h3 class="sub">Ta couleur d'accompagnement</h3>
@@ -1045,7 +2415,8 @@ R.boutique = () => {
   let conseil = COACH.boutique;
   if (S.strategie === "petit" && S.ambiance === "prestige") conseil = "Attention : une boutique très luxueuse peut faire croire à tes clients que tes prix sont élevés… alors que ta stratégie, ce sont les petits prix. C'est toi qui décides !";
   else if (S.strategie === "haut" && S.ambiance && S.ambiance !== "prestige") conseil = "Pour une stratégie haut de gamme, l'ambiance Prestige peut renforcer ton image de qualité… mais d'autres choix peuvent aussi fonctionner. C'est toi qui décides !";
-  const opts = (key, list, withDot) => `<div class="opt-row">${list.map(o => `<button class="opt ${S[key] === o[0] ? "on" : ""}" data-set="${key}" data-val="${o[0]}">${withDot ? `<span class="dot" style="background:linear-gradient(${o[2]},${o[3]})"></span>` : ""}${esc(o[1])}${o[2] && !withDot ? `<small style="opacity:.75">· ${esc(o[2])}</small>` : ""}</button>`).join("")}</div>`;
+  const ech = (key, o) => key === "facade" || key === "auvent" ? `<span class="ech ech-${o[0]}" aria-hidden="true"></span>` : "";   // échantillon du matériau
+  const opts = (key, list, withDot) => `<div class="opt-row">${list.map(o => `<button class="opt ${S[key] === o[0] ? "on" : ""}" data-set="${key}" data-val="${o[0]}">${ech(key, o)}${withDot ? `<span class="dot" style="background:linear-gradient(${o[2]},${o[3]})"></span>` : ""}${esc(o[1])}${o[2] && !withDot ? `<small style="opacity:.75">· ${esc(o[2])}</small>` : ""}</button>`).join("")}</div>`;
   return head(5, "Imagine <span class='grad'>ta boutique</span>", "Voici la façade de ton entreprise. Fais les choix qui donneront envie à tes clients d'entrer !") + coach("boutique", conseil)
   + `<div class="boutique-grid">
       <div class="card glass">
@@ -1053,15 +2424,23 @@ R.boutique = () => {
         <h3 class="sub">L'auvent au-dessus de la vitrine</h3>${opts("auvent", AUVENTS)}
         <h3 class="sub">L'ambiance à l'intérieur</h3>${opts("ambiance", AMBIANCES, true)}
         <h3 class="sub">Ta phrase d'accueil</h3>
-        <div class="chips">${ACCUEILS.map(a => `<button class="chip ${S.accueil === a ? "on" : ""}" data-set="accueil" data-val="${esc(a)}">${esc(a)}</button>`).join("")}</div>
+        <div class="chips">${ACCUEILS.map(a => `<button class="chip ardoise ${S.accueil === a ? "on" : ""}" data-set="accueil" data-val="${esc(a)}">${esc(a)}</button>`).join("")}</div>
       </div>
-      <div class="front-wrap glass">${vitrine("main")}</div>
+      <div class="front-wrap glass vitrine-grande"><div class="vg-scene" data-anim="vue-${VUE_COMPTE}">${vitrine("main")}</div>
+        <button type="button" class="vue-bascule" data-vue aria-pressed="${VUE_NUIT}" aria-label="Voir la vitrine de nuit"><span class="vb-jour" aria-hidden="true">☀️ Jour</span><span class="vb-nuit" aria-hidden="true">🌙 Nuit</span></button></div>
     </div>` + nav("boutique");
 };
 
 R.adresse = () => { const t = type(), done = S.bonusDone.adresse;
   return head(6, "Où s'installe <span class='grad'>ton entreprise</span> ?", "Choisis une rue, un numéro et une commune de la région.") + coach("adresse")
-    + `<div class="card glass">
+    + `<div class="adresse-scene">
+      <div class="as-mur kit-anim" data-anim="adresse-plaques">
+        <div class="plaque-rue ${S.rue ? "" : "vide"}" role="img" aria-label="Plaque de rue : ${esc(S.rue || "rue pas encore choisie")}"><small>${esc(S.commune || "Ta commune")}</small><b>${esc(S.rue || "Choisis ta rue")}</b></div>
+        <div class="plaque-num ${String(S.numero).trim() ? "" : "vide"}" role="img" aria-label="Numéro : ${esc(String(S.numero).trim() || "pas encore choisi")}"><span class="pn-txt">${esc(String(S.numero).trim() || "?")}</span></div>
+      </div>
+      <div class="carte-region">${carteRegion()}</div>
+    </div>
+    <div class="card glass">
       <div class="row row3">
         <div><label class="f" for="ru">Rue</label><select class="inp" id="ru" data-bind="rue"><option value="">Choisis…</option>${RUES.map(r => `<option ${S.rue === r ? "selected" : ""}>${esc(r)}</option>`).join("")}</select></div>
         <div><label class="f" for="nu">Numéro</label><input class="inp" id="nu" data-bind="numero" inputmode="numeric" maxlength="3" value="${esc(S.numero)}"></div>
@@ -1069,33 +2448,42 @@ R.adresse = () => { const t = type(), done = S.bonusDone.adresse;
       </div>
       <label class="f">Commune</label>
       <div class="grid g4">${COMMUNES.map(c => `<button class="choice ${S.commune === c[0] ? "on" : ""}" data-set="commune" data-val="${esc(c[0])}" style="padding:12px 14px"><h4 style="margin:0;font-size:18px">${esc(c[0])}</h4><p>${c[1]}</p></button>`).join("")}</div>
-      ${adresse1() && commune() ? `<p class="help" style="font-size:17px;margin-top:18px">Ton adresse : <b style="color:#fff">${esc(adresse1())}, ${esc(adresse2())}</b></p>` : ""}
+      ${adresse1() && commune() ? `<p class="help adresse-ligne" style="font-size:17px;margin-top:18px">Ton adresse : <b style="color:#fff">${esc(adresse1())}, ${esc(adresse2())}</b></p>` : ""}
     </div>
     <div class="bonus ${done ? "won" : ""}"><h4>${done ? "✓ Défi réussi : +50 XP" : "Défi bonus : +50 XP"}</h4>
       <p>Cherche sur internet un vrai magasin qui fait la même activité que toi (${esc(t.nom.toLowerCase())}) dans ta commune ou pas loin. Note son nom et sa commune : ce sera ton concurrent !</p>
       <div class="row" style="margin:0"><input class="inp" data-bind="bonus.concurrent" value="${esc(S.bonus.concurrent)}" placeholder="Ex. : nom du magasin, commune" ${done ? "disabled" : ""}>
-        ${done ? "" : `<button class="btn btn-gold" data-act="bonus" data-b="adresse">Valider mon défi</button>`}</div></div>` + nav("adresse"); };
+        ${done ? "" : `<button class="btn btn-gold" data-act="bonus" data-b="adresse">Valider mon défi</button>`}</div>${done ? `<span class="tampon vert frappe bonus-tampon" data-anim="bonus-ok" aria-hidden="true">Réussi</span>` : ""}</div>` + nav("adresse"); };
 
 R.direction = () => head(7, "Entreprise individuelle ou <span class='grad'>société</span> ?", "Tu démarres avec 10 000 € d'économies. Chaque formule a un prix et des conséquences.") + coach("direction")
-  + `<div class="grid g2">
-    <button class="choice ${S.direction === "seul" ? "on" : ""}" data-set="direction" data-val="seul"><div class="ico">🙋</div><h4>Entreprise individuelle</h4>
+  + `<div class="grid g2 docs-direction">
+    <button class="choice doc-officiel doc-indep ${S.direction === "seul" ? "on" : ""}" data-set="direction" data-val="seul"><span class="do-entete" aria-hidden="true"><span class="do-logo">🏛️</span><span>Guichet des indépendants<small>Demande d'inscription · document fictif</small></span></span>
+      <div class="ico">🙋</div><h4>Entreprise individuelle</h4>
       <p>Tu travailles en ton nom propre : tu es indépendant(e) et l'entreprise, c'est toi.</p><span class="cost">Frais de création : environ ${euro(FRAIS.seul)}</span>
       <span class="pro">✓ Simple et peu coûteux à créer</span><span class="pro">✓ Tu décides seul(e) et tu gardes tous les bénéfices</span>
-      <span class="con">✗ Si ton entreprise a des dettes, tu dois les payer avec tes biens personnels (tes économies, ta voiture…)</span></button>
-    <button class="choice ${S.direction === "plusieurs" ? "on" : ""}" data-set="direction" data-val="plusieurs"><div class="ico">🏢</div><h4>Société (SRL)</h4>
+      <span class="con">✗ Si ton entreprise a des dettes, tu dois les payer avec tes biens personnels (tes économies, ta voiture…)</span>${S.direction === "seul" ? `<span class="tampon vert frappe do-tampon" data-anim="dir-seul" aria-hidden="true">Choisi</span>` : ""}</button>
+    <button class="choice doc-officiel doc-notaire ${S.direction === "plusieurs" ? "on" : ""}" data-set="direction" data-val="plusieurs"><span class="do-entete" aria-hidden="true"><span class="do-sceau">⚖️</span><span>Étude du notaire<small>Acte de création d'une société · document fictif</small></span></span>
+      <div class="ico">🏢</div><h4>Société (SRL)</h4>
       <p>Tu crées une société, une entreprise qui a sa propre existence. Tu peux la créer seul(e) ou avec des associés.</p><span class="cost">Frais de création : environ ${euro(FRAIS.plusieurs)}</span>
       <span class="pro">✓ Tes biens personnels sont protégés</span><span class="pro">✓ Tu peux être seul(e) ou partager le travail avec des associés</span>
-      <span class="con">✗ Plus cher à créer (notaire, papiers officiels) et chaque année, il faut payer un comptable</span><span class="con">✗ Avec des associés, il faut se mettre d'accord et partager les bénéfices</span></button>
+      <span class="con">✗ Plus cher à créer (notaire, papiers officiels) et chaque année, il faut payer un comptable</span><span class="con">✗ Avec des associés, il faut se mettre d'accord et partager les bénéfices</span>${S.direction === "plusieurs" ? `<span class="do-associes" aria-hidden="true">Associés : ${"<i>👤</i>".repeat(S.nbAssocies)}</span><span class="tampon vert frappe do-tampon" data-anim="dir-plusieurs" aria-hidden="true">Choisi</span>` : ""}</button>
   </div>
   ${S.direction === "plusieurs" ? `<div class="card glass" style="margin-top:16px;display:flex;align-items:center;gap:18px;flex-wrap:wrap"><span style="font-weight:600">Combien de personnes dans ta société, toi compris ?</span>
      <div class="chips" style="margin:0">${[1,2,3,4,5].map(n => `<button class="chip ${S.nbAssocies === n ? "on" : ""}" data-set="nbAssocies" data-val="${n}">${n === 1 ? "1 : rien que moi" : n}</button>`).join("")}</div></div>` : ""}
-  ${S.direction ? `<div class="money glass"><div class="mi">🏦</div><div>Après les frais de création, il restera <b>${euro(enBanque())}</b> sur le compte en banque de <b style="color:#fff;font-family:var(--ui)">${esc(deno())}</b>.<div class="help">Montants simplifiés pour le jeu.</div></div></div>` : ""}`
+  ${S.direction ? `<div class="money glass">${billets()}<div class="mo-txt"><div class="mi">🏦</div><div>Après les frais de création, il restera <b>${euro(enBanque())}</b> sur le compte en banque de <b style="color:#fff;font-family:var(--ui)">${esc(deno())}</b>.<div class="help">Montants simplifiés pour le jeu.</div></div></div></div>` : ""}`
   + nav("direction");
 
 R.reveal = () => {
   if (!S.ids){ S.ids = {bce:genBCE(), iban:genIBAN()}; save(); setTimeout(confetti, 300); }
   if (!S.dateCreation) S.dateCreation = today();
-  return head(8, "Ton entreprise est <span class='grad'>officiellement créée</span> !", "") + coach("reveal") + idcard()
+  momentReveal();   // décor : sons de l'enveloppe, des numéros et du tampon (une seule fois)
+  return head(8, "Ton entreprise est <span class='grad'>officiellement créée</span> !", "") + coach("reveal")
+    + `<div class="bureau reveal-bureau"><div class="reveal-scene" data-anim="reveal-${esc(S.ids.bce)}">
+        <div class="env env-dos" aria-hidden="true"></div><div class="env env-rabat" aria-hidden="true"></div>
+        ${idcard()}
+        <div class="env env-face" aria-hidden="true"><span class="env-officiel">Officiel</span><span class="env-timbre"><span>✉</span></span>
+          <span class="env-adresse"><b>${esc(deno())}</b>${esc(adresse1())}<br>${esc(adresse2())}</span></div>
+      </div></div>`
     + `<div class="coach glass" style="margin-top:24px"><div class="av">🕵️</div><p><b>Trois numéros mystérieux sont apparus.</b> Chaque entreprise en reçoit à sa création. À quoi servent-ils ? Garde-les bien : on découvre leur secret au prochain cours.</p></div>
     <h3 class="sub" style="text-align:center">Ce que possède ton entreprise aujourd'hui</h3>
     <p class="lead" style="text-align:center;margin:0 auto">À gauche, ce que ton entreprise possède. À droite, d'où vient cet argent. Les deux côtés sont toujours égaux !</p>
@@ -1105,14 +2493,16 @@ R.reveal = () => {
 R.lancement = () => { const t = type(), st = strat(), ok = VALID.lancement();
   const ligne = (k, v) => `<li><b>${k}</b><span>${v}</span></li>`;
   return head(9, "Je lance <span class='grad'>mon entreprise</span>", "Relis bien ta déclaration. Si tu veux changer quelque chose, clique sur « Retour ». Une fois signée, elle est définitive.") + coach("lancement")
-    + `<div class="decl"><h3>Déclaration de création</h3><div class="sub2">${esc(S.commune)}, le ${esc(S.dateCreation)}</div>
+    + `<div class="bureau decl-bureau"><div class="decl formulaire kit-anim" data-anim="decl-formulaire">
+      <div class="df-entete" aria-hidden="true"><span class="df-logo">SL</span><span class="df-titre">Formulaire officiel<small>Mission 1 · création d'entreprise · document fictif</small></span><span class="df-ref">M1-${new Date().getFullYear()}</span></div>
+      <h3>Déclaration de création</h3><div class="sub2">${esc(S.commune)}, le ${esc(S.dateCreation)}</div>
       <ul>${ligne("Nom officiel", esc(deno()))}${ligne("Activité", `${t.emoji} ${esc(t.nom)}`)}${ligne("Stratégie", `${st.icone} ${esc(st.nom)}`)}
         ${ligne("Forme", esc(forme()))}${ligne("Adresse officielle", `${esc(adresse1())}, ${esc(adresse2())}`)}
         ${ligne("Personnalité", `${S.symbole} style ${esc(STYLES.find(s => s[0] === S.style)[1].toLowerCase())}, façade ${esc(FACADES.find(f => f[0] === S.facade)[1].toLowerCase())}, ambiance ${esc(AMBIANCES.find(a => a[0] === S.ambiance)[1].toLowerCase())}`)}
         ${ligne("Argent de départ", euro(APPORT))}${ligne("Frais de création", "− " + euro(frais()))}${ligne("Argent en banque", `<b>${euro(enBanque())}</b>`)}</ul>
       <label class="engage"><input type="checkbox" id="eng" ${S.engagement ? "checked" : ""}><span>Je comprends que ces choix sont <b>définitifs</b> et qu'ils me suivront <b>toute l'année</b>.</span></label>
       <div class="sigl"><div><input data-bind="signature" value="${esc(S.signature)}" placeholder="Signe ici (prénom et nom)" maxlength="40" aria-label="Signature"><small>${esc(S.eleve.prenom)} ${esc(S.eleve.nom)}, ${esc(fonction().toLowerCase())}</small></div></div>
-    </div>
+    </div></div>
     <ul class="chk"><li class="${S.engagement ? "ok" : ""}">Je coche mon engagement</li><li class="${S.signature.trim().length >= 3 ? "ok" : ""}">Je signe ma déclaration</li></ul>
     <div class="nav"><button class="btn btn-ghost" data-act="back">Retour</button>
       <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="hint" style="visibility:${ok ? "hidden" : "visible"}">${MANQUE.lancement}</span>
@@ -1135,12 +2525,12 @@ R.fin = () => {
       <div class="stat glass"><b style="font-family:var(--serif);font-size:24px;padding:6px 0">${niveau()}</b><span>Ton niveau</span></div>
       <div class="stat glass"><b>${badges.filter(b => b[1]).length}/${badges.length}</b><span>Badges</span></div></div>
     ${status}
-    <div class="duo"><div class="front-wrap glass">${vitrine("fin")}</div><div>${carteVisite()}<p class="help" style="margin-top:10px">Ta carte de visite de chef d'entreprise.</p></div></div>
+    <div class="duo"><div class="front-wrap glass vitrine-fin kit-anim" data-anim="fin-vitrine">${vitrine("fin")}</div><div class="biz-zone">${carteVisite()}<p class="help" style="margin-top:10px">Ta carte de visite de chef d'entreprise.</p></div></div>
     ${lecture ? `<h3 class="sub">Ta carte d'identité d'entreprise</h3>${idcard()}${patrimoine()}` : ""}
     <div class="card glass" style="margin-top:22px"><h3 class="sub" style="margin-top:0">Tes badges</h3>
-      <div class="badges">${badges.map(([b,on]) => `<div class="badge glass ${on ? "" : "lockd"}"><div class="i">${on ? b[0] : "🔒"}</div><b>${esc(b[1])}</b></div>`).join("")}</div>
+      <div class="badges" data-anim="fin-pins">${badges.map(([b,on], i) => `<div class="badge pin ${on ? "" : "lockd"}" style="--i:${i}"><div class="i">${on ? b[0] : "🔒"}</div><b>${esc(b[1])}</b></div>`).join("")}</div>
       <h3 class="sub">Ton carnet de mots de pro</h3>
-      <div class="words">${S.mots.map(m => `<div class="word"><b>${esc(MOTS[m].mot)}</b><span>${esc(MOTS[m].def)}</span></div>`).join("")}</div>
+      <div class="words carnet">${S.mots.map(m => `<div class="word"><b>${esc(MOTS[m].mot)}</b><span>${esc(MOTS[m].def)}</span></div>`).join("")}</div>
       <div class="nav" style="margin-top:22px"><button class="btn btn-ghost" data-act="print">Imprimer ma carte d'entreprise</button></div></div>
     <div class="next glass"><div class="ic">🧰</div><div><b>Prochaine mission : équipe ton entreprise.</b><br><span class="hint">Avec les ${euro(enBanque())} de ton compte en banque, tu achèteras le matériel dont ton entreprise a besoin pour fonctionner… sans tout dépenser !</span></div></div>`;
 };
@@ -1158,9 +2548,9 @@ function renderSide(){
     ["En banque", S.direction ? euro(enBanque()) : ""]];
   const filled = [t, st, S.nom.trim(), VALID.logo(), VALID.boutique(), adresse1() && commune(), S.direction, S.ids, S.done.lancement].filter(Boolean).length;
   const pct = Math.round(filled/9*100);
-  side.innerHTML = `<div class="sign glass">
+  side.innerHTML = `<div class="sign glass side-boutique">
     ${key === "boutique" ? "" : `<div class="front-wrap" style="border-radius:0">${vitrine("side")}</div>`}
-    <div class="sign-body"><h3>Mon entreprise${S.nom.trim() ? " : " + esc(deno()) : ""}</h3>
+    <div class="sign-body fiche-side"><h3>Mon entreprise${S.nom.trim() ? " : " + esc(deno()) : ""}</h3>
       ${rows.map(r => `<div class="srow"><div class="k">${r[0]}</div><div class="v ${r[1] ? "" : "todo"}">${r[1] ? esc(r[1]) : "à compléter"}</div></div>`).join("")}
       <div class="pbar"><i style="width:${pct}%"></i></div><div class="help">Entreprise construite à ${pct} %</div></div></div>`;
 }
@@ -1184,14 +2574,15 @@ const ERREURS = {
   email_invalide:"Cette adresse n'est pas valide. Elle doit ressembler à prenom.nom@istlm.org.",
   non_inscrit:"Cette adresse n'est pas sur la liste de ta classe. Vérifie l'orthographe ou demande à ton professeur.",
   reseau:"Impossible de joindre le serveur. Vérifie ta connexion internet puis réessaie.",
-  timeout:"Le serveur Google ne répond pas pour l'instant. Patiente quelques secondes, puis clique à nouveau."
+  timeout:"Le serveur ne répond pas pour l'instant. Patiente quelques secondes, puis clique à nouveau.",
+  serveur:"Le serveur a refusé la demande. Préviens ton professeur (la base de données doit être vérifiée)."
 };
 async function seConnecter(email){
   LOGIN.busy = true; LOGIN.err = ""; LOGIN.lent = false; render();
   SESSION.email = email;
   const lent = setTimeout(() => { if (LOGIN.busy){ LOGIN.lent = true; render(); } }, 6000);
   let r;
-  try { r = await connexion(); } catch(e) { clearTimeout(lent); LOGIN.busy = false; LOGIN.lent = false; LOGIN.err = e.message === "timeout" ? ERREURS.timeout : ERREURS.reseau; render(); return; }
+  try { r = await connexion(); } catch(e) { clearTimeout(lent); LOGIN.busy = false; LOGIN.lent = false; LOGIN.err = ERREURS[e.message] || ERREURS.reseau; render(); return; }
   clearTimeout(lent); LOGIN.busy = false; LOGIN.lent = false;
   if (!r || !r.ok){ LOGIN.err = ERREURS[r && r.erreur] || "Connexion refusée. Demande à ton professeur."; render(); return; }
   appliquerConnexion(r, email);
@@ -1232,7 +2623,7 @@ function appliquerConnexion(r, email){
   save(); render(true);
 }
 async function verifierOuvert(){
-  try { const r = await jsonp({action:"ping", mission:CONFIG.MISSION}, 10000); if (r && r.diagnostic) SESSION.diag = r.diagnostic;
+  try { const r = await appelServeur({action:"ping", mission:CONFIG.MISSION}, 10000); if (r && r.diagnostic) SESSION.diag = r.diagnostic;
     return !!(r && r.acces && (r.missionsOuvertes || []).indexOf(CONFIG.MISSION) >= 0); }
   catch(e) { return true; }
 }
@@ -1288,10 +2679,12 @@ async function envoyerFinal(btn){
   S.finishedAt = Date.now(); S.step = 10; S.envoi = {mode:"wait"};
   save();
   setTimeout(() => { render(true); confetti(); }, 1100);
-  await envoyer("termine");
-  await confirmerEnvoi();
+  await confirmerEnvoi(await envoyer("termine"));
 }
-async function confirmerEnvoi(){
+/** La base répond tout de suite ; si la réponse s'est perdue, on vérifie en relisant le dossier. */
+async function confirmerEnvoi(res){
+  if (res && (res.ok || res.erreur === "mission_deja_terminee")){ S.envoi = {mode:"ok"}; save(); render(); return; }
+  if (res && (res.erreur === "acces_ferme" || res.erreur === "mission_fermee")){ S.envoi = {mode:"ferme"}; save(); render(); return; }
   for (let i = 0; i < 4; i++){
     await wait(2000 + i*1500);
     try {
@@ -1339,7 +2732,7 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") $("#modal").hidden = true;
   if (e.key === "Enter" && e.target.id === "em"){ const b = $('[data-act="login"]'); if (b && !b.disabled) b.click(); }
   if (e.ctrlKey && e.altKey && e.key.toLowerCase() === "d"){
-    const m = $("#modal"); m.innerHTML = `<div class="box glass" role="dialog"><h3 style="font-family:var(--serif)">Données de la mission (format envoyé au Google Sheet)</h3><pre>${esc(JSON.stringify(S.lastPayload || payload("apercu"), null, 2))}</pre><button class="btn btn-main" data-act="close">Fermer</button></div>`; m.hidden = false; }
+    const m = $("#modal"); m.innerHTML = `<div class="box glass" role="dialog"><h3 style="font-family:var(--serif)">Données de la mission (format envoyé à la base de données)</h3><pre>${esc(JSON.stringify(S.lastPayload || payload("apercu"), null, 2))}</pre><button class="btn btn-main" data-act="close">Fermer</button></div>`; m.hidden = false; }
 });
 document.addEventListener("click", (e) => {
   const b = e.target.closest("button"); if (!b) return;
@@ -1374,7 +2767,104 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// ======================================================================
+//  DÉCOR RÉALISTE : sons et petites animations (ne modifie jamais les données ni la progression)
+// ======================================================================
+const DEJA_JOUE = new Set();
+const moinsDeMouvement = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+function uneFois(cle, fn){ if (DEJA_JOUE.has(cle)) return; DEJA_JOUE.add(cle); fn(); }
+/** Icône et son des notifications : XP gagnés (et le compteur saute), mot de pro, information. */
+function decorerToast(t, html, cls){
+  if (cls === "word"){ SON.jouer("notif"); return; }
+  if (/XP<\/b>/.test(html)){
+    t.classList.add("xp"); SON.jouer("xp");
+    const p = document.querySelector(".xp-pill"); if (p){ p.classList.remove("gagne"); void p.offsetWidth; p.classList.add("gagne"); }
+    return;
+  }
+  t.classList.add("info"); SON.jouer("erreur");
+}
+/** Étape « Officiel » : l'enveloppe arrive et s'ouvre, les trois numéros apparaissent, puis le tampon frappe. */
+function momentReveal(){
+  uneFois("reveal-" + S.ids.bce, () => {
+    if (moinsDeMouvement()){ setTimeout(() => SON.jouer("tampon"), 300); return; }
+    [[60, "papier"], [560, "papier"], [2400, "bip"], [2700, "bip"], [3000, "bip"], [3580, "tampon"]].forEach(([ms, son]) => setTimeout(() => {
+      if (MODE !== "mission" || STEPS[S.step].key !== "reveal") return;   // l'élève a déjà quitté l'écran
+      SON.jouer(son);
+      if (son === "tampon"){ const c = document.querySelector(".reveal-scene .certificat"); if (c){ c.classList.remove("secoue"); void c.offsetWidth; c.classList.add("secoue"); } }
+    }, ms));
+  });
+}
+const NOEUD_SVG = `<svg viewBox="0 0 100 70" aria-hidden="true"><path d="M50 35C30 8 2 12 8 33c4 15 28 12 42 2z" fill="#e02424"/><path d="M50 35C70 8 98 12 92 33c-4 15-28 12-42 2z" fill="#e02424"/>
+  <path d="M14 26c8-7 22-5 30 6M86 26c-8-7-22-5-30 6" stroke="#ff9a9a" stroke-width="2.4" fill="none" opacity=".7"/><path d="M45 38L33 68l9-4 6 6 4-30zM55 38l12 30-9-4-6 6-4-30z" fill="#c21b1b"/><circle cx="50" cy="35" r="8" fill="#b01818"/></svg>`;
+const CISEAUX_SVG = `<svg viewBox="0 0 120 60" aria-hidden="true">
+  <g class="lame-h"><path d="M52 30L117 23q2 1.5 0 3L54 33z" fill="#eef1f5" stroke="#7d8696"/><ellipse cx="22" cy="16" rx="15" ry="9" fill="none" stroke="#e5484d" stroke-width="6"/><path d="M35 21L52 30" stroke="#e5484d" stroke-width="6" stroke-linecap="round"/></g>
+  <g class="lame-b"><path d="M52 30L117 37q2-1.5 0-3L54 27z" fill="#d9dee5" stroke="#7d8696"/><ellipse cx="22" cy="44" rx="15" ry="9" fill="none" stroke="#e5484d" stroke-width="6"/><path d="M35 39L52 30" stroke="#e5484d" stroke-width="6" stroke-linecap="round"/></g>
+  <circle cx="52" cy="30" r="3.4" fill="#5b6474"/></svg>`;
+/** Lancement : inauguration devant la vitrine (ciseaux, ruban qui tombe, lumières, fanfare). La page de fin s'affiche derrière. */
+function ceremonieRuban(){
+  if (document.querySelector(".ceremonie")) return;
+  if (moinsDeMouvement()){ SON.jouer("fanfare"); return; }
+  const t = type(), cfg = { nom:S.nom.trim(), couleur:S.couleur, couleur2:S.couleur2, style:S.style, symbole:S.symbole || (t ? t.emoji : ""),
+    facade:S.facade, auvent:S.auvent, ambiance:S.ambiance, accueil:S.accueil, numero:S.numero, produits: t ? t.vitrine : [], nuit:true };
+  const el = document.createElement("div");
+  el.className = "ceremonie"; el.setAttribute("aria-hidden", "true");
+  el.innerHTML = `<div class="cer-scene"><div class="cer-vitrine">${vitrineSVG(Object.assign({}, cfg, { allumee:false, panneau:"FERMÉ" }), "cer-off")}
+      <div class="cer-on">${vitrineSVG(Object.assign({}, cfg, { allumee:true, panneau:"OUVERT" }), "cer-on")}</div>
+      <div class="cer-ruban"><span class="cr-g"></span><span class="cr-d"></span></div><div class="cer-noeud">${NOEUD_SVG}</div><div class="cer-ciseaux">${CISEAUX_SVG}</div></div>
+    <p class="cer-titre"><span>${esc(deno())}</span> ouvre ses portes !</p></div>`;
+  el.addEventListener("click", () => el.remove());
+  document.body.appendChild(el);
+  setTimeout(() => SON.jouer("papier"), 860);
+  setTimeout(() => SON.jouer("fanfare"), 980);
+  setTimeout(() => el.remove(), 3400);
+}
+document.addEventListener("click", (e) => {
+  if (e.target.closest("[data-vue]")){ VUE_NUIT = !VUE_NUIT; VUE_COMPTE++; SON.jouer("clic"); render(); return; }   // vitrine de jour ou de nuit
+  const b = e.target.closest("button"); if (!b) return;
+  if (b.dataset.act === "brief") SON.jouer("porte");                                            // on pousse la porte de l'entreprise
+  else if (b.dataset.act === "send" && MODE === "mission" && S.step === 10) ceremonieRuban();   // seulement si l'envoi final a bien démarré
+});
+document.addEventListener("input", (e) => {   // la plaque du numéro suit la frappe
+  if (MODE !== "mission" || e.target.id !== "nu") return;
+  const p = document.querySelector(".plaque-num"), n = String(S.numero || "").trim(); if (!p) return;
+  p.querySelector(".pn-txt").textContent = n || "?"; p.classList.toggle("vide", !n); p.setAttribute("aria-label", "Numéro : " + (n || "pas encore choisi"));
+  const ligne = document.querySelector(".adresse-ligne b"); if (ligne && adresse1() && commune()) ligne.textContent = `${adresse1()}, ${adresse2()}`;
+});
+
 render();
+
+// ======================================================================
+//  MODE TEST POUR LE PROFESSEUR : ajouter « ?test » à l'adresse de la page
+//  → un élève fictif commence la mission 1 ; RIEN n'est envoyé à la base de données.
+// ======================================================================
+(function(){
+  const qs = new URLSearchParams(location.search);
+  if (!qs.has("test")) return;
+  const EMAIL = "eleve.test@istlm.org", ELEVE = { email:EMAIL, prenom:"Élève", nom:"Test", classe:"3P Vente" };
+  let dossier = null;
+  CONFIG.STORAGE_PREFIX = "mini-entreprise-3p-m1-test-";
+  CONFIG.HORS_LIGNE = true;                                         // aucune donnée ne part vers la base
+  try { localStorage.removeItem(CONFIG.STORAGE_PREFIX + EMAIL); } catch(e) {}
+  const diag = { versionScript:"test", mission:"1", raison:"Mode test", verrouActif:"OUI", missionsOuvertesLues:["1","2","3"] };
+  appelServeur = function(params){
+    const attente = new Promise(r => setTimeout(r, 250));
+    if (params.action === "ping") return attente.then(() => ({ ok:true, acces:true, missionsOuvertes:["1","2","3"], diagnostic:diag }));
+    return attente.then(() => ({ ok:true, ouvert:true, statut: dossier ? "termine" : "nouveau", eleve:ELEVE, dossier: dossier ? JSON.parse(JSON.stringify(dossier)) : null,
+      compteurs:{ animalerie:6, chocolaterie:3 }, max:6, diagnostic:diag }));
+  };
+  envoyer = function(statut){
+    const data = payload(statut); S.lastPayload = data;
+    if (statut === "termine") dossier = { eleve:ELEVE, entreprise:data.entreprise, missions:{ "1":Object.assign({}, data, { statut:"termine" }) } };
+    return Promise.resolve({ ok:true, email:EMAIL, mission:"1", statut });
+  };
+  // Bandeau du mode test
+  const b = document.createElement("div");
+  b.style.cssText = "position:fixed;left:12px;bottom:12px;z-index:90;background:#FFF3C4;color:#1D1F33;border:2px solid #F5C451;border-radius:14px;padding:10px 14px;font:600 14px Outfit,Arial,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.4);display:flex;gap:10px;align-items:center;flex-wrap:wrap;max-width:calc(100vw - 24px)";
+  b.innerHTML = `🧪 MODE TEST : rien n'est enregistré <button id="tGo" style="font:inherit;padding:4px 12px;border-radius:8px;border:0;background:#1D1F33;color:#fff;cursor:pointer">Recommencer</button>`;
+  document.body.appendChild(b);
+  $("#tGo").addEventListener("click", () => { try { localStorage.removeItem(CONFIG.STORAGE_PREFIX + EMAIL); } catch(e) {} location.reload(); });
+  LOGIN.email = EMAIL; seConnecter(EMAIL);
+})();
 </script>
 </body>
 </html>
