@@ -1672,6 +1672,7 @@ const TYPES = [
 { id:"ferme", secteur:"primaire", emoji:"🐄", nom:"La ferme avec son magasin",
   desc:"Tu élèves des vaches et tu cultives des légumes. Dans le magasin de la ferme, tu vends tes produits frais aux habitants de la région.",
   achete:"semences, aliments pour animaux, emballages", vend:"légumes de saison, lait, œufs, fromages",
+  famille:"Fabrique et vend (produit à la ferme et distribue au magasin)", pensebete:"Secteur primaire : je prends dans la nature",
   noms:["La Ferme du Terril","Les Saveurs du Pré","Ferme des Trois Tilleuls","Le Panier Fermier"],
   slogans:["Du champ à ton assiette","Le goût du vrai","Frais, local et fait avec amour"],
   produits:[["Semences de pommes de terre","sac de 25 kg","Pour planter les pommes de terre au printemps"],["Graines de carottes","sachet de 500 g","De quoi semer plusieurs longues rangées"],["Aliment pour vaches laitières","sac de 25 kg","Un mélange de céréales pour tes vaches"],["Foin","botte de 250 kg","La nourriture de base des vaches en hiver"],["Engrais naturel","sac de 25 kg","Pour nourrir la terre de tes champs"],["Boîtes à œufs","lot de 100","Pour vendre les œufs par 6 ou par 10"],["Bouteilles en verre pour le lait","caisse de 24","Des bouteilles consignées de 1 litre"],["Filets à légumes","lot de 100","Pour vendre pommes de terre et oignons"],["Papier pour emballer le fromage","rouleau de 50 m","Garde le fromage frais plus longtemps"],["Bottes en caoutchouc","paire","Indispensables dans la boue de la ferme"]],
@@ -1679,6 +1680,7 @@ const TYPES = [
 { id:"pepiniere", secteur:"primaire", emoji:"🌱", nom:"La pépinière",
   desc:"Tu fais pousser des plantes, des fleurs et des arbres dans tes serres, puis tu les vends aux particuliers et aux jardiniers.",
   achete:"graines, bulbes, pots, terreau", vend:"plantes, fleurs, arbustes, arbres fruitiers",
+  famille:"Fabrique et vend (cultive et distribue)", pensebete:"Secteur primaire : je prends dans la nature",
   noms:["Au Jardin Fleuri","Vert Passion","Graines de Bonheur","Les Serres du Borinage"],
   slogans:["Faites fleurir vos envies","Des plantes qui ont du caractère","Le vert, c'est notre nature"],
   produits:[["Terreau universel","sac de 50 litres","La terre idéale pour les pots et les semis"],["Pots en terre cuite","lot de 20","Des pots classiques de 15 cm"],["Graines de fleurs d'été","lot de 50 sachets","Tournesols, cosmos, capucines…"],["Bulbes de tulipes","filet de 50","À planter en automne pour des fleurs au printemps"],["Jeunes plants de fraisiers","plateau de 24","Prêts à grandir et à donner des fraises"],["Engrais pour plantes","bidon de 5 litres","Pour des plantes plus fortes et plus fleuries"],["Tuteurs en bambou","lot de 50","Pour aider les plantes à pousser bien droit"],["Arrosoirs","pièce","Arrosoir en métal de 10 litres"],["Gants de jardinage","paire","Protègent les mains des épines"],["Étiquettes pour plantes","lot de 500","Pour écrire le nom et le prix de chaque plante"]],
@@ -1686,6 +1688,7 @@ const TYPES = [
 { id:"chocolaterie", secteur:"secondaire", emoji:"🍫", nom:"La chocolaterie artisanale",
   desc:"Dans ton atelier, tu transformes le cacao, le sucre et le lait en pralines et en tablettes, que tu vends dans ta boutique.",
   achete:"cacao, sucre, noisettes, emballages", vend:"pralines, tablettes, coffrets cadeaux",
+  famille:"Fabrique et vend (transforme le cacao et distribue)", pensebete:"Secteur secondaire : je transforme",
   noms:["L'Atelier Cacao","Praline & Cie","Douceur Noire","Les Chocolats du Borinage"],
   slogans:["Le chocolat belge, avec passion","Craquez pour nos pralines","Fait main, fait pour vous"],
   produits:[["Fèves de cacao","sac de 25 kg","La matière première de tout chocolat"],["Chocolat de couverture noir","bloc de 5 kg","Pour enrober les pralines"],["Sucre de canne","sac de 25 kg","Pour adoucir le chocolat"],["Lait en poudre","sac de 25 kg","Indispensable pour le chocolat au lait"],["Noisettes grillées","sac de 5 kg","Pour le praliné et les tablettes"],["Beurre de cacao","bloc de 5 kg","Rend le chocolat fondant"],["Boîtes à pralines","lot de 100","Boîtes cadeaux de 250 g"],["Papier doré","rouleau de 50 m","Pour emballer les tablettes"],["Moules à pralines","pièce","Moule de 24 pralines"],["Rubans cadeaux","rouleau de 50 m","La touche finale des coffrets"]],
@@ -1693,20 +1696,23 @@ const TYPES = [
 { id:"textile", secteur:"secondaire", emoji:"👕", nom:"L'atelier de T-shirts personnalisés",
   desc:"Tu imprimes des dessins, des prénoms ou des logos sur des T-shirts, des sweats et des casquettes, selon les envies de tes clients.",
   achete:"T-shirts blancs, sweats, encres, vinyle", vend:"vêtements personnalisés",
+  famille:"Fabrique et vend (personnalise et distribue)", pensebete:"Secteur secondaire : je transforme",
   noms:["Borinage Print","L'Atelier du T-shirt","Street Ink","Mon Style Unique"],
   slogans:["Ton style, ton message","On imprime tes idées","Unique comme toi"],
   produits:[["T-shirts blancs en coton","carton de 50","T-shirts vierges à personnaliser"],["Sweats à capuche","carton de 20","Sweats noirs, gris ou blancs"],["Casquettes","carton de 25","Casquettes réglables à imprimer"],["Sacs en tissu","lot de 50","Sacs en coton naturel"],["Encre textile noire","pot de 1 kg","Encre qui résiste au lavage"],["Encres textiles de couleur","lot de 4 pots","Rouge, bleu, jaune et vert"],["Papier transfert","paquet de 100 feuilles","Pour transférer un dessin au fer chaud"],["Vinyle flex","rouleau de 5 m","Pour découper des lettres et des logos"],["Sachets d'emballage","lot de 500","Pour emballer chaque vêtement vendu"],["Étiquettes à ta marque","lot de 1 000","Pour coudre ton logo dans le col"]],
   fournisseurs:[["Textiles Delcourt","SRL","Rue du Midi 77","7700","Mouscron","Belgique","Grossiste en vêtements vierges","Prix bas"],["PrintSupply","BV","Strijpsestraat 40","5616 GS","Eindhoven","Pays-Bas","Tout le matériel pour imprimer sur textile","Livraison rapide"],["Encres & Couleurs","SAS","Rue de la Soie 14","69001","Lyon","France","Fabricant d'encres et de textiles de qualité","Qualité premium"],["BlankWear","GmbH","Industriestraße 21","50667","Cologne","Allemagne","Grossiste européen en textile","Grand choix"]]},
 { id:"baskets", secteur:"tertiaire", emoji:"👟", nom:"Le magasin de baskets",
   desc:"Tu vends des baskets et des accessoires aux jeunes et aux sportifs, et tu les conseilles pour trouver la bonne paire.",
-  achete:"baskets, chaussettes, accessoires", vend:"les mêmes articles, à tes clients",
+  achete:"baskets, chaussettes, accessoires", vend:"baskets, chaussettes et accessoires",
+  famille:"Distribue des biens : le magasin est le lien entre celui qui fabrique et celui qui achète", pensebete:"Secteur tertiaire : je rends un service (je vends)",
   noms:["Sneak'Up","Street Kicks","Pas de Géant","Chaussure à ton Pied"],
   slogans:["Chaque pas compte","Le style commence par les pieds","Tes pieds vont adorer"],
   produits:[["Baskets de running","paire","Légères et confortables pour courir"],["Baskets en toile","paire","Le classique qui va avec tout"],["Baskets montantes","paire","Style street, cheville maintenue"],["Baskets pour enfants","paire","Du 28 au 35, avec scratch"],["Claquettes","paire","Pour la piscine ou l'été"],["Chaussettes de sport","lot de 3 paires","Blanches ou noires"],["Semelles confort","paire","Pour marcher toute la journée"],["Spray imperméabilisant","flacon","Protège les baskets de la pluie"],["Kit de nettoyage","kit","Brosse et produit pour baskets blanches"],["Lacets de couleur","lot de 5 paires","Pour personnaliser ses baskets"]],
   fournisseurs:[["Sport Distribution","SA","Boulevard Industriel 60","1070","Anderlecht","Belgique","Grossiste en articles de sport","Grand choix"],["Shoes Europe","BV","Venrayseweg 100","5928 RH","Venlo","Pays-Bas","Centre de distribution de chaussures","Livraison rapide"],["Pied Léger","SAS","Route de Béthune 25","62300","Lens","France","Fabricant de baskets","Qualité premium"],["Sneaker Großhandel","GmbH","Kölner Straße 15","40211","Düsseldorf","Allemagne","Grossiste qui vend en très grandes quantités","Prix bas"]]},
 { id:"gaming", secteur:"tertiaire", emoji:"🎮", nom:"La boutique gaming et high-tech",
   desc:"Tu vends des consoles, des jeux et des accessoires aux joueurs, et tu les aides à choisir le bon matériel.",
-  achete:"consoles, manettes, casques, accessoires", vend:"les mêmes articles, à tes clients",
+  achete:"consoles, manettes, casques, accessoires", vend:"consoles, manettes, casques, jeux et accessoires",
+  famille:"Distribue des biens : le magasin est le lien entre celui qui fabrique et celui qui achète", pensebete:"Secteur tertiaire : je rends un service (je vends)",
   noms:["Level Up Store","Pixel Shop","Game Zone","Joystick Corner"],
   slogans:["Passe au niveau supérieur","Le jeu commence ici","Game on !"],
   produits:[["Consoles de jeux","pièce","La console de salon la plus demandée"],["Manettes sans fil","pièce","Compatibles avec la console"],["Casques gaming","pièce","Avec micro pour jouer en ligne"],["Claviers gaming","pièce","Clavier lumineux et résistant"],["Souris gaming","pièce","Précise et rapide"],["Tapis de souris XXL","pièce","Couvre tout le bureau"],["Cartes cadeaux jeux vidéo","lot de 10","Cartes de 25 € à offrir"],["Câbles HDMI","lot de 10","Pour brancher la console à l'écran"],["Chaises gaming","pièce","Confortables pour de longues parties"],["Housses de transport","lot de 10","Pour protéger la console en voyage"]],
@@ -1714,13 +1720,15 @@ const TYPES = [
 { id:"velos", secteur:"tertiaire", emoji:"🚲", nom:"Le magasin de vélos",
   desc:"Tu vends des vélos et des accessoires, et tu répares les vélos de tes clients dans ton atelier.",
   achete:"vélos, casques, pièces détachées", vend:"vélos, accessoires et réparations",
+  famille:"Distribue des biens et rend un service (réparations)", pensebete:"Secteur tertiaire : je rends un service",
   noms:["Roue Libre","Le Guidon Malin","Cycl'Hainaut","Vélo Village"],
   slogans:["En selle !","Roulez plus loin","La liberté sur deux roues"],
   produits:[["Vélos de ville","pièce","Avec panier et éclairage"],["VTT","pièce","Vélo tout terrain pour les chemins"],["Vélos électriques","pièce","Une batterie pour aller plus loin"],["Vélos pour enfants","pièce","Roues de 16 pouces"],["Casques de vélo","pièce","Pour rouler en sécurité"],["Antivols","pièce","Antivol en U très solide"],["Chambres à air","lot de 10","Pour réparer les crevaisons"],["Pneus","pièce","Pneus pour vélo de ville"],["Kits d'éclairage","kit","Lampes avant et arrière rechargeables"],["Sacoches","pièce","Pour transporter ses affaires"]],
   fournisseurs:[["Cycles Benelux","SA","Kempische Steenweg 300","3500","Hasselt","Belgique","Grossiste en vélos et accessoires","Grand choix"],["Fietsen Groothandel","BV","Europalaan 50","3526 KS","Utrecht","Pays-Bas","Importateur de vélos électriques","Qualité premium"],["Vélo Pièces","SAS","Rue de la Manufacture 3","42000","Saint-Étienne","France","Spécialiste des pièces détachées","Prix bas"],["RadTeile","GmbH","Landsberger Straße 150","80339","Munich","Allemagne","Fabricant d'accessoires pour vélos","Livraison rapide"]]},
 { id:"animalerie", secteur:"tertiaire", emoji:"🐶", nom:"L'animalerie",
   desc:"Tu vends de la nourriture, des jouets et des accessoires pour les chiens, les chats, les poissons et les rongeurs, et tu conseilles leurs propriétaires.",
-  achete:"croquettes, litière, accessoires", vend:"les mêmes articles, à tes clients",
+  achete:"croquettes, litière, accessoires", vend:"croquettes, litière, accessoires et aquariums",
+  famille:"Distribue des biens : le magasin est le lien entre celui qui fabrique et celui qui achète", pensebete:"Secteur tertiaire : je rends un service (je vends)",
   noms:["Patte & Moustache","Wouf & Miaou","Le Paradis des Animaux","Compagnons Store"],
   slogans:["Ils le méritent bien","Pour le bonheur de vos compagnons","Tout pour vos animaux"],
   produits:[["Croquettes pour chiens","sac de 12 kg","Pour chiens adultes"],["Croquettes pour chats","sac de 10 kg","Pour chats adultes"],["Litière pour chats","sac de 20 litres","Absorbe les odeurs"],["Paniers pour chiens","pièce","Coussin doux et lavable"],["Arbres à chat","pièce","Pour grimper et griffer"],["Laisses","pièce","Laisse solide de 2 mètres"],["Jouets pour chiens","lot de 10","Balles et cordes à mâcher"],["Aquariums","pièce","Aquarium de 60 litres avec filtre"],["Nourriture pour poissons","lot de 20 boîtes","Flocons pour poissons d'eau douce"],["Cages pour rongeurs","pièce","Pour lapins nains et cobayes"]],
@@ -1752,7 +1760,7 @@ TYPES.forEach(t => Object.assign(t, EXTRAS[t.id]));
 
 const STRATEGIES = [
   { id:"petit", nom:"Petits prix", icone:"💰", cls:"st-petit", atout:"Prix bas",
-    texte:"Tu vends pas cher. Beaucoup de clients viennent chez toi, mais tu gagnes peu d'argent sur chaque vente : il faudra vendre beaucoup !",
+    texte:"Tu vends à petits prix. Beaucoup de clients viennent chez toi, mais tu gagnes peu d'argent sur chaque vente : il faudra vendre beaucoup !",
     jauge:{prix:1, qualite:1, clients:3} },
   { id:"milieu", nom:"Bon rapport qualité-prix", icone:"⚖️", cls:"st-milieu", atout:"Grand choix",
     texte:"Des produits de bonne qualité à des prix raisonnables. C'est l'équilibre : ni les moins chers, ni les plus chers.",
@@ -1770,7 +1778,7 @@ const AMBIANCES = [["chaleureuse","Chaleureuse","#FFD89A","#F4A259"],["lumineuse
 const ACCUEILS = ["Bienvenue chez nous !","Entrez, c'est ouvert !","Au plaisir de vous conseiller","Ici, chaque client compte"];
 
 const APPORT = 10000;
-const FRAIS = { seul:150, plusieurs:3000 };   // seul = entreprise individuelle ; plusieurs = société (SRL), avec 1 à 5 personnes
+const FRAIS = { seul:150, plusieurs:3000 };   // seul = entreprise individuelle ; plusieurs = société (SRL), avec 1 à 5 personnes — les 3 000 € couvrent le notaire, la publication au Moniteur belge et les premiers frais de comptable (montants simplifiés pour le jeu)
 const euro = (n) => n.toLocaleString("fr-BE") + " €";
 
 const SECTEURS = { primaire:"Secteur primaire", secondaire:"Secteur secondaire", tertiaire:"Secteur tertiaire" };
@@ -1798,7 +1806,7 @@ const MOTS = {
   denomination:{mot:"Dénomination", def:"Le nom officiel d'une entreprise."},
   siege:{mot:"Siège social", def:"L'adresse officielle d'une entreprise."},
   individuelle:{mot:"Entreprise individuelle", def:"Une entreprise qui appartient à une seule personne."},
-  srl:{mot:"Société (SRL)", def:"Une entreprise qui a sa propre existence, créée par une ou plusieurs personnes (les associés). SRL veut dire « société à responsabilité limitée »."},
+  srl:{mot:"Société (SRL)", def:"Une entreprise qui a sa propre existence, créée par une ou plusieurs personnes (les associés). SRL veut dire « société à responsabilité limitée » (avant 2019 : SPRL ; il existe aussi la SA et la SC)."},
   apport:{mot:"Apport", def:"L'argent que le ou les créateurs mettent dans l'entreprise au départ."}
 };
 const NIVEAUX = [[0,"Idée en poche"],[250,"Projet en route"],[500,"Commerce en vue"],[700,"Entreprise lancée"],[900,"Boss du business"]];
@@ -1806,10 +1814,10 @@ const COACH = {
   type:"Tout commence par une idée ! Lis bien chaque activité et choisis celle où tu te vois le plus. <b>Tu achèteras</b> et <b>tu vendras</b> t'aident à imaginer ton futur quotidien.",
   strategie:"C'est une décision très importante : elle va guider tous tes choix de l'année (tes fournisseurs, tes prix, ta boutique). Il n'y a pas de mauvaise réponse, mais il faut <b>une bonne raison</b>.",
   nom:"Un bon nom, c'est court, facile à retenir et ça donne envie d'entrer. Invente le tien ou pioche dans mes idées.",
-  logo:"Ton logo, c'est le visage de ton entreprise. Il doit plaire à tes clients et coller à ta stratégie. Regarde ton enseigne s'allumer à droite !",
+  logo:"Ton logo, c'est le visage de ton entreprise. Il doit plaire à tes clients et coller à ta stratégie. Regarde ton enseigne s'allumer !",
   boutique:"Fais rêver tes clients ! Une boutique donne envie d'entrer… ou pas. Pense à tes clients : que vont-ils ressentir en passant devant ?",
   adresse:"Où s'installe ton entreprise ? C'est l'adresse qui figurera sur tous tes documents officiels.",
-  direction:"Tu démarres avec <b>10 000 €</b> d'économies. Entreprise individuelle ou société ? Chaque choix a un prix et des conséquences. Lis bien avant de décider.",
+  direction:"Entreprise individuelle ou société ? Chaque choix a un prix et des conséquences. Lis bien avant de décider.",   // l'écran Direction place devant ce texte la phrase sur les 10 000 € de départ (apportTexte)
   reveal:"Ton entreprise existe officiellement ! Regarde bien ta carte d'identité : des numéros mystérieux viennent d'apparaître…",
   lancement:"Dernière étape : relis tes choix. Une fois ta déclaration signée, ils sont définitifs et te suivront toute l'année. Prends le temps !"
 };
@@ -1849,7 +1857,15 @@ const emailOk = (e) => new RegExp("^[a-z0-9-]+(\\.[a-z0-9-]+)+@" + CONFIG.DOMAIN
 const wait = (ms) => new Promise(r => setTimeout(r, ms));
 const frais = () => S.direction ? FRAIS[S.direction] : 0;
 const enBanque = () => APPORT - frais();
-const fonction = () => S.direction === "plusieurs" ? (S.nbAssocies > 1 ? "Gérant(e) et associé(e)" : "Gérant(e)") : "Indépendant(e)";
+const fonction = () => S.direction === "plusieurs" ? (S.nbAssocies > 1 ? "Administrateur(-trice) et associé(e)" : "Administrateur(-trice)") : "Indépendant(e)";
+/** Les 10 000 € de départ, dits selon la formule choisie (écran Direction) : économies, apport des associés, ou neutre tant que rien n'est choisi. */
+function apportTexte(gras){
+  const m = gras ? `<b>${euro(APPORT)}</b>` : euro(APPORT);
+  if (S.direction === "seul") return `Tu démarres avec ${m} d'économies.`;
+  if (S.direction === "plusieurs" && S.nbAssocies > 1){ const part = APPORT / S.nbAssocies; return `Tu démarres avec ${m} apportés par les associés (${Number.isInteger(part) ? "" : "environ "}${euro(Math.round(part))} chacun).`; }
+  if (S.direction === "plusieurs") return `Tu démarres avec ${m} apportés par toi, seul(e) associé(e).`;
+  return `Tu as ${m} pour démarrer.`;
+}
 function nomDepuisEmail(email){
   const cap = s => s.split("-").map(w => w ? w[0].toUpperCase() + w.slice(1) : w).join("-");
   const parts = email.split("@")[0].split(".");
@@ -2536,12 +2552,12 @@ function idcard(){ const t = type(), bce = S.ids.bce, st = strat();
   return `<div class="idcard certificat">
       <div class="cert-filigrane" aria-hidden="true">${S.symbole || t.emoji}</div>
       <div class="cert-bandeau"><span>Certificat d'enregistrement</span><small>Document officiel de ton entreprise · projet scolaire</small></div>
-      <div class="hd"><div class="emb">${S.symbole || t.emoji}</div><div><h3 class="f-${S.style}">${esc(deno())}</h3><p>${esc(S.slogan)}</p></div></div>
+      <div class="hd"><div class="emb">${S.symbole || t.emoji}</div><div><h3 class="f-${S.style}">${esc(deno())}</h3>${S.direction === "seul" ? `<p style="font-size:13px;margin-top:0">Entreprise individuelle de ${esc(S.eleve.prenom)} ${esc(S.eleve.nom)}</p>` : ""}<p>${esc(S.slogan)}</p></div></div>
       <div class="idgrid">
         <div class="k">Activité</div><div>${esc(t.nom)}</div>
         <div class="k">Stratégie</div><div>${st ? st.icone + " " + esc(st.nom) : ""}</div>
-        <div class="k">Forme</div><div>${esc(forme())}</div>
-        <div class="k">Adresse officielle</div><div>${esc(adresse1())}, ${esc(adresse2())}</div>
+        <div class="k">Forme juridique</div><div>${esc(forme())}</div>
+        <div class="k">Siège social (adresse officielle)</div><div>${esc(adresse1())}, ${esc(adresse2())}</div>
         <div class="k">Dirigée par</div><div>${esc(S.eleve.prenom)} ${esc(S.eleve.nom)}${S.direction === "plusieurs" && S.nbAssocies > 1 ? ` et ${S.nbAssocies - 1} associé${S.nbAssocies > 2 ? "s" : ""}` : ""}</div>
         <div class="k">Numéro mystère n° 1</div><div><span class="num n1">${bce}</span></div>
         <div class="k">Numéro mystère n° 2</div><div><span class="num n2">BE ${bce}</span></div>
@@ -2549,7 +2565,7 @@ function idcard(){ const t = type(), bce = S.ids.bce, st = strat();
         <div class="k">E-mail</div><div>${esc(emailPro())}</div>
       </div>
       <div class="cert-pied"><div class="cert-sceau" aria-hidden="true"><span><b>★</b>Sceau<br>officiel</span></div>
-        <div class="cert-lieu">Fait à ${esc(S.commune)}, le ${esc(S.dateCreation)}<div class="cert-sig"><span class="signed">Max</span><small>Coach Max, pour le bureau des entreprises (fictif)</small></div></div></div>
+        <div class="cert-lieu">Fait à ${esc(S.commune)}, le ${esc(S.dateCreation)}<div class="cert-sig"><span class="signed">Max</span><small>Coach Max, pour le guichet d'entreprises (fictif)</small></div></div></div>
       <div class="fict">Entreprise et numéros fictifs – projet scolaire, Institut Saint-Luc de Frameries.</div>
       <div class="tampon cert-tampon">Enregistrée</div></div>`; }
 function patrimoine(){
@@ -2584,12 +2600,12 @@ R.login = () => { const anim = ACCUEIL_ANIME; ACCUEIL_ANIME = false; return `<di
     <div class="badge-school glass"><div class="logo">SL</div><span>Institut Saint-Luc de Frameries</span></div>
     <h2>Aujourd'hui, tu crées<br><span class="grad">ta propre entreprise</span></h2>
     <p class="sub">Ton activité, ta stratégie, ton nom, ton logo, ta boutique… Chaque décision compte : ton entreprise te suivra toute l'année !</p>
-    <div class="hero-meta"><span class="meta-chip glass">🏪 8 entreprises au choix</span><span class="meta-chip glass">🎨 Une boutique à ton image</span><span class="meta-chip glass">📅 Toute l'année avec toi</span></div>
+    <div class="hero-meta"><span class="meta-chip glass">🏪 8 activités au choix</span><span class="meta-chip glass">🎨 Une boutique à ton image</span><span class="meta-chip glass">📅 Toute l'année avec toi</span></div>
     <div class="accueil-rue">
       <figure class="rue-local ${anim ? "kit-anim" : ""}" data-anim="login-rue">${vitrineSVG({ aLouer:true, allumee:false, nuit:true, numero:"18" }, "login")}
-        <figcaption class="postit">Ce local attend son patron… et si c'était toi ?</figcaption></figure>
+        <figcaption class="postit">Ce local attend son patron ou sa patronne… et si c'était toi ?</figcaption></figure>
       <div class="login fiche-accueil ${anim ? "kit-anim d2" : ""}"><div class="fa-papier">
-      <div class="fa-tete"><span class="fa-logo" aria-hidden="true">SL</span><div><b>Fiche d'accueil</b><small>Nouveau chef d'entreprise · 3P Vente</small></div></div>
+      <div class="fa-tete"><span class="fa-logo" aria-hidden="true">SL</span><div><b>Fiche d'accueil</b><small>Nouveau chef ou nouvelle cheffe d'entreprise · 3P Vente</small></div></div>
       <label class="f" for="em">Ton adresse e-mail de l'école</label>
       <input class="inp" id="em" type="text" inputmode="email" autocapitalize="off" value="${esc(LOGIN.email)}" placeholder="prenom.nom@istlm.org" autocomplete="email" spellcheck="false">
       ${LOGIN.lent ? `<div class="help" style="color:#ffd97a">⏳ Le serveur met un peu de temps à répondre… Patiente quelques secondes, ne ferme pas la page.</div>` : LOGIN.err ? `<div class="err">${LOGIN.err}</div>` : `<div class="help">Écris-la en entier, en minuscules, sans accents.</div>`}
@@ -2602,7 +2618,7 @@ R.login = () => { const anim = ACCUEIL_ANIME; ACCUEIL_ANIME = false; return `<di
 R.briefing = () => `<div class="brief">
     <div class="chip-label"><span class="led"></span>Avant de commencer</div>
     <h2 class="title">${esc(S.eleve.prenom)}, voici <span class="grad">ta mission</span></h2>
-    <p class="lead">Aujourd'hui, tu deviens chef d'entreprise. Pas pour de faux : pendant toute l'année, tu vas faire vivre l'entreprise que tu crées maintenant.</p>
+    <p class="lead">Aujourd'hui, tu deviens chef ou cheffe d'entreprise. Pas pour de faux : pendant toute l'année, tu vas faire vivre l'entreprise que tu crées maintenant.</p>
     <div class="bureau brief-bureau kit-anim" data-anim="brief-bureau"><div class="goals">
       <div class="goal glass" style="--r:-1.1deg"><div class="gi">🏗️</div><b>Créer ta propre entreprise</b><p>Choisir ton activité, ton nom, ton adresse et décider entre entreprise individuelle et société.</p></div>
       <div class="goal glass" style="--r:.8deg"><div class="gi">🎯</div><b>Choisir ta stratégie</b><p>Petits prix ou haut de gamme ? Ce choix guidera toutes tes décisions de l'année.</p></div>
@@ -2641,10 +2657,10 @@ R.type = () => {
   const card = (t) => { const full = complet(t.id) && S.typeId !== t.id, on = S.typeId === t.id, k = TYPES.indexOf(t);
     return `<button class="choice fiche-act sec-${t.secteur} ${on ? "on" : ""} ${full ? "full" : ""}" data-pick="type" data-id="${t.id}" aria-pressed="${on}" ${full ? 'aria-disabled="true"' : ""} style="--rot:${[-.8, .6, -.5, .7, -.6, .5, -.7, .4][k] || 0}deg">
       <span class="fa-photo ${PHOTOS["act-" + t.id] ? "fa-photo-r" : ""}" aria-hidden="true">${PHOTOS["act-" + t.id] ? photo("act-" + t.id, "", "") + `<span class="ico ico-coin">${t.emoji}</span>` : `<span class="ico">${t.emoji}</span>`}${full ? `<span class="bande-complet">Complet</span>` : ""}</span><h4>${esc(t.nom)}</h4><p>${esc(t.desc)}</p>
-      <div class="meta"><div><span class="mi" aria-hidden="true">🛒</span><b>Tu achèteras :</b> ${esc(t.achete)}</div><div><span class="mi" aria-hidden="true">🏷️</span><b>Tu vendras :</b> ${esc(t.vend)}</div></div>
+      <div class="meta"><div><span class="mi" aria-hidden="true">🛒</span><b>Tu achèteras :</b> ${esc(t.achete)}</div><div><span class="mi" aria-hidden="true">🏷️</span><b>Tu vendras :</b> ${esc(t.vend)}</div>${t.famille ? `<div><span class="mi" aria-hidden="true">📚</span><b>Famille :</b> ${esc(t.famille)}</div>` : ""}${t.pensebete ? `<div><span class="mi" aria-hidden="true">🧭</span>${esc(t.pensebete)}</div>` : ""}</div>
       ${full ? `<span class="tag full">Complet : ${SESSION.max} élèves l'ont déjà choisie</span>` : ""}${on ? `<span class="tampon vert frappe fa-tampon" data-anim="choisi-${t.id}" aria-hidden="true">Choisi</span>` : ""}</button>`; };
   return (SESSION.reouvert ? `<div class="status wait" style="margin:0 0 20px">🔄 Ton professeur a rouvert ta mission. Tes choix précédents sont déjà remplis : modifie seulement ce qui doit l'être.</div>` : "")
-    + head(1, "Quelle entreprise veux-tu <span class='grad'>créer</span> ?", "Huit activités t'attendent, rangées en trois groupes. Choisis celle qui te plaît le plus.") + coach("type")
+    + head(1, "Quelle entreprise veux-tu <span class='grad'>créer</span> ?", "Huit activités t'attendent, rangées en trois secteurs d'activité. Choisis celle qui te plaît le plus.") + coach("type")
     + ["primaire","secondaire","tertiaire"].map(s => `<div class="sector-h"><span class="chip-label" style="margin:0"><span class="led"></span>${SECTEURS[s]}</span><div class="rule"></div></div>
        <div class="grid g2 liege">${TYPES.filter(t => t.secteur === s).map(card).join("")}</div>`).join("") + nav("type");
 };
@@ -2734,20 +2750,20 @@ R.adresse = () => { const t = type(), done = S.bonusDone.adresse;
       <div class="row" style="margin:0"><input class="inp" data-bind="bonus.concurrent" value="${esc(S.bonus.concurrent)}" placeholder="Ex. : nom du magasin, commune" ${done ? "disabled" : ""}>
         ${done ? "" : `<button class="btn btn-gold" data-act="bonus" data-b="adresse">Valider mon défi</button>`}</div>${done ? `<span class="tampon vert frappe bonus-tampon" data-anim="bonus-ok" aria-hidden="true">Réussi</span>` : ""}</div>` + nav("adresse"); };
 
-R.direction = () => head(7, "Entreprise individuelle ou <span class='grad'>société</span> ?", "Tu démarres avec 10 000 € d'économies. Chaque formule a un prix et des conséquences.") + coach("direction")
+R.direction = () => head(7, "Entreprise individuelle ou <span class='grad'>société</span> ?", `${apportTexte()} Chaque formule a un prix et des conséquences.`) + coach("direction", `${apportTexte(true)} ${COACH.direction}`)
   + `<div class="grid g2 docs-direction">
-    <button class="choice doc-officiel doc-indep ${S.direction === "seul" ? "on" : ""}" data-set="direction" data-val="seul"><span class="do-entete" aria-hidden="true"><span class="do-logo">🏛️</span><span>Guichet des indépendants<small>Demande d'inscription · document fictif</small></span></span>
+    <button class="choice doc-officiel doc-indep ${S.direction === "seul" ? "on" : ""}" data-set="direction" data-val="seul"><span class="do-entete" aria-hidden="true"><span class="do-logo">🏛️</span><span>Guichet d'entreprises<small>Demande d'inscription à la BCE · document fictif</small></span></span>
       <div class="ico">🙋</div><h4>Entreprise individuelle</h4>
       <p>Tu travailles en ton nom propre : tu es indépendant(e) et l'entreprise, c'est toi.</p><span class="cost">Frais de création : environ ${euro(FRAIS.seul)}</span>
       <span class="pro">✓ Simple et peu coûteux à créer</span><span class="pro">✓ Tu décides seul(e) et tu gardes tous les bénéfices</span>
       <span class="con">✗ Si ton entreprise a des dettes, tu dois les payer avec tes biens personnels (tes économies, ta voiture…)</span>${S.direction === "seul" ? `<span class="tampon vert frappe do-tampon" data-anim="dir-seul" aria-hidden="true">Choisi</span>` : ""}</button>
     <button class="choice doc-officiel doc-notaire ${S.direction === "plusieurs" ? "on" : ""}" data-set="direction" data-val="plusieurs"><span class="do-entete" aria-hidden="true"><span class="do-sceau">⚖️</span><span>Étude du notaire<small>Acte de création d'une société · document fictif</small></span></span>
       <div class="ico">🏢</div><h4>Société (SRL)</h4>
-      <p>Tu crées une société, une entreprise qui a sa propre existence. Tu peux la créer seul(e) ou avec des associés.</p><span class="cost">Frais de création : environ ${euro(FRAIS.plusieurs)}</span>
-      <span class="pro">✓ Tes biens personnels sont protégés</span><span class="pro">✓ Tu peux être seul(e) ou partager le travail avec des associés</span>
-      <span class="con">✗ Plus cher à créer (notaire, papiers officiels) et chaque année, il faut payer un comptable</span><span class="con">✗ Avec des associés, il faut se mettre d'accord et partager les bénéfices</span>${S.direction === "plusieurs" ? `<span class="do-associes" aria-hidden="true">Associés : ${"<i>👤</i>".repeat(S.nbAssocies)}</span><span class="tampon vert frappe do-tampon" data-anim="dir-plusieurs" aria-hidden="true">Choisi</span>` : ""}</button>
+      <p>Tu crées une société, une entreprise qui a sa propre existence. Tu peux la créer seul(e) ou avec des associés : tu la diriges comme administrateur(-trice) (on dit encore souvent « gérant »). Le notaire te demandera un plan financier : tes ${euro(APPORT)} doivent suffire pour démarrer.</p><span class="cost">Frais de création : environ ${euro(FRAIS.plusieurs)} (notaire, publication au Moniteur belge, premiers frais de comptable)</span>
+      <span class="pro">✓ Tes biens personnels sont, en principe, protégés</span><span class="pro">✓ Tu peux être seul(e) ou partager le travail avec des associés</span>
+      <span class="con">✗ Plus cher à créer (notaire, publication officielle) et, chaque année, une comptabilité complète à tenir avec un comptable</span><span class="con">✗ Avec des associés, il faut se mettre d'accord et partager les bénéfices</span>${S.direction === "plusieurs" ? `<span class="do-associes" aria-hidden="true">Associés : ${"<i>👤</i>".repeat(S.nbAssocies)}</span><span class="tampon vert frappe do-tampon" data-anim="dir-plusieurs" aria-hidden="true">Choisi</span>` : ""}</button>
   </div>
-  ${S.direction === "plusieurs" ? `<div class="card glass" style="margin-top:16px;display:flex;align-items:center;gap:18px;flex-wrap:wrap"><span style="font-weight:600">Combien de personnes dans ta société, toi compris ?</span>
+  ${S.direction === "plusieurs" ? `<div class="card glass" style="margin-top:16px;display:flex;align-items:center;gap:18px;flex-wrap:wrap"><span style="font-weight:600">Combien de personnes dans ta société, toi compris(e) ?</span>
      <div class="chips" style="margin:0">${[1,2,3,4,5].map(n => `<button class="chip ${S.nbAssocies === n ? "on" : ""}" data-set="nbAssocies" data-val="${n}">${n === 1 ? "1 : rien que moi" : n}</button>`).join("")}</div></div>` : ""}
   ${S.direction ? `<div class="money glass">${billets()}<div class="mo-txt"><div class="mi">🏦</div><div>Après les frais de création, il restera <b>${euro(enBanque())}</b> sur le compte en banque de <b style="color:#fff;font-family:var(--ui)">${esc(deno())}</b>.<div class="help">Montants simplifiés pour le jeu.</div></div></div></div>` : ""}`
   + nav("direction");
@@ -2769,7 +2785,7 @@ R.reveal = () => {
     ${patrimoine()}
     <div class="duo-banque">${coach("reveal", `Ton compte professionnel est ouvert à la <b>Banque des Terrils</b>. Ton apport de départ y est arrivé, et les frais de création en sont déjà sortis. Regarde : l'application de la banque te prévient à chaque mouvement d'argent.`)}
       ${telBanqueHTML({ titulaire:deno(), iban:"", heure:new Date().toLocaleTimeString("fr-BE", { hour:"2-digit", minute:"2-digit" }), anim:"tel-banque-m1",
-        lignes:[{ date:new Date(), libelle:S.direction === "plusieurs" ? "Apport des associés (capital de départ)" : "Apport de départ", court:"Apport de départ", credit:APPORT },
+        lignes:[{ date:new Date(), libelle:S.direction === "plusieurs" && S.nbAssocies > 1 ? "Apport de départ des associés" : "Apport de départ", court:"Apport de départ", credit:APPORT },
           { date:new Date(), libelle:S.direction === "plusieurs" ? "Frais de création de la société" : "Frais d'inscription de l'entreprise", court:"Frais de création", debit:frais(),
             notif:`Frais de création : ${fmtEur(frais())} payés` }] })}</div>` + nav("reveal", {label:"Relire et signer"});
 };
@@ -2780,8 +2796,8 @@ R.lancement = () => { const t = type(), st = strat(), ok = VALID.lancement();
     + `<div class="bureau decl-bureau"><div class="decl formulaire kit-anim" data-anim="decl-formulaire">
       <div class="df-entete" aria-hidden="true"><span class="df-logo">SL</span><span class="df-titre">Formulaire officiel<small>Mission 1 · création d'entreprise · document fictif</small></span><span class="df-ref">M1-${new Date().getFullYear()}</span></div>
       <h3>Déclaration de création</h3><div class="sub2">${esc(S.commune)}, le ${esc(S.dateCreation)}</div>
-      <ul>${ligne("Nom officiel", esc(deno()))}${ligne("Activité", `${t.emoji} ${esc(t.nom)}`)}${ligne("Stratégie", `${st.icone} ${esc(st.nom)}`)}
-        ${ligne("Forme", esc(forme()))}${ligne("Adresse officielle", `${esc(adresse1())}, ${esc(adresse2())}`)}
+      <ul>${ligne("Dénomination (nom officiel)", esc(deno()) + (S.direction === "seul" ? `<br><small>Entreprise individuelle de ${esc(S.eleve.prenom)} ${esc(S.eleve.nom)}</small>` : ""))}${ligne("Activité", `${t.emoji} ${esc(t.nom)}`)}${ligne("Stratégie", `${st.icone} ${esc(st.nom)}`)}
+        ${ligne("Forme juridique", esc(forme()))}${ligne("Siège social (adresse officielle)", `${esc(adresse1())}, ${esc(adresse2())}`)}
         ${ligne("Personnalité", `${S.symbole} style ${esc(STYLES.find(s => s[0] === S.style)[1].toLowerCase())}, façade ${esc(FACADES.find(f => f[0] === S.facade)[1].toLowerCase())}, ambiance ${esc(AMBIANCES.find(a => a[0] === S.ambiance)[1].toLowerCase())}`)}
         ${ligne("Argent de départ", euro(APPORT))}${ligne("Frais de création", "− " + euro(frais()))}${ligne("Argent en banque", `<b>${euro(enBanque())}</b>`)}</ul>
       <label class="engage"><input type="checkbox" id="eng" ${S.engagement ? "checked" : ""}><span>Je comprends que ces choix sont <b>définitifs</b> et qu'ils me suivront <b>toute l'année</b>.</span></label>
@@ -2809,7 +2825,7 @@ R.fin = () => {
       <div class="stat glass"><b style="font-family:var(--serif);font-size:24px;padding:6px 0">${niveau()}</b><span>Ton niveau</span></div>
       <div class="stat glass"><b>${badges.filter(b => b[1]).length}/${badges.length}</b><span>Badges</span></div></div>
     ${status}
-    <div class="duo"><div class="front-wrap glass vitrine-fin kit-anim" data-anim="fin-vitrine">${vitrine("fin")}</div><div class="biz-zone">${carteVisite()}<p class="help" style="margin-top:10px">Ta carte de visite de chef d'entreprise.</p></div></div>
+    <div class="duo"><div class="front-wrap glass vitrine-fin kit-anim" data-anim="fin-vitrine">${vitrine("fin")}</div><div class="biz-zone">${carteVisite()}<p class="help" style="margin-top:10px">Ta carte de visite de chef ou cheffe d'entreprise.</p></div></div>
     ${lecture ? `<h3 class="sub">Ta carte d'identité d'entreprise</h3>${idcard()}${patrimoine()}` : ""}
     <div class="card glass" style="margin-top:22px"><h3 class="sub" style="margin-top:0">Tes badges</h3>
       <div class="badges" data-anim="fin-pins">${badges.map(([b,on], i) => `<div class="badge pin ${on ? "" : "lockd"}" style="--i:${i}"><div class="i">${on ? b[0] : "🔒"}</div><b>${esc(b[1])}</b></div>`).join("")}</div>
@@ -2923,7 +2939,7 @@ async function controlerEnFond(key){
       const surServeur = r.dossier && r.dossier.entreprise ? r.dossier.entreprise.typeId : null;
       if (surServeur !== S.typeId && complet(S.typeId)){
         S.typeId = null; S.strategie = null; S.raisons = []; S.symbole = null; S.step = 1; save(); render(true);
-        toast("<div>Oups ! Cette entreprise vient d'être complétée par tes camarades. Choisis-en une autre : tes autres choix sont gardés.</div>");
+        toast("<div>Oups ! Cette activité est maintenant complète : tes camarades ont pris toutes les places. Choisis-en une autre : tes autres choix sont gardés.</div>");
       }
     } catch(e) {}
   }
@@ -3032,7 +3048,7 @@ document.addEventListener("click", (e) => {
   if (MODE !== "mission") return;
 
   if (b.dataset.pick === "type"){
-    if (complet(b.dataset.id) && S.typeId !== b.dataset.id){ toast("<div>Cette entreprise est complète. Choisis-en une autre !</div>"); return; }
+    if (complet(b.dataset.id) && S.typeId !== b.dataset.id){ toast("<div>Cette activité est complète. Choisis-en une autre !</div>"); return; }
     if (S.typeId !== b.dataset.id){ S.typeId = b.dataset.id; S.symbole = null; }
     save(); render(); return;
   }
